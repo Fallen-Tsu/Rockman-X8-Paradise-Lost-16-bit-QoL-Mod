@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://src/Fonts/Xclassicfont.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://src/Fonts/X8Bossfont.fnt" type="BitmapFont" id=2]
@@ -23,8 +23,12 @@
 [ext_resource path="res://src/Options/CRTButton.gd" type="Script" id=21]
 [ext_resource path="res://src/Options/AchievButton.gd" type="Script" id=22]
 [ext_resource path="res://src/Options/clearachiev.gd" type="Script" id=23]
+[ext_resource path="res://src/Options/LivesplitMenu.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/Options/AutonomousMenuButton.gd" type="Script" id=25]
 
 [sub_resource type="ShortCut" id=1]
+
+[sub_resource type="ShortCut" id=2]
 
 [node name="OptionsMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -96,7 +100,7 @@ follow_focus = true
 
 [node name="OptionHolder" type="VBoxContainer" parent="Menu/scrollContainer"]
 margin_right = 200.0
-margin_bottom = 162.0
+margin_bottom = 173.0
 grow_horizontal = 2
 custom_constants/separation = 3
 
@@ -854,12 +858,53 @@ align = 2
 valign = 1
 uppercase = true
 
-[node name="clearsave" type="TextureButton" parent="Menu/scrollContainer/OptionHolder"]
-modulate = Color( 0.466667, 0.0745098, 0.0745098, 1 )
-self_modulate = Color( 1, 1, 1, 0 )
+[node name="LiveSplit" type="Control" parent="Menu/scrollContainer/OptionHolder"]
 margin_top = 143.0
 margin_right = 200.0
 margin_bottom = 151.0
+rect_min_size = Vector2( 200, 8 )
+size_flags_horizontal = 0
+script = ExtResource( 4 )
+objects_to_light = [ NodePath("OptionName") ]
+focus_group = [ NodePath("Livesplit") ]
+idle_color = Color( 0.407843, 0.792157, 1, 1 )
+focus_color = Color( 0.984314, 1, 0.686275, 1 )
+
+[node name="OptionName" type="Label" parent="Menu/scrollContainer/OptionHolder/LiveSplit"]
+modulate = Color( 0.407843, 0.792157, 1, 1 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -9.0
+margin_right = 126.0
+margin_bottom = 5.0
+custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "LIVESPLIT_OPTIONS"
+uppercase = true
+
+[node name="Livesplit" type="TextureButton" parent="Menu/scrollContainer/OptionHolder/LiveSplit"]
+modulate = Color( 0.407843, 0.792157, 1, 1 )
+margin_right = 200.0
+margin_bottom = 8.0
+rect_min_size = Vector2( 200, 8 )
+action_mode = 0
+shortcut = SubResource( 2 )
+script = ExtResource( 25 )
+menu_path = NodePath("../../../../..")
+pick_sound = NodePath("../../../../../choice")
+
+[node name="LivesplitMenu" parent="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" instance=ExtResource( 24 )]
+layer = 6
+visible = false
+
+[node name="clearsave" type="TextureButton" parent="Menu/scrollContainer/OptionHolder"]
+modulate = Color( 0.466667, 0.0745098, 0.0745098, 1 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 154.0
+margin_right = 200.0
+margin_bottom = 162.0
 rect_min_size = Vector2( 0, 8 )
 action_mode = 0
 script = ExtResource( 16 )
@@ -882,9 +927,9 @@ uppercase = true
 [node name="clearachiev" type="TextureButton" parent="Menu/scrollContainer/OptionHolder"]
 modulate = Color( 0.466667, 0.0745098, 0.0745098, 1 )
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 154.0
+margin_top = 165.0
 margin_right = 200.0
-margin_bottom = 162.0
+margin_bottom = 173.0
 rect_min_size = Vector2( 0, 8 )
 action_mode = 0
 script = ExtResource( 23 )
@@ -1023,6 +1068,11 @@ menu = NodePath("../Menu")
 [connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/ShowDebug/Button" to="Menu/scrollContainer/OptionHolder/ShowDebug/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/scrollContainer/OptionHolder/ShowDebug/Button" to="Menu/scrollContainer/OptionHolder/ShowDebug/Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu/scrollContainer/OptionHolder/ShowDebug/Button" to="Menu/scrollContainer/OptionHolder/ShowDebug/Button" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" to="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" to="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" to="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" to="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" to="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" method="_on_pressed"]
 [connection signal="focus_entered" from="Menu/scrollContainer/OptionHolder/clearsave" to="Menu/scrollContainer/OptionHolder/clearsave" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Menu/scrollContainer/OptionHolder/clearsave" to="Menu/scrollContainer/OptionHolder/clearsave" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/clearsave" to="Menu/scrollContainer/OptionHolder/clearsave" method="_on_mouse_entered"]

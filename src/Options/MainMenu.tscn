@@ -111,7 +111,7 @@ anchor_bottom = 0.5
 margin_left = -43.0
 margin_top = 35.0
 margin_right = 157.0
-margin_bottom = 89.0
+margin_bottom = 102.0
 grow_horizontal = 2
 custom_constants/separation = 3
 
@@ -256,7 +256,7 @@ position = Vector2( 13, 2 )
 z_index = -1
 frames = ExtResource( 17 )
 animation = "loop"
-frame = 5
+frame = 7
 playing = true
 
 [node name="choice" type="AudioStreamPlayer" parent="."]
