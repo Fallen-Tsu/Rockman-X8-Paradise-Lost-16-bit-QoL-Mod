@@ -610,3 +610,11 @@ SECRET3-6,Sounds more like you're a filthy bounty hunter.,Você não passa de um
 SECRET3-7,You are free to think whatever you want. I'm not backing down... Get Ready!,"Pense o que quiser, eu não vou recuar agora. Prepare-se!",Eres libre de pensar lo que quieras. No me voy a echar atrás... ¡Prepárate!,"Pense o que quiser, eu não vou recuar agora. Prepare-se!"
 ,,,,
 SECRET3-8,Not bad... \nFor an old timer...,Nada mau... Para um velhote...,No está mal... \nPara un anciano...,X7 demake... É o caralho...  
+SPLIT_OPTION,Split on boss kill,Split ao matar o boss,Split al matar al jefe,Split ao matar o boss
+SPLIT_PORT,LiveSplit Port,Porta do LiveSplit,Puerto de LiveSplit,Porta do LiveSplit
+LIVESPLIT_OPTIONS,LiveSplit Options,Opções do LiveSplit,Opciones de LiveSplit,Opções do LiveSplit
+LIVESPLIT_TITLE,LiveSplit Options,Opções do LiveSplit,Opciones de LiveSplit,Opções do LiveSplit
+SPLIT_SERVER,Websocket,Websocket,Websocket,Websocket
+SPLIT_TYPE,Protocol,Protocolo,Protocolo,Protocolo
+SERVER_ON,Up,Ativo,Activo,Ativo
+SERVER_OFF,Down,Inativo,Inactivo,Inativo
