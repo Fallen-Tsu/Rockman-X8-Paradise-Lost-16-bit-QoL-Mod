@@ -54,6 +54,12 @@ func _Setup():
 	background.scale.y = 40 
 	GameManager.pause(character.name + name)
 	freeze_moment = OS.get_ticks_msec()
+	if IGT.has_peer():
+		if Configurations.get("SplitOnBossKill"):
+			IGT.send_command("split_command")
+		else:
+			var seconds := 15.0 if collectible == "finished_intro" else 17.0
+			Tools.timer_p(seconds,"send_command",IGT,"split_command")
 	
 
 func animate_boss_or_reploid() -> void:
