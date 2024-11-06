@@ -3,6 +3,8 @@ extends X8TextureButton
 export var pick_sound : NodePath
 
 func on_press() -> void:
+	if IGT.has_peer():
+		IGT.start_run()
 	get_node(pick_sound).play()
 	Event.emit_signal("fadeout_startmenu")
 	strong_flash()
