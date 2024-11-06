@@ -32,6 +32,7 @@ func action() -> void:
 	GameManager.collectibles = []
 	GlobalVariables.variables = {}
 	IGT.reset()
+	IGT.send_command("reset_command")
 	#GameManager.rng.seed = 0000000000
 	Savefile.save()
 	GameManager.go_to_intro()
