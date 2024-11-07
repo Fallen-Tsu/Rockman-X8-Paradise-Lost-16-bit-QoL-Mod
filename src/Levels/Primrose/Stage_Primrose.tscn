@@ -182,7 +182,7 @@ extents = Vector2( 198, 112 )
 [sub_resource type="RectangleShape2D" id=39]
 extents = Vector2( 78, 85 )
 
-[node name="Stage" type="Node2D"]
+[node name="Primrose" type="Node2D"]
 
 [node name="Hud" parent="." instance=ExtResource( 13 )]
 
