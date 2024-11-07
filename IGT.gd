@@ -2,68 +2,72 @@ extends Node
 
 const sections := 13
 
-## TODO: Create a TCP client for og livesplit
-onready var websocket_server: WebSocketServer = WebSocketServer.new()
-
-var remote_peer_id: int = -1
+var active_connection = null
 
 var already_started: bool = false
 
 var times := {}
 
-func _ready():
-	websocket_server.connect("client_connected",self,"_on_client_connected")
-	websocket_server.connect("data_received",self,"_on_data_received")
+var total_time: float = 0.0
 
-func _process(_delta):
-	# Call this in _process or _physics_process.
-	# Data transfer, and signals emission will only happen when calling this function.
-	websocket_server.poll()
+signal connection_timeout
+signal connection_established
+
+var connection_timeout: Timer = Timer.new()
+
+func _ready():
+	pass
 
 func reset():
 	already_started = false
 	times.clear()
+	total_time = 0.0
 
 func add(section_name,delta):
 	if section_name in times:
 		times[section_name] += delta
 	else:
 		times[section_name] = 0.0
+	total_time += delta
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
-		if websocket_server.is_listening():
-			websocket_server.stop()
+		if active_connection:
+			active_connection.stop()
 			
+
+func _process(delta):
+	if active_connection:
+		active_connection._process(delta)
+		if not active_connection.has_peer_connected() and connection_timeout.is_stopped():
+			connection_timeout = Tools.timer_r(5.0, "close_connection", self)
+		else:
+			connection_timeout.stop()
 
 func clocked_all_stages() -> bool:
 	return times.size() == sections
 
-func initialize_websocket_server():
-	close_websocket_server()
-	var port: int = int(Configurations.get("SplitPort"))
-	websocket_server.set_bind_ip("0.0.0.0")
-	var err = websocket_server.listen(port)
-	if err != OK:
-		push_error("Error initializing WebSocketServer: " + str(err))
+func initialize_connection():
+	if active_connection:
+		active_connection.disconnect("connected_to_livesplit",self,"_on_connected_to_livesplit")
+	if Configurations.get("SplitType"):
+		active_connection = LiveSplitOneWebSocket.new()
+	else:
+		active_connection = LiveSplitTCPClient.new()
+	active_connection.connect("connected_to_livesplit",self,"_on_connected_to_livesplit")
+	active_connection.setup()
 
-func close_websocket_server():
-	if websocket_server.is_listening():
-		websocket_server.stop()
-		websocket_server.disconnect("client_connected",self,"_on_client_connected")
-		websocket_server.disconnect("data_received",self,"_on_data_received")
-		websocket_server = WebSocketServer.new()
-		websocket_server.connect("client_connected",self,"_on_client_connected")
-		websocket_server.connect("data_received",self,"_on_data_received")
+func close_connection(_stub = null):
+	if active_connection:
+		active_connection.stop()
+		active_connection = null
+		emit_signal("connection_timeout")
 
 func send_command(command: String):
-	if websocket_server.has_peer(remote_peer_id):
-		print("Sending command: " + command)
-		var remote_peer = websocket_server.get_peer(remote_peer_id)
-		remote_peer.set_write_mode(WebSocketPeer.WRITE_MODE_TEXT)
-		var packet: PoolByteArray = self.call(command)
-		print(packet.get_string_from_utf8())
-		remote_peer.put_packet(packet)
+	if active_connection:
+		active_connection.send_command(command)
+		if command == "reset_command":
+			already_started = false
 
 func start_run():
 	if not already_started:
@@ -71,46 +75,16 @@ func start_run():
 		send_command("split_command")
 		send_command("pause_igt_command")
 
-func split_command():
-	var packet: PoolByteArray
-	if Configurations.get("SplitType"):
-		packet = JSON.print({"command": "splitOrStart"},"\t" ).to_utf8()
-	else:
-		packet = "startorsplit".to_utf8()
-	return packet
 
-func reset_command():
-	var packet: PoolByteArray
-	if Configurations.get("SplitType"):
-		packet = JSON.print({"command": "reset"},"\t").to_utf8()
-	else:
-		packet = "reset".to_utf8()
-	return packet
-
-func pause_igt_command():
-	var packet: PoolByteArray
-	if Configurations.get("SplitType"):
-		packet = JSON.print({"command": "pauseGameTime"},"\t").to_utf8()
-	else:
-		packet = "pausegametime".to_utf8()
-	return packet
-	
-func resume_igt_command():
-	var packet: PoolByteArray
-	if Configurations.get("SplitType"):
-		packet = JSON.print({"command": "resumeGameTime"},"\t").to_utf8()
-	else:
-		packet = "resumegametime".to_utf8()
-	return packet
 
 func has_peer() -> bool:
-	return websocket_server.has_peer(remote_peer_id)
+	if active_connection:
+		return active_connection.has_peer_connected()
+	else:
+		return false
 
-func _on_client_connected(id: int, protocol: String):
-	print("Client connected with id " + str(id) + " and protocol " + protocol)
-	remote_peer_id = id
-	
+func connection_exists() -> bool:
+	return not active_connection == null
 
-func _on_data_received(id: int):
-	var message = websocket_server.get_peer(id).get_packet().get_string_from_utf8()
-	print("Received message: " + message)
+func _on_connected_to_livesplit():
+	emit_signal("connection_established")

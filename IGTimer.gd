@@ -3,26 +3,26 @@ extends Node
 export var section := "section_name"
 
 var running := true
-
-func _exit_tree():
-	if IGT.has_peer():
-		IGT.send_command("pause_igt_command")
 	
-		
+var time_elapsed = 0.0
 
 func _ready() -> void:
 	Event.connect("beat_seraph_lumine",self,"stop")
 	running = true
-	call_deferred("resume_igt")
-
-func resume_igt():
-	if IGT.has_peer():
-		IGT.send_command("resume_igt_command")
 
 func _physics_process(delta: float) -> void:
 	if running:
 		IGT.add(section,delta)
+		time_elapsed += delta
+		if time_elapsed >= 1:
+			IGT.send_command("set_gametime_command")
+			time_elapsed = 0.0
 
 func stop() -> void:
+	var final_time = 0.0
+	for section_name in IGT.times:
+		final_time += IGT.times[section_name]
+	IGT.total_time = final_time
+	IGT.send_command("set_gametime_command")
 	IGT.send_command("split_command")
 	running = false
