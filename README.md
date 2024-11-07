@@ -16,3 +16,11 @@ Mega Man X8 16-bit is a free fangame. It is not affiliated, associated, authoriz
 
 Mega Man X and all Mega Man/Rockman material is a property of CAPCOM.
 Please support the offical release.
+
+## Livesplit Integration
+
+To integrate Livesplit you need to start the TCP server by right clicking Livesplit and then
+Control > Start TCP Server
+Once this is done, you can establish the connection in game from Options > Livesplit Options > Connection, if it says "UP", you're good to go, if it's stuck on "WAITING", make sure you did start the TCP server and that no other process has taken the network port that Livesplit uses, by default it's port 16834. By default, a local TCP server is assumed to be running (i.e. at IP 127.0.0.1), if you use Livesplit on a different machine, change the value of the IP address accordingly.
+
+If you're using Livesplit One, make sure it says "LIVESPLIT ONE" on Protocol, start the connection first so it says "WAITING", and then on Livesplit One, go to Settings > Network > Server Connection > Connect, on the textbox input `ws://<ip>:<port>` where `<ip>` is the IP of the computer that is running the game (usually the same pc, so 127.0.0.1) and `<port>` must be the port configured ingame (by default it's 16834), so most of the time you'll have to fill it with `ws://127.0.0.1:16834` and then click connect.
