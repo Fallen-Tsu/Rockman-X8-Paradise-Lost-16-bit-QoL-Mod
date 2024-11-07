@@ -36,7 +36,7 @@ func set_split_port(value:int) -> void:
 func get_split_port():
 	if Configurations.exists("SplitPort"):
 		return Configurations.get("SplitPort")
-	return false
+	return 16834
 
 func display_split_port():
 	if Configurations.get("SplitPort"):

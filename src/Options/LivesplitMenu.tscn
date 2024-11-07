@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/Options/CoverScreen.gd" type="Script" id=1]
 [ext_resource path="res://src/Fonts/X8Bossfont.fnt" type="BitmapFont" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://src/Options/SplitOnBossKill.gd" type="Script" id=13]
 [ext_resource path="res://src/Options/SplitPortButton.gd" type="Script" id=14]
 [ext_resource path="res://src/Options/StartWebsocketButton.gd" type="Script" id=15]
+[ext_resource path="res://SplitIPButton.gd" type="Script" id=16]
+[ext_resource path="res://IPInput.gd" type="Script" id=17]
 
 [sub_resource type="ShortCut" id=1]
 
@@ -92,7 +94,7 @@ follow_focus = true
 
 [node name="OptionHolder" type="VBoxContainer" parent="Menu/scrollContainer"]
 margin_right = 200.0
-margin_bottom = 41.0
+margin_bottom = 52.0
 grow_horizontal = 2
 custom_constants/separation = 3
 
@@ -227,10 +229,82 @@ rounded = true
 editable = false
 script = ExtResource( 7 )
 
-[node name="SplitType" type="Control" parent="Menu/scrollContainer/OptionHolder"]
+[node name="SplitIP" type="Control" parent="Menu/scrollContainer/OptionHolder"]
 margin_top = 22.0
 margin_right = 200.0
 margin_bottom = 30.0
+rect_min_size = Vector2( 200, 8 )
+size_flags_horizontal = 0
+script = ExtResource( 3 )
+objects_to_light = [ NodePath("OptionName") ]
+focus_group = [ NodePath("Button") ]
+idle_color = Color( 0.407843, 0.792157, 1, 1 )
+focus_color = Color( 0.984314, 1, 0.686275, 1 )
+
+[node name="OptionName" type="Label" parent="Menu/scrollContainer/OptionHolder/SplitIP"]
+modulate = Color( 0.407843, 0.792157, 1, 1 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -9.0
+margin_right = 92.0
+margin_bottom = 5.0
+custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 4 )
+text = "SPLIT_IP"
+uppercase = true
+
+[node name="Button" type="TextureButton" parent="Menu/scrollContainer/OptionHolder/SplitIP"]
+modulate = Color( 0.490196, 0.490196, 0.490196, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -6.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 8 )
+action_mode = 0
+shortcut = SubResource( 1 )
+script = ExtResource( 16 )
+menu_path = NodePath("../../../../..")
+
+[node name="Value" type="Label" parent="Menu/scrollContainer/OptionHolder/SplitIP/Button"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 4 )
+text = "127.0.0.1"
+align = 2
+valign = 1
+uppercase = true
+
+[node name="IpInput" type="LineEdit" parent="Menu/scrollContainer/OptionHolder/SplitIP"]
+visible = false
+margin_left = 156.0
+margin_top = -6.0
+margin_right = 242.0
+margin_bottom = 15.0
+theme = SubResource( 2 )
+text = "127.0.0.1"
+max_length = 15
+editable = false
+placeholder_text = "IP"
+caret_blink = true
+script = ExtResource( 17 )
+
+[node name="SplitType" type="Control" parent="Menu/scrollContainer/OptionHolder"]
+margin_top = 33.0
+margin_right = 200.0
+margin_bottom = 41.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 3 )
@@ -286,9 +360,9 @@ valign = 1
 uppercase = true
 
 [node name="SplitServer" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 33.0
+margin_top = 44.0
 margin_right = 200.0
-margin_bottom = 41.0
+margin_bottom = 52.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 3 )
@@ -401,6 +475,12 @@ menu = NodePath("../Menu")
 [connection signal="mouse_exited" from="Menu/scrollContainer/OptionHolder/SplitPort/Button" to="Menu/scrollContainer/OptionHolder/SplitPort/Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu/scrollContainer/OptionHolder/SplitPort/Button" to="Menu/scrollContainer/OptionHolder/SplitPort/Button" method="on_press"]
 [connection signal="value_changed" from="Menu/scrollContainer/OptionHolder/SplitPort/PortInput" to="Menu/scrollContainer/OptionHolder/SplitPort/Button" method="set_split_port"]
+[connection signal="focus_entered" from="Menu/scrollContainer/OptionHolder/SplitIP/Button" to="Menu/scrollContainer/OptionHolder/SplitIP/Button" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/scrollContainer/OptionHolder/SplitIP/Button" to="Menu/scrollContainer/OptionHolder/SplitIP/Button" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/SplitIP/Button" to="Menu/scrollContainer/OptionHolder/SplitIP/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/scrollContainer/OptionHolder/SplitIP/Button" to="Menu/scrollContainer/OptionHolder/SplitIP/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/scrollContainer/OptionHolder/SplitIP/Button" to="Menu/scrollContainer/OptionHolder/SplitIP/Button" method="on_press"]
+[connection signal="text_entered" from="Menu/scrollContainer/OptionHolder/SplitIP/IpInput" to="Menu/scrollContainer/OptionHolder/SplitIP/Button" method="set_split_ip"]
 [connection signal="focus_entered" from="Menu/scrollContainer/OptionHolder/SplitType/Button" to="Menu/scrollContainer/OptionHolder/SplitType/Button" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Menu/scrollContainer/OptionHolder/SplitType/Button" to="Menu/scrollContainer/OptionHolder/SplitType/Button" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/SplitType/Button" to="Menu/scrollContainer/OptionHolder/SplitType/Button" method="_on_mouse_entered"]
