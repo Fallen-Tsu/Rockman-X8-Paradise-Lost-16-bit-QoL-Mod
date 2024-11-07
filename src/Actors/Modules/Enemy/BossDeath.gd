@@ -56,9 +56,11 @@ func _Setup():
 	freeze_moment = OS.get_ticks_msec()
 	if IGT.has_peer():
 		if Configurations.get("SplitOnBossKill"):
+			IGT.send_command("set_gametime_command")
 			IGT.send_command("split_command")
 		else:
 			var seconds := 15.0 if collectible == "finished_intro" else 17.0
+			Tools.timer_p(seconds,"send_command",IGT,"set_gametime_command")
 			Tools.timer_p(seconds,"send_command",IGT,"split_command")
 	
 

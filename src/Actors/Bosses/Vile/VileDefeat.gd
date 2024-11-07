@@ -12,6 +12,14 @@ func _ready() -> void:
 
 func start() -> void:
 	character.interrupt_all_moves()
+	if defeat_flag == "vile3_defeated" and IGT.has_peer():
+		if Configurations.get("SplitOnBossKill"):
+			IGT.send_command("set_gametime_command")
+			IGT.send_command("split_command")
+		else:
+			var seconds := 8.0
+			Tools.timer_p(seconds,"send_command",IGT,"set_gametime_command")
+			Tools.timer_p(seconds,"send_command",IGT,"split_command")
 	ExecuteOnce()
 
 func _Setup() -> void:
