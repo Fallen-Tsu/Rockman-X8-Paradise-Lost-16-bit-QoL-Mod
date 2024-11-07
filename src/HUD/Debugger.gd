@@ -380,3 +380,232 @@ func _on_spawn_gridearm_pressed() -> void:
 	instance.current_health = instance.current_health/2
 	instance.set_position(armor_pos)
 	pass # Replace with function body.
+
+		
+
+func panda_hundo_items(collectibles: Array):
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_panda","panda_weapon"])
+	Event.emit_signal("collected", "icarus_legs")
+	return new_collectibles
+
+func sunflower_hundo_items(collectibles: Array):
+	_on_subtank1_pressed()
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_sunflower","sunflower_weapon"])
+	Event.emit_signal("collected", "hermes_arms")
+	return new_collectibles
+	
+func yeti_hundo_items(collectibles: Array):
+	_on_subtank1_pressed()
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_yeti","yeti_weapon"])
+	Event.emit_signal("collected", "hermes_head")
+	return new_collectibles
+
+func rooster_hundo_items(collectibles: Array):
+	_on_subtank1_pressed()
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_rooster","rooster_weapon"])
+	Event.emit_signal("collected", "hermes_legs")
+	Event.emit_signal("collected", "icarus_legs")
+	return new_collectibles
+
+func trilobyte_hundo_items(collectibles: Array):
+	_on_subtank1_pressed()
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_trilobyte","trilobyte_weapon"])
+	Event.emit_signal("collected", "icarus_body")
+	return new_collectibles
+
+func manowar_hundo_items(collectibles: Array):
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_manowar","manowar_weapon"])
+	Event.emit_signal("collected", "icarus_arms")
+	return new_collectibles
+
+func mantis_hundo_items(collectibles: Array):
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_mantis","mantis_weapon"])
+	Event.emit_signal("collected", "hermes_body")
+	Event.emit_signal("collected", "icarus_body")
+	return new_collectibles
+
+func antonion_hundo_items(collectibles: Array):
+	var new_collectibles = collectibles
+	new_collectibles.append_array(["life_up_antonion","antonion_weapon"])
+	Event.emit_signal("collected", "icarus_head")
+	Event.emit_signal("collected", "hermes_head")
+	return new_collectibles
+
+func _on_flower_2nd_pressed():
+	if checkpoints:
+		GameManager.collectibles = []
+		var collectibles: Array = []
+		var stage = checkpoints.get_parent().name
+		match stage:
+			"NoahsPark":
+				pass
+			"BoosterForest":
+				pass
+			"TroiaBase":
+				collectibles = panda_hundo_items(collectibles)
+			"CentralWhite":
+				collectibles = sunflower_hundo_items(
+					panda_hundo_items(collectibles)
+					)
+			"Inferno":
+				collectibles = yeti_hundo_items(
+					sunflower_hundo_items(
+						panda_hundo_items(collectibles)
+					)
+				)
+			"MetalValley":
+				collectibles = rooster_hundo_items(
+					yeti_hundo_items(
+						sunflower_hundo_items(
+							panda_hundo_items(collectibles)
+						)
+					)
+				)
+			"Dynasty":
+				collectibles = trilobyte_hundo_items(
+					rooster_hundo_items(
+						yeti_hundo_items(
+							sunflower_hundo_items(
+								panda_hundo_items(collectibles)
+							)
+						)
+					)
+				)
+			"PitchBlack":
+				collectibles = manowar_hundo_items(
+					trilobyte_hundo_items(
+						rooster_hundo_items(
+							yeti_hundo_items(
+								sunflower_hundo_items(
+									panda_hundo_items(collectibles)
+								)
+							)
+						)
+					)
+				)
+			"Primrose":
+				collectibles = mantis_hundo_items(
+					manowar_hundo_items(
+						trilobyte_hundo_items(
+							rooster_hundo_items(
+								yeti_hundo_items(
+									sunflower_hundo_items(
+										panda_hundo_items(collectibles)
+									)
+								)
+							)
+						)
+					)
+				)
+			_:
+				collectibles = antonion_hundo_items(
+					mantis_hundo_items(
+						manowar_hundo_items(
+							trilobyte_hundo_items(
+								rooster_hundo_items(
+									yeti_hundo_items(
+										sunflower_hundo_items(
+											panda_hundo_items(collectibles)
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+		for item in collectibles:
+			GameManager.add_collectible_to_savedata(item)
+		GameManager.restart_level()
+
+func _on_man_2nd_pressed():
+	if checkpoints:
+		GameManager.collectibles = []
+		var collectibles: Array = []
+		var stage = checkpoints.get_parent().name
+		match stage:
+			"NoahsPark":
+				pass
+			"BoosterForest":
+				pass
+			"Dynasty":
+				collectibles = panda_hundo_items(collectibles)
+			"CentralWhite":
+				collectibles = manowar_hundo_items(
+					panda_hundo_items(collectibles)
+					)
+			"Inferno":
+				collectibles = yeti_hundo_items(
+					manowar_hundo_items(
+						panda_hundo_items(collectibles)
+					)
+				)
+			"MetalValley":
+				collectibles = rooster_hundo_items(
+					yeti_hundo_items(
+						manowar_hundo_items(
+							panda_hundo_items(collectibles)
+						)
+					)
+				)
+			"TroiaBase":
+				collectibles = trilobyte_hundo_items(
+					rooster_hundo_items(
+						yeti_hundo_items(
+							manowar_hundo_items(
+								panda_hundo_items(collectibles)
+							)
+						)
+					)
+				)
+			"PitchBlack":
+				collectibles = sunflower_hundo_items(
+					trilobyte_hundo_items(
+						rooster_hundo_items(
+							yeti_hundo_items(
+								manowar_hundo_items(
+									panda_hundo_items(collectibles)
+								)
+							)
+						)
+					)
+				)
+			"Primrose":
+				collectibles = mantis_hundo_items(
+					sunflower_hundo_items(
+						trilobyte_hundo_items(
+							rooster_hundo_items(
+								yeti_hundo_items(
+									manowar_hundo_items(
+										panda_hundo_items(collectibles)
+									)
+								)
+							)
+						)
+					)
+				)
+			_:
+				collectibles = antonion_hundo_items(
+					mantis_hundo_items(
+						sunflower_hundo_items(
+							trilobyte_hundo_items(
+								rooster_hundo_items(
+									yeti_hundo_items(
+										manowar_hundo_items(
+											panda_hundo_items(collectibles)
+										)
+									)
+								)
+							)
+						)
+					)
+				)
+		for item in collectibles:
+			GameManager.add_collectible_to_savedata(item)
+		GameManager.restart_level()
