@@ -519,6 +519,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/Options/Highlighter.gd"
 }, {
+"base": "WebSocketServer",
+"class": "LiveSplitOneWebSocket",
+"language": "GDScript",
+"path": "res://LiveSplitOneWebsocket.gd"
+}, {
+"base": "StreamPeerTCP",
+"class": "LiveSplitTCPClient",
+"language": "GDScript",
+"path": "res://LiveSplitTCPClient.gd"
+}, {
 "base": "Node",
 "class": "Locale",
 "language": "GDScript",
@@ -937,6 +947,8 @@ _global_script_class_icons={
 "Lemon": "",
 "LifeUp": "",
 "LightGroup": "",
+"LiveSplitOneWebSocket": "",
+"LiveSplitTCPClient": "",
 "Locale": "",
 "MediumBuster": "",
 "Melee": "",
@@ -1004,7 +1016,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Mega Man X8 16-bit"
+config/name="Mega Man X8 16-bit Speedrun"
 run/main_scene="res://src/Title/DisclaimerScreen.tscn"
 run/low_processor_mode=true
 boot_splash/show_image=false
@@ -1353,6 +1365,10 @@ test="br"
 translation_remaps={
 }
 translations=PoolStringArray( "res://src/Localization/test1.br.translation", "res://src/Localization/test1.en.translation", "res://src/Localization/test1.es.translation", "res://src/Localization/test1.pr.translation" )
+
+[mono]
+
+project/assembly_name="Mega Man X8 16-bit"
 
 [network]
 
