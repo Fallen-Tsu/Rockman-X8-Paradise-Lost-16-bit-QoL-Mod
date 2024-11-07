@@ -614,7 +614,9 @@ SPLIT_OPTION,Split on boss kill,Split ao matar o boss,Split al matar al jefe,Spl
 SPLIT_PORT,LiveSplit Port,Porta do LiveSplit,Puerto de LiveSplit,Porta do LiveSplit
 LIVESPLIT_OPTIONS,LiveSplit Options,Opções do LiveSplit,Opciones de LiveSplit,Opções do LiveSplit
 LIVESPLIT_TITLE,LiveSplit Options,Opções do LiveSplit,Opciones de LiveSplit,Opções do LiveSplit
-SPLIT_SERVER,Websocket,Websocket,Websocket,Websocket
+SPLIT_SERVER,Connection,Conexão,Conexión,Conexão
 SPLIT_TYPE,Protocol,Protocolo,Protocolo,Protocolo
 SERVER_ON,Up,Ativo,Activo,Ativo
 SERVER_OFF,Down,Inativo,Inactivo,Inativo
+SERVER_WAIT,Waiting,Esperando,Esperando,Esperando
+SPLIT_IP,IP Address,Endereço IP,Dirección IP,Endereço IP
