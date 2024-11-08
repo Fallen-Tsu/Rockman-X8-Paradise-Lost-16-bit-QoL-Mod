@@ -381,231 +381,66 @@ func _on_spawn_gridearm_pressed() -> void:
 	instance.set_position(armor_pos)
 	pass # Replace with function body.
 
-		
 
-func panda_hundo_items(collectibles: Array):
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_panda","panda_weapon"])
-	Event.emit_signal("collected", "icarus_legs")
-	return new_collectibles
-
-func sunflower_hundo_items(collectibles: Array):
-	_on_subtank1_pressed()
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_sunflower","sunflower_weapon"])
-	Event.emit_signal("collected", "hermes_arms")
-	return new_collectibles
+func all_hundo_stage_items(collectibles: Array, boss_name: String, has_subtank: bool = false) -> Array:
+	var new_collectibles = collectibles.duplicate()
+	new_collectibles.append_array(["life_up_" + boss_name, boss_name + "_weapon"])
 	
-func yeti_hundo_items(collectibles: Array):
-	_on_subtank1_pressed()
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_yeti","yeti_weapon"])
-	Event.emit_signal("collected", "hermes_head")
+	if has_subtank:
+		var subtank = "subtank_" + boss_name
+		new_collectibles.append(subtank)
+		GameManager.player.equip_subtank(subtank)
+		GlobalVariables.set(subtank, 24)
+	
 	return new_collectibles
 
-func rooster_hundo_items(collectibles: Array):
-	_on_subtank1_pressed()
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_rooster","rooster_weapon"])
-	Event.emit_signal("collected", "hermes_legs")
-	Event.emit_signal("collected", "icarus_legs")
-	return new_collectibles
+func give_all_hundo_items(second_boss: String, sixth_boss: String):
+	if not checkpoints:
+		return
 
-func trilobyte_hundo_items(collectibles: Array):
-	_on_subtank1_pressed()
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_trilobyte","trilobyte_weapon"])
-	Event.emit_signal("collected", "icarus_body")
-	return new_collectibles
+	GameManager.collectibles = []
+	var collectibles = []
+	var armor_parts = []
+	var stage = checkpoints.get_parent().name
+	
+	var second_stage = "TroiaBase" if second_boss == "sunflower" else "Dynasty"
+		
+	var sixth_stage = "Dynasty" if sixth_boss == "manowar" else "TroiaBase"
+	
+	var stage_data = [
+		{"stage": "SigmaPalace", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false},
+		{"stage": "Gateway", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false},
+		{"stage": "Jakob", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false},
+		{"stage": "Primrose", "boss": "mantis", "parts": ["icarus_body", "hermes_body"], "subtank": false},
+		{"stage": "PitchBlack", "boss": sixth_boss, "parts": ["icarus_arms"], "subtank": sixth_boss == "sunflower", "extra_parts": ["hermes_arms"] if sixth_stage == "TroiaBase" else []},
+		{"stage": sixth_stage, "boss": "trilobyte", "parts": ["icarus_body"], "subtank": true},
+		{"stage": "MetalValley", "boss": "rooster", "parts": ["icarus_legs", "hermes_legs"], "subtank": true},
+		{"stage": "Inferno", "boss": "yeti", "parts": ["hermes_head"], "subtank": true},
+		{"stage": "CentralWhite", "boss": second_boss, "parts": ["hermes_arms"] if second_stage == "TroiaBase" else ["icarus_arms"], "subtank": second_boss == "sunflower"},
+		{"stage": second_stage, "boss": "panda", "parts": ["icarus_legs"], "subtank": false}
+	]
+	
+	var processing = false
 
-func manowar_hundo_items(collectibles: Array):
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_manowar","manowar_weapon"])
-	Event.emit_signal("collected", "icarus_arms")
-	return new_collectibles
+	for data in stage_data:
+		if stage == data.stage or processing:
+			processing = true 
+			collectibles = all_hundo_stage_items(collectibles, data.boss, data.subtank)
+			armor_parts.append_array(data.parts)
+			if data.has("extra_parts"):
+				armor_parts.append_array(data.extra_parts)
+	
+	for item in collectibles:
+		GameManager.add_collectible_to_savedata(item)
+		
+	for i in range(armor_parts.size() - 1, -1, -1):
+		Event.emit_signal("collected", armor_parts[i])
 
-func mantis_hundo_items(collectibles: Array):
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_mantis","mantis_weapon"])
-	Event.emit_signal("collected", "hermes_body")
-	Event.emit_signal("collected", "icarus_body")
-	return new_collectibles
+	GameManager.restart_level()
 
-func antonion_hundo_items(collectibles: Array):
-	var new_collectibles = collectibles
-	new_collectibles.append_array(["life_up_antonion","antonion_weapon"])
-	Event.emit_signal("collected", "icarus_head")
-	Event.emit_signal("collected", "hermes_head")
-	return new_collectibles
-
+# Callbacks for button presses
 func _on_flower_2nd_pressed():
-	if checkpoints:
-		GameManager.collectibles = []
-		var collectibles: Array = []
-		var stage = checkpoints.get_parent().name
-		match stage:
-			"NoahsPark":
-				pass
-			"BoosterForest":
-				pass
-			"TroiaBase":
-				collectibles = panda_hundo_items(collectibles)
-			"CentralWhite":
-				collectibles = sunflower_hundo_items(
-					panda_hundo_items(collectibles)
-					)
-			"Inferno":
-				collectibles = yeti_hundo_items(
-					sunflower_hundo_items(
-						panda_hundo_items(collectibles)
-					)
-				)
-			"MetalValley":
-				collectibles = rooster_hundo_items(
-					yeti_hundo_items(
-						sunflower_hundo_items(
-							panda_hundo_items(collectibles)
-						)
-					)
-				)
-			"Dynasty":
-				collectibles = trilobyte_hundo_items(
-					rooster_hundo_items(
-						yeti_hundo_items(
-							sunflower_hundo_items(
-								panda_hundo_items(collectibles)
-							)
-						)
-					)
-				)
-			"PitchBlack":
-				collectibles = manowar_hundo_items(
-					trilobyte_hundo_items(
-						rooster_hundo_items(
-							yeti_hundo_items(
-								sunflower_hundo_items(
-									panda_hundo_items(collectibles)
-								)
-							)
-						)
-					)
-				)
-			"Primrose":
-				collectibles = mantis_hundo_items(
-					manowar_hundo_items(
-						trilobyte_hundo_items(
-							rooster_hundo_items(
-								yeti_hundo_items(
-									sunflower_hundo_items(
-										panda_hundo_items(collectibles)
-									)
-								)
-							)
-						)
-					)
-				)
-			_:
-				collectibles = antonion_hundo_items(
-					mantis_hundo_items(
-						manowar_hundo_items(
-							trilobyte_hundo_items(
-								rooster_hundo_items(
-									yeti_hundo_items(
-										sunflower_hundo_items(
-											panda_hundo_items(collectibles)
-										)
-									)
-								)
-							)
-						)
-					)
-				)
-		for item in collectibles:
-			GameManager.add_collectible_to_savedata(item)
-		GameManager.restart_level()
+	give_all_hundo_items("sunflower", "manowar")
 
 func _on_man_2nd_pressed():
-	if checkpoints:
-		GameManager.collectibles = []
-		var collectibles: Array = []
-		var stage = checkpoints.get_parent().name
-		match stage:
-			"NoahsPark":
-				pass
-			"BoosterForest":
-				pass
-			"Dynasty":
-				collectibles = panda_hundo_items(collectibles)
-			"CentralWhite":
-				collectibles = manowar_hundo_items(
-					panda_hundo_items(collectibles)
-					)
-			"Inferno":
-				collectibles = yeti_hundo_items(
-					manowar_hundo_items(
-						panda_hundo_items(collectibles)
-					)
-				)
-			"MetalValley":
-				collectibles = rooster_hundo_items(
-					yeti_hundo_items(
-						manowar_hundo_items(
-							panda_hundo_items(collectibles)
-						)
-					)
-				)
-			"TroiaBase":
-				collectibles = trilobyte_hundo_items(
-					rooster_hundo_items(
-						yeti_hundo_items(
-							manowar_hundo_items(
-								panda_hundo_items(collectibles)
-							)
-						)
-					)
-				)
-			"PitchBlack":
-				collectibles = sunflower_hundo_items(
-					trilobyte_hundo_items(
-						rooster_hundo_items(
-							yeti_hundo_items(
-								manowar_hundo_items(
-									panda_hundo_items(collectibles)
-								)
-							)
-						)
-					)
-				)
-			"Primrose":
-				collectibles = mantis_hundo_items(
-					sunflower_hundo_items(
-						trilobyte_hundo_items(
-							rooster_hundo_items(
-								yeti_hundo_items(
-									manowar_hundo_items(
-										panda_hundo_items(collectibles)
-									)
-								)
-							)
-						)
-					)
-				)
-			_:
-				collectibles = antonion_hundo_items(
-					mantis_hundo_items(
-						sunflower_hundo_items(
-							trilobyte_hundo_items(
-								rooster_hundo_items(
-									yeti_hundo_items(
-										manowar_hundo_items(
-											panda_hundo_items(collectibles)
-										)
-									)
-								)
-							)
-						)
-					)
-				)
-		for item in collectibles:
-			GameManager.add_collectible_to_savedata(item)
-		GameManager.restart_level()
+	give_all_hundo_items("manowar", "sunflower")
