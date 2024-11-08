@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func start() -> void:
 	character.interrupt_all_moves()
+	IGT.calculate_total_time()
 	if defeat_flag == "vile3_defeated" and IGT.has_peer():
 		if Configurations.get("SplitOnBossKill"):
 			IGT.send_command("set_gametime_command")
