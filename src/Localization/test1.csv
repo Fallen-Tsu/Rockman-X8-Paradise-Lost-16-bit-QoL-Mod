@@ -620,3 +620,4 @@ SERVER_ON,Up,Ativo,Activo,Ativo
 SERVER_OFF,Down,Inativo,Inactivo,Inativo
 SERVER_WAIT,Waiting,Esperando,Esperando,Esperando
 SPLIT_IP,IP Address,Endereço IP,Dirección IP,Endereço IP
+IGT_OPTION,Display IGT,Mostrar o tempo do jogo,Mostrar tiempo de juego,Mostrar o tempo do jogo
