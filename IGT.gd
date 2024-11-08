@@ -9,6 +9,7 @@ var already_started: bool = false
 var times := {}
 
 var total_time: float = 0.0
+var current_section: String = "Misc."
 
 signal connection_timeout
 signal connection_established
@@ -29,6 +30,13 @@ func add(section_name,delta):
 	else:
 		times[section_name] = 0.0
 	total_time += delta
+	current_section = section_name
+
+func calculate_total_time():
+	var sum = 0.0
+	for section_name in times:
+		sum += times[section_name]
+	total_time = sum
 
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:

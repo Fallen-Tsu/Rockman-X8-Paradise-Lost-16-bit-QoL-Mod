@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/Fonts/X8bitmapfont.fnt" type="BitmapFont" id=1]
+[ext_resource path="res://src/HUD/IGTCanvas.gd" type="Script" id=2]
+
+[node name="IGTCanvas" type="CanvasLayer"]
+layer = 4
+script = ExtResource( 2 )
+
+[node name="IGTRect" type="ColorRect" parent="."]
+margin_left = 324.0
+margin_top = 206.0
+margin_right = 399.0
+margin_bottom = 224.0
+color = Color( 0, 0, 0, 0.443137 )
+
+[node name="IGTLabelContainer" type="VBoxContainer" parent="IGTRect"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -73.0
+margin_top = -20.0
+
+[node name="TotalTime" type="Label" parent="IGTRect/IGTLabelContainer"]
+margin_right = 69.0
+margin_bottom = 11.0
+size_flags_horizontal = 2
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "HH:MM:SS.ms"
+align = 1
+
+[node name="node2D" type="Node2D" parent="IGTRect/IGTLabelContainer"]
+scale = Vector2( 0.7, 0.7 )
+
+[node name="StageTime" type="Label" parent="IGTRect/IGTLabelContainer/node2D"]
+margin_left = 30.0
+margin_top = 15.0
+margin_right = 106.0
+margin_bottom = 26.0
+size_flags_horizontal = 2
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "HH:MM:SS.ms"

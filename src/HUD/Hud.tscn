@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://src/Levels/HUD.gd" type="Script" id=1]
 [ext_resource path="res://src/HUD/BossBar.gd" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://src/HUD/RidearmorBar.gd" type="Script" id=20]
 [ext_resource path="res://src/HUD/R2_bar.png" type="Texture" id=21]
 [ext_resource path="res://src/Effects/Materials/crt_shader_1.tres" type="Material" id=22]
+[ext_resource path="res://src/HUD/IGTDisplayScene.tscn" type="PackedScene" id=23]
 
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
@@ -316,6 +317,8 @@ layer = 128
 [node name="DebugAndCheats" parent="Boss and Weapon Info/canvasLayer" instance=ExtResource( 11 )]
 margin_left = 397.0
 margin_right = 397.0
+
+[node name="IGTCanvas" parent="." instance=ExtResource( 23 )]
 
 [connection signal="displayed" from="X Bar/WeaponBar" to="X Bar/SpecialBar" method="_on_WeaponBar_displayed"]
 [connection signal="hidden" from="X Bar/WeaponBar" to="X Bar/SpecialBar" method="_on_WeaponBar_hidden"]
