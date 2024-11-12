@@ -141,7 +141,7 @@ func _physics_process(delta: float) -> void:
 func player_forced_end_of_dialog() -> bool:
 	if Configurations.exists("SkipDialog"):
 		if Configurations.get("SkipDialog"):
-			return Input.is_action_pressed("pause")
+			return Input.is_action_pressed("pause") or Configurations.get("AutoSkipDialog")
 	return false
 
 func grow(delta: float) -> void:

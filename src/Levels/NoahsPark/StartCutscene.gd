@@ -6,7 +6,9 @@ func _ready() -> void:
 	Tools.timer(3,"start",self)
 
 func start():
-	if not GameManager.was_dialogue_seen(dialogue):
+	if Configurations.get("AutoSkipDialog"):
+		start_gameplay()
+	elif not GameManager.was_dialogue_seen(dialogue):
 		GameManager.start_dialog(dialogue)
 	else:
 		start_gameplay()

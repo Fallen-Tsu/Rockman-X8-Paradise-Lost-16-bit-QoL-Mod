@@ -84,7 +84,7 @@ func _physics_process(delta: float) -> void:
 
 	if executing:
 		visual_skip.fill(skip_timer)
-		if Input.is_action_pressed("pause"):
+		if Input.is_action_pressed("pause") or Configurations.get("AutoSkipDialog"):
 			skip_timer += delta
 			visual_skip.fadein()
 

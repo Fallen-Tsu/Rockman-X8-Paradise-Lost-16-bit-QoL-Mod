@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://src/Fonts/Xclassicfont.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://src/Fonts/X8Bossfont.fnt" type="BitmapFont" id=2]
@@ -26,6 +26,8 @@
 [ext_resource path="res://src/Options/LivesplitMenu.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/Options/AutonomousMenuButton.gd" type="Script" id=25]
 [ext_resource path="res://src/Options/IGTDisplay.gd" type="Script" id=26]
+[ext_resource path="res://src/Options/AutoSkipDialogOption.gd" type="Script" id=27]
+[ext_resource path="res://src/Options/SkipIntrosOption.gd" type="Script" id=28]
 
 [sub_resource type="ShortCut" id=1]
 
@@ -101,7 +103,7 @@ follow_focus = true
 
 [node name="OptionHolder" type="VBoxContainer" parent="Menu/scrollContainer"]
 margin_right = 200.0
-margin_bottom = 184.0
+margin_bottom = 206.0
 grow_horizontal = 2
 custom_constants/separation = 3
 
@@ -278,10 +280,126 @@ align = 2
 valign = 1
 uppercase = true
 
-[node name="Charge Fadeout" type="Control" parent="Menu/scrollContainer/OptionHolder"]
+[node name="Auto Skip Dialogs" type="Control" parent="Menu/scrollContainer/OptionHolder"]
 margin_top = 33.0
 margin_right = 200.0
 margin_bottom = 41.0
+rect_min_size = Vector2( 200, 8 )
+size_flags_horizontal = 0
+script = ExtResource( 4 )
+objects_to_light = [ NodePath("OptionName") ]
+focus_group = [ NodePath("Button") ]
+idle_color = Color( 0.407843, 0.792157, 1, 1 )
+focus_color = Color( 0.984314, 1, 0.686275, 1 )
+
+[node name="OptionName" type="Label" parent="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs"]
+modulate = Color( 0.407843, 0.792157, 1, 1 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -9.0
+margin_right = 92.0
+margin_bottom = 5.0
+custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "AUTO_DIAG_OPTION"
+uppercase = true
+
+[node name="Button" type="TextureButton" parent="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs"]
+modulate = Color( 0.490196, 0.490196, 0.490196, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -6.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 8 )
+action_mode = 0
+shortcut = SubResource( 1 )
+script = ExtResource( 27 )
+menu_path = NodePath("../../../../..")
+
+[node name="Value" type="Label" parent="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Value"
+align = 2
+valign = 1
+uppercase = true
+
+[node name="Skip Intros" type="Control" parent="Menu/scrollContainer/OptionHolder"]
+margin_top = 44.0
+margin_right = 200.0
+margin_bottom = 52.0
+rect_min_size = Vector2( 200, 8 )
+size_flags_horizontal = 0
+script = ExtResource( 4 )
+objects_to_light = [ NodePath("OptionName") ]
+focus_group = [ NodePath("Button") ]
+idle_color = Color( 0.407843, 0.792157, 1, 1 )
+focus_color = Color( 0.984314, 1, 0.686275, 1 )
+
+[node name="OptionName" type="Label" parent="Menu/scrollContainer/OptionHolder/Skip Intros"]
+modulate = Color( 0.407843, 0.792157, 1, 1 )
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -9.0
+margin_right = 92.0
+margin_bottom = 5.0
+custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "AUTO_INTROS_OPTION"
+uppercase = true
+
+[node name="Button" type="TextureButton" parent="Menu/scrollContainer/OptionHolder/Skip Intros"]
+modulate = Color( 0.490196, 0.490196, 0.490196, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -6.0
+margin_bottom = 2.0
+rect_min_size = Vector2( 0, 8 )
+action_mode = 0
+shortcut = SubResource( 1 )
+script = ExtResource( 28 )
+menu_path = NodePath("../../../../..")
+
+[node name="Value" type="Label" parent="Menu/scrollContainer/OptionHolder/Skip Intros/Button"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = -7.0
+margin_bottom = 7.0
+custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_offset_y = 1
+custom_fonts/font = ExtResource( 1 )
+text = "Value"
+align = 2
+valign = 1
+uppercase = true
+
+[node name="Charge Fadeout" type="Control" parent="Menu/scrollContainer/OptionHolder"]
+margin_top = 55.0
+margin_right = 200.0
+margin_bottom = 63.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -337,9 +455,9 @@ valign = 1
 uppercase = true
 
 [node name="Show Achiev" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 44.0
+margin_top = 66.0
 margin_right = 200.0
-margin_bottom = 52.0
+margin_bottom = 74.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -395,9 +513,9 @@ valign = 1
 uppercase = true
 
 [node name="Music Volume" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 55.0
+margin_top = 77.0
 margin_right = 200.0
-margin_bottom = 63.0
+margin_bottom = 85.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -453,9 +571,9 @@ valign = 1
 uppercase = true
 
 [node name="Sound Volume" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 66.0
+margin_top = 88.0
 margin_right = 200.0
-margin_bottom = 74.0
+margin_bottom = 96.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -512,9 +630,9 @@ valign = 1
 uppercase = true
 
 [node name="Vsync" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 77.0
+margin_top = 99.0
 margin_right = 200.0
-margin_bottom = 85.0
+margin_bottom = 107.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -570,9 +688,9 @@ valign = 1
 uppercase = true
 
 [node name="FPS" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 88.0
+margin_top = 110.0
 margin_right = 200.0
-margin_bottom = 96.0
+margin_bottom = 118.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -628,9 +746,9 @@ valign = 1
 uppercase = true
 
 [node name="Window Size" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 99.0
+margin_top = 121.0
 margin_right = 200.0
-margin_bottom = 107.0
+margin_bottom = 129.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -686,9 +804,9 @@ valign = 1
 uppercase = true
 
 [node name="Fullscreen" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 110.0
+margin_top = 132.0
 margin_right = 200.0
-margin_bottom = 118.0
+margin_bottom = 140.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -744,9 +862,9 @@ valign = 1
 uppercase = true
 
 [node name="CRT" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 121.0
+margin_top = 143.0
 margin_right = 200.0
-margin_bottom = 129.0
+margin_bottom = 151.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -802,9 +920,9 @@ valign = 1
 uppercase = true
 
 [node name="ShowDebug" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 132.0
+margin_top = 154.0
 margin_right = 200.0
-margin_bottom = 140.0
+margin_bottom = 162.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -860,9 +978,9 @@ valign = 1
 uppercase = true
 
 [node name="IGTDisplay" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 143.0
+margin_top = 165.0
 margin_right = 200.0
-margin_bottom = 151.0
+margin_bottom = 173.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -898,6 +1016,7 @@ rect_min_size = Vector2( 0, 8 )
 action_mode = 0
 shortcut = SubResource( 1 )
 script = ExtResource( 26 )
+menu_path = NodePath("../../../../..")
 
 [node name="Value" type="Label" parent="Menu/scrollContainer/OptionHolder/IGTDisplay/Button"]
 anchor_left = 1.0
@@ -917,9 +1036,9 @@ valign = 1
 uppercase = true
 
 [node name="LiveSplit" type="Control" parent="Menu/scrollContainer/OptionHolder"]
-margin_top = 154.0
+margin_top = 176.0
 margin_right = 200.0
-margin_bottom = 162.0
+margin_bottom = 184.0
 rect_min_size = Vector2( 200, 8 )
 size_flags_horizontal = 0
 script = ExtResource( 4 )
@@ -954,15 +1073,14 @@ menu_path = NodePath("../../../../..")
 pick_sound = NodePath("../../../../../choice")
 
 [node name="LivesplitMenu" parent="Menu/scrollContainer/OptionHolder/LiveSplit/Livesplit" instance=ExtResource( 24 )]
-layer = 6
 visible = false
 
 [node name="clearsave" type="TextureButton" parent="Menu/scrollContainer/OptionHolder"]
 modulate = Color( 0.466667, 0.0745098, 0.0745098, 1 )
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 165.0
+margin_top = 187.0
 margin_right = 200.0
-margin_bottom = 173.0
+margin_bottom = 195.0
 rect_min_size = Vector2( 0, 8 )
 action_mode = 0
 script = ExtResource( 16 )
@@ -985,9 +1103,9 @@ uppercase = true
 [node name="clearachiev" type="TextureButton" parent="Menu/scrollContainer/OptionHolder"]
 modulate = Color( 0.466667, 0.0745098, 0.0745098, 1 )
 self_modulate = Color( 1, 1, 1, 0 )
-margin_top = 176.0
+margin_top = 198.0
 margin_right = 200.0
-margin_bottom = 184.0
+margin_bottom = 206.0
 rect_min_size = Vector2( 0, 8 )
 action_mode = 0
 script = ExtResource( 23 )
@@ -1076,6 +1194,16 @@ menu = NodePath("../Menu")
 [connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Skip Dialogs/Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/scrollContainer/OptionHolder/Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Skip Dialogs/Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu/scrollContainer/OptionHolder/Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Skip Dialogs/Button" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" to="Menu/scrollContainer/OptionHolder/Auto Skip Dialogs/Button" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/scrollContainer/OptionHolder/Skip Intros/Button" to="Menu/scrollContainer/OptionHolder/Skip Intros/Button" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/scrollContainer/OptionHolder/Skip Intros/Button" to="Menu/scrollContainer/OptionHolder/Skip Intros/Button" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/Skip Intros/Button" to="Menu/scrollContainer/OptionHolder/Skip Intros/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/scrollContainer/OptionHolder/Skip Intros/Button" to="Menu/scrollContainer/OptionHolder/Skip Intros/Button" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/scrollContainer/OptionHolder/Skip Intros/Button" to="Menu/scrollContainer/OptionHolder/Skip Intros/Button" method="_on_pressed"]
 [connection signal="focus_entered" from="Menu/scrollContainer/OptionHolder/Charge Fadeout/Button" to="Menu/scrollContainer/OptionHolder/Charge Fadeout/Button" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Menu/scrollContainer/OptionHolder/Charge Fadeout/Button" to="Menu/scrollContainer/OptionHolder/Charge Fadeout/Button" method="_on_focus_exited"]
 [connection signal="mouse_entered" from="Menu/scrollContainer/OptionHolder/Charge Fadeout/Button" to="Menu/scrollContainer/OptionHolder/Charge Fadeout/Button" method="_on_mouse_entered"]

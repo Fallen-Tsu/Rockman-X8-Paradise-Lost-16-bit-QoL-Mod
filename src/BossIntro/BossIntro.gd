@@ -45,6 +45,9 @@ func _ready() -> void:
 		stage_info = GameManager.current_stage_info
 	call_deferred("prepare")
 	Tools.timer(0.25,"start",self)
+	var skip_type = Configurations.get("SkipIntros")
+	if skip_type and skip_type & 1:
+		skip()
 
 func prepare() -> void:
 	if not stage_info.should_play_intro:

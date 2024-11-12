@@ -15,6 +15,9 @@ func decrease_value() -> void: #override
 
 func set_skip_dialog(value:bool) -> void:
 	Configurations.set("SkipDialog",value)
+	if not value and Configurations.get("AutoSkipDialog"):
+		Configurations.set("AutoSkipDialog", value)
+		Event.emit_signal("translation_updated")
 	display_skip_dialog()
 
 func get_skip_dialog():
