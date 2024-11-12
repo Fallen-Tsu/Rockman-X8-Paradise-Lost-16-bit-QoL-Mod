@@ -165,10 +165,9 @@ bus = "SFX"
 
 [node name="demo_02" type="Label" parent="title_card_intro"]
 visible = false
-margin_left = 170.0
 margin_top = 197.0
-margin_right = 226.0
-margin_bottom = 224.0
+margin_right = 398.0
+margin_bottom = 216.0
 custom_colors/font_color = Color( 0.639216, 0.713726, 0.898039, 1 )
 custom_colors/font_color_shadow = Color( 0.270588, 0.270588, 0.270588, 1 )
 custom_fonts/font = ExtResource( 19 )
