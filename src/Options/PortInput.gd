@@ -4,7 +4,7 @@ onready var parent_button = $"../Button"
 # Function to handle input
 var old_value: int
 func _ready():
-	old_value = value
+	old_value = int(value)
 func _input(event):
 	# Check if the "ui_accept" action (typically Enter key) is pressed
 	if visible:
@@ -23,7 +23,7 @@ func _input(event):
 		
 func return_control():
 	release_focus()
-	old_value = value
+	old_value = int(value)
 	visible = false
 	editable = false
 	parent_button.menu.unlock_buttons()
