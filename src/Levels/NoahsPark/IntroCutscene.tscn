@@ -540,6 +540,7 @@ margin_top = 189.0
 margin_right = 395.0
 margin_bottom = 221.0
 script = ExtResource( 35 )
+fill_multiplier = 100
 
 [node name="textureProgress" type="TextureProgress" parent="canvasLayer/VisualSkip"]
 margin_right = 40.0
