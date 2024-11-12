@@ -26,14 +26,14 @@ text = "Debug Options"
 [node name="hBoxContainer" type="HBoxContainer" parent="vBoxContainer"]
 margin_top = 20.0
 margin_right = 240.0
-margin_bottom = 380.0
+margin_bottom = 397.0
 grow_horizontal = 0
 grow_vertical = 0
 custom_constants/separation = 0
 
 [node name="vBoxContainer" type="VBoxContainer" parent="vBoxContainer/hBoxContainer"]
 margin_right = 124.0
-margin_bottom = 360.0
+margin_bottom = 377.0
 custom_constants/separation = 1
 
 [node name="pause" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer"]
@@ -304,7 +304,7 @@ align = 1
 [node name="vBoxContainer2" type="VBoxContainer" parent="vBoxContainer/hBoxContainer"]
 margin_left = 124.0
 margin_right = 240.0
-margin_bottom = 360.0
+margin_bottom = 377.0
 custom_constants/separation = 1
 
 [node name="rooster_stage" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer2"]
@@ -479,7 +479,6 @@ action_mode = 0
 text = "gateway"
 
 [node name="gateway_final" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer2"]
-visible = false
 margin_top = 357.0
 margin_right = 116.0
 margin_bottom = 377.0
