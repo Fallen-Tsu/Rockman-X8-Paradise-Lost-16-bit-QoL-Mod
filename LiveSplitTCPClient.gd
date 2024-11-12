@@ -10,7 +10,7 @@ signal connected_to_livesplit
 func setup():
 	_status = get_status()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var new_status: int = get_status()
 	if new_status != _status:
 		_status = new_status
