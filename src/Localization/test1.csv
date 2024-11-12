@@ -621,3 +621,9 @@ SERVER_OFF,Down,Inativo,Inactivo,Inativo
 SERVER_WAIT,Waiting,Esperando,Esperando,Esperando
 SPLIT_IP,IP Address,Endereço IP,Dirección IP,Endereço IP
 IGT_OPTION,Display IGT,Mostrar o tempo do jogo,Mostrar tiempo de juego,Mostrar o tempo do jogo
+NO_INTRO_SKIP_VALUE,None,Nenhum,Ninguno,Nenhum
+INTRO_ONLY_SKIP_VALUE,Boss,Chefe,Jefe,Chefe
+WEAPON_GET_ONLY_VALUE,Weapon,Arma,Arma,Arma
+BOTH_SKIP_VALUE,Both,Ambas,Ambas,Ambas
+AUTO_INTROS_OPTION,Auto Skip Transitions,Transições auto.,Transiciones auto.,Transições auto.
+AUTO_DIAG_OPTION,Auto Skip Dialogs,Remover Diálogos,Quitar Dialogos,Não gosto de ler nada
