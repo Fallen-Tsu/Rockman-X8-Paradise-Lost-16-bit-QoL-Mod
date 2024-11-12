@@ -97,7 +97,12 @@ WPNLEFT_ACT,wheel left,roda esq.,Rueda Izq.,roda esq.
 WPNRIGHT_ACT,wheel right,roda dir.,Rueda Der.,roda dir.
 WPNUP_ACT,wheel up,roda cima,Rueda Arriba,roda cima
 WPNDOWN_ACT,wheel down,roda baixo,Rueda Abajo,roda baixo
+WPNUPLEFT_ACT,wheel up left,roda c. esq.,Rueda Ar. Izq.,roda c. esq
+WPNUPRIGHT_ACT,wheel up right,roda c. dir.,Rueda Ar. Der.,roda c. dir
+WPNDOWNLEFT_ACT,wheel d. left,roda b. esq.,Rueda Ab. Izq.,roda b. esq
+WPNDOWNRIGHT_ACT,wheel d. right,roda b. dir,Rueda Ab. Der.,roda b. esq
 WPNRESET_ACT,select buster,selec. Buster,Selec. Buster,selec. Buster
+INPUT_UNASSIGNED,(not set),(não definido),(no definido),(não definido)
 ,,,,
 ,,,,
 ARMORSETUP_TITLE,Armor Setup,Armadura,Armadura,Fashion Souls
@@ -627,3 +632,4 @@ WEAPON_GET_ONLY_VALUE,Weapon,Arma,Arma,Arma
 BOTH_SKIP_VALUE,Both,Ambas,Ambas,Ambas
 AUTO_INTROS_OPTION,Auto Skip Transitions,Transições auto.,Transiciones auto.,Transições auto.
 AUTO_DIAG_OPTION,Auto Skip Dialogs,Remover Diálogos,Quitar Dialogos,Não gosto de ler nada
+DEFAULT_KEY_BUTTON,Default Controls,Controles Padrão,Controles Por Defecto,Controles Padrão

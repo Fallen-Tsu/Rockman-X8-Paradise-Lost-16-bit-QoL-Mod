@@ -2,6 +2,7 @@ extends VBoxContainer
 
 export (PackedScene) var input_holder
 onready var main: CanvasLayer = $"../../.."
+signal default_pressed
 
 var configurable = {
 	"move_left" : "LEFT_ACT",
@@ -22,13 +23,20 @@ var configurable = {
 	"analog_right" : "WPNRIGHT_ACT",
 	"analog_up" : "WPNUP_ACT",
 	"analog_down" : "WPNDOWN_ACT",
-	"reset_weapon" : "WPNRESET_ACT"
+	"analog_up_left": "WPNUPLEFT_ACT",
+	"analog_up_right": "WPNUPRIGHT_ACT",
+	"analog_down_left": "WPNDOWNLEFT_ACT",
+	"analog_down_right": "WPNDOWNRIGHT_ACT",
+	"reset_weapon" : "WPNRESET_ACT",
 }
 
 onready var exit: TextureButton = $"../../exit"
 
 func _ready() -> void:
 	Setup_actions()
+
+func emit_default_pressed() -> void:
+	emit_signal("default_pressed")
 
 func Setup_actions() -> void:
 	var last_child
@@ -38,6 +46,7 @@ func Setup_actions() -> void:
 
 func instantiate(action) -> Node:
 	var instance = input_holder.instance()
+	connect("default_pressed", instance, "get_inputs_and_set_names_after_reset")
 	add_child(instance,true)
 	instance.setup(action, configurable[action], main)
 	return instance

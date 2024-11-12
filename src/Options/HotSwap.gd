@@ -49,6 +49,30 @@ func _input(event: InputEvent) -> void:
 			tweeny.reset()
 		elif event.is_action_released("analog_down") or event.is_action_released("analog_up"):
 			slowly_reset_y_cursor()
+		
+		if event.is_action_pressed("analog_up_left"):
+			cursor.position = Vector2(-travel_distance, -travel_distance)
+			tweeny.reset()
+			tweenx.reset()
+		elif event.is_action_pressed("analog_down_right"):
+			cursor.position = Vector2(travel_distance, travel_distance)
+			tweeny.reset()
+			tweenx.reset()
+		elif event.is_action_released("analog_down_right") or event.is_action_released("analog_up_left"):
+			slowly_reset_y_cursor()
+			slowly_reset_x_cursor()
+		
+		if event.is_action_pressed("analog_up_right"):
+			cursor.position = Vector2(travel_distance, -travel_distance)
+			tweeny.reset()
+			tweenx.reset()
+		elif event.is_action_pressed("analog_down_left"):
+			cursor.position = Vector2(-travel_distance, travel_distance)
+			tweeny.reset()
+			tweenx.reset()
+		elif event.is_action_released("analog_down_left") or event.is_action_released("analog_up_right"):
+			slowly_reset_y_cursor()
+			slowly_reset_x_cursor()
 
 func slowly_reset_x_cursor():
 	tweenx.reset()

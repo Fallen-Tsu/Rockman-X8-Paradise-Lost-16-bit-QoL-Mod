@@ -45,7 +45,7 @@ custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 custom_fonts/font = ExtResource( 3 )
-text = "(not set)"
+text = "INPUT_UNASSIGNED"
 uppercase = true
 
 [node name="joypad" type="TextureButton" parent="."]
@@ -73,7 +73,7 @@ custom_colors/font_color_shadow = Color( 0.415686, 0.415686, 0.415686, 1 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 custom_fonts/font = ExtResource( 3 )
-text = "(not set)"
+text = "INPUT_UNASSIGNED"
 uppercase = true
 
 [node name="actionname" type="Label" parent="."]
