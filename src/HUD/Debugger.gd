@@ -398,10 +398,11 @@ func give_all_hundo_items(second_boss: String, sixth_boss: String):
 	if not checkpoints:
 		return
 
-	GameManager.collectibles = []
-	var collectibles = []
-	var armor_parts = []
 	var stage = checkpoints.get_parent().name
+	GameManager.collectibles = []
+	var collectibles = ["finished_intro"] if stage != "NoahsPark" else []
+	var armor_parts = []
+	
 	
 	var second_stage = "TroiaBase" if second_boss == "sunflower" else "Dynasty"
 		
