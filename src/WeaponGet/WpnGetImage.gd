@@ -49,12 +49,7 @@ func _ready() -> void:
 	reset()
 	Tools.timer(2.0,"start_loop",lines_2)
 	you_get.material.set_shader_param("palette",text_palette)
-	var skip_type = Configurations.get("SkipIntros")
-	if skip_type and skip_type & 2:
-		tween.reset()
-		fadeout(.5)
-		GameManager.pause("weaponget")
-		ending = true
+
 	
 func delayed_initialize():
 	Tools.timer(1.0,"initialize",self)
