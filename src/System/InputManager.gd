@@ -1,6 +1,7 @@
 extends Node
 
 var observed_inputs = ["move_right","move_left", "move_up", "move_down"]
+var analog_inputs = ["analog_right","analog_left","analog_up","analog_down", "analog_up_left","analog_up_right","analog_down_left","analog_down_right"]
 var last_inputs = []
 var last_timings = []
 var current_associated_key := ""
@@ -152,4 +153,5 @@ func switch_events(event, action, old_event) -> void:
 	else:
 		InputMap.action_erase_event(action, old_event)
 	InputMap.action_add_event(action, event)
-	InputMap.action_set_deadzone(action,.85)
+	if not action in analog_inputs:
+		InputMap.action_set_deadzone(action,.85)
