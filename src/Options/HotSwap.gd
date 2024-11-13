@@ -21,15 +21,14 @@ func _input(event: InputEvent) -> void:
 	if not active:
 		return
 	
-	if not using_buttons:
-		for input in analogs:
-			if event.is_action_pressed(input):
-				if event is InputEventKey or event is InputEventJoypadButton:
-					using_buttons = true
-					break
-				elif event is InputEventJoypadMotion:
-					using_buttons = false
-					break
+	for input in analogs:
+		if event.is_action_pressed(input):
+			if event is InputEventKey or event is InputEventJoypadButton:
+				using_buttons = true
+				break
+			elif event is InputEventJoypadMotion:
+				using_buttons = false
+				break
 	
 	if using_buttons:
 		if event.is_action_pressed("analog_left"):
