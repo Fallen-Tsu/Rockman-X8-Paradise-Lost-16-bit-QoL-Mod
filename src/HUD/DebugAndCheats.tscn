@@ -26,14 +26,14 @@ text = "Debug Options"
 [node name="hBoxContainer" type="HBoxContainer" parent="vBoxContainer"]
 margin_top = 20.0
 margin_right = 240.0
-margin_bottom = 397.0
+margin_bottom = 422.0
 grow_horizontal = 0
 grow_vertical = 0
 custom_constants/separation = 0
 
 [node name="vBoxContainer" type="VBoxContainer" parent="vBoxContainer/hBoxContainer"]
 margin_right = 124.0
-margin_bottom = 377.0
+margin_bottom = 402.0
 custom_constants/separation = 1
 
 [node name="pause" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer"]
@@ -206,6 +206,20 @@ margin_bottom = 335.0
 action_mode = 0
 text = "flower_2nd_items"
 
+[node name="revive_vile_panda" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer"]
+margin_top = 336.0
+margin_right = 124.0
+margin_bottom = 356.0
+action_mode = 0
+text = "revive_vile_panda"
+
+[node name="revive_vile_ant" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer"]
+margin_top = 357.0
+margin_right = 124.0
+margin_bottom = 377.0
+action_mode = 0
+text = "revive_vile_ant"
+
 [node name="1xSize" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer"]
 visible = false
 margin_top = 294.0
@@ -295,16 +309,16 @@ action_mode = 0
 text = "trilo_crystal"
 
 [node name="set_seed" type="LineEdit" parent="vBoxContainer/hBoxContainer/vBoxContainer"]
-margin_top = 336.0
+margin_top = 378.0
 margin_right = 124.0
-margin_bottom = 360.0
+margin_bottom = 402.0
 text = "set_seed"
 align = 1
 
 [node name="vBoxContainer2" type="VBoxContainer" parent="vBoxContainer/hBoxContainer"]
 margin_left = 124.0
 margin_right = 240.0
-margin_bottom = 377.0
+margin_bottom = 402.0
 custom_constants/separation = 1
 
 [node name="rooster_stage" type="Button" parent="vBoxContainer/hBoxContainer/vBoxContainer2"]
@@ -516,6 +530,8 @@ text = "manow_crystal"
 [connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/spawn_gridearm" to="." method="_on_spawn_gridearm_pressed"]
 [connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/man_2nd" to="." method="_on_man_2nd_pressed"]
 [connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/flower_2nd" to="." method="_on_flower_2nd_pressed"]
+[connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/revive_vile_panda" to="." method="_on_revive_vile_panda_pressed"]
+[connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/revive_vile_ant" to="." method="_on_revive_vile_ant_pressed"]
 [connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/1xSize" to="." method="_on_1xSize_pressed"]
 [connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/2xSize" to="." method="_on_2xSize_pressed"]
 [connection signal="pressed" from="vBoxContainer/hBoxContainer/vBoxContainer/3xSize" to="." method="_on_3xSize_pressed"]

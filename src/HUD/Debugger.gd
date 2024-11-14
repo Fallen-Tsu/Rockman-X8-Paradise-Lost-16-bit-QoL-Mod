@@ -400,27 +400,29 @@ func give_all_hundo_items(second_boss: String, sixth_boss: String):
 
 	var stage = checkpoints.get_parent().name
 	GameManager.collectibles = []
+	GlobalVariables.erase("defeated_panda_vile")
+	GlobalVariables.erase("defeated_antonion_vile")
 	var collectibles = ["finished_intro"] if stage != "NoahsPark" else []
 	var armor_parts = []
 	
-	
+	var second_boss_is_manowar = second_boss == "manowar"
 	var second_stage = "TroiaBase" if second_boss == "sunflower" else "Dynasty"
 		
-	var sixth_stage = "Dynasty" if sixth_boss == "manowar" else "TroiaBase"
+	var sixth_stage = "Dynasty" if !second_boss_is_manowar else "TroiaBase"
 	
 	var stage_data = [
-		{"stage": "SigmaPalace", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false},
-		{"stage": "Gateway", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false},
-		{"stage": "Jakob", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false},
-		{"stage": "Primrose", "boss": "mantis", "parts": ["icarus_body", "hermes_body"], "subtank": false},
-		{"stage": "PitchBlack", "boss": sixth_boss, "parts": ["icarus_arms"], "subtank": sixth_boss == "sunflower", "extra_parts": ["hermes_arms"] if sixth_stage == "TroiaBase" else []},
-		{"stage": sixth_stage, "boss": "trilobyte", "parts": ["icarus_body"], "subtank": true},
-		{"stage": "MetalValley", "boss": "rooster", "parts": ["icarus_legs", "hermes_legs"], "subtank": true},
-		{"stage": "Inferno", "boss": "yeti", "parts": ["hermes_head"], "subtank": true},
-		{"stage": "CentralWhite", "boss": second_boss, "parts": ["hermes_arms"] if second_stage == "TroiaBase" else ["icarus_arms"], "subtank": second_boss == "sunflower"},
-		{"stage": second_stage, "boss": "panda", "parts": ["icarus_legs"], "subtank": false}
+		{"stage": "SigmaPalace", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false, "rng": 4871},
+		{"stage": "Gateway", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false, "rng": 3851},
+		{"stage": "Jakob", "boss": "antonion", "parts": ["hermes_head", "icarus_head"], "subtank": false, "rng": 3831, "vile_flag": "defeated_antonion_vile"},
+		{"stage": "Primrose", "boss": "mantis", "parts": ["icarus_body", "hermes_body"], "subtank": false, "rng": 3594},
+		{"stage": "PitchBlack", "boss": sixth_boss, "parts": ["icarus_arms"], "subtank": sixth_boss == "sunflower", "extra_parts": ["hermes_arms"] if sixth_stage == "TroiaBase" else [], "rng": 3274},
+		{"stage": sixth_stage, "boss": "trilobyte", "parts": ["icarus_body"], "subtank": true, "rng": 3154},
+		{"stage": "MetalValley", "boss": "rooster", "parts": ["icarus_legs", "hermes_legs"], "subtank": true, "rng": 2534 if second_boss_is_manowar else 2217},
+		{"stage": "Inferno", "boss": "yeti", "parts": ["hermes_head"], "subtank": true, "rng": 1697 if second_boss_is_manowar else 1397},
+		{"stage": "CentralWhite", "boss": second_boss, "parts": ["hermes_arms"] if second_stage == "TroiaBase" else ["icarus_arms"], "subtank": second_boss == "sunflower", "rng": 997 if second_boss_is_manowar else 677},
+		{"stage": second_stage, "boss": "panda", "parts": ["icarus_legs"], "subtank": false, "rng": 557, "vile_flag": "defeated_panda_vile"},
 	]
-	
+	var was_rng_set = false
 	var processing = false
 
 	for data in stage_data:
@@ -430,6 +432,14 @@ func give_all_hundo_items(second_boss: String, sixth_boss: String):
 			armor_parts.append_array(data.parts)
 			if data.has("extra_parts"):
 				armor_parts.append_array(data.extra_parts)
+			if not was_rng_set:
+				was_rng_set = true
+				BossRNG.set_seed(data.rng)
+			if data.has("vile_flag"):
+				GlobalVariables.set(data.vile_flag, true)
+	
+	if not was_rng_set and stage == "BoosterForest":
+		BossRNG.set_seed(20)
 	
 	for item in collectibles:
 		GameManager.add_collectible_to_savedata(item)
@@ -445,3 +455,11 @@ func _on_flower_2nd_pressed():
 
 func _on_man_2nd_pressed():
 	give_all_hundo_items("manowar", "sunflower")
+
+
+func _on_revive_vile_ant_pressed():
+	GlobalVariables.erase("defeated_antonion_vile")
+
+
+func _on_revive_vile_panda_pressed():
+	GlobalVariables.erase("defeated_panda_vile")
