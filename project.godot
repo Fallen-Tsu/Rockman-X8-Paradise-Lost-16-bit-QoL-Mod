@@ -1024,6 +1024,7 @@ boot_splash/image="res://src/Screens/bootsplash.png"
 boot_splash/use_filter=false
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
+config/windows_native_icon="res://x8.ico"
 
 [aseprite_animation_importer]
 
@@ -1079,7 +1080,6 @@ low=false
 widt=false
 FPS=false
 frames=false
-export=false
 syn=false
 
 [importer_defaults]
@@ -1332,6 +1332,26 @@ down_emulated={
 "deadzone": 0.5,
 "events": [  ]
 }
+analog_up_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":84,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+analog_up_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":85,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+analog_down_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":66,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+analog_down_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":77,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -1365,6 +1385,7 @@ test="br"
 translation_remaps={
 }
 translations=PoolStringArray( "res://src/Localization/test1.br.translation", "res://src/Localization/test1.en.translation", "res://src/Localization/test1.es.translation", "res://src/Localization/test1.pr.translation" )
+locale_filter=[ 0, [  ] ]
 
 [mono]
 

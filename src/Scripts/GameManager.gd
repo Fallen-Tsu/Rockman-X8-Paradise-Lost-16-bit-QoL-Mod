@@ -1,7 +1,7 @@
 extends Node
 
 const codename := "X8FC"
-const version := "1.0.0.9 - Tchy's Speedrun Version V.1.0.0.3"
+const version := "1.0.0.9 - Tchy's Speedrun Version V.1.0.0.4"
 const current_demo := "16-bit"
 
 var player : Character
