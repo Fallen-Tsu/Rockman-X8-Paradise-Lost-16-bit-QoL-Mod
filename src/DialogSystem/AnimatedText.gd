@@ -7,6 +7,7 @@ onready var bg: Sprite = $BG
 onready var next_dialogue: AnimatedSprite = $next_dialogue
 onready var portrait_side: Label = $portrait_side
 
+export var is_final_dialogue := false
 export var debug_messages := true
 export var debug_force_start := false
 export var dialog_tree : Resource
@@ -141,7 +142,10 @@ func _physics_process(delta: float) -> void:
 func player_forced_end_of_dialog() -> bool:
 	if Configurations.exists("SkipDialog"):
 		if Configurations.get("SkipDialog"):
-			return Input.is_action_pressed("pause") or Configurations.get("AutoSkipDialog")
+			if is_final_dialogue:
+				return Input.is_action_pressed("pause")
+			else:
+				return Input.is_action_pressed("pause") or Configurations.get("AutoSkipDialog")
 	return false
 
 func grow(delta: float) -> void:

@@ -14692,6 +14692,7 @@ margin_top = 35.0
 margin_right = 299.0
 margin_bottom = 102.0
 text = ""
+is_final_dialogue = true
 dialog_tree = ExtResource( 1 )
 resume_character_inputs = false
 
