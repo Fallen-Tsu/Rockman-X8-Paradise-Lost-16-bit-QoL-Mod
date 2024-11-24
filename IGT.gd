@@ -17,7 +17,7 @@ signal connection_established
 var connection_timeout: Timer = Timer.new()
 
 func _ready():
-	pass
+	pause_mode = Node.PAUSE_MODE_PROCESS
 
 func reset():
 	already_started = false
