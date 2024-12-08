@@ -60,10 +60,8 @@ func _Setup():
 			IGT.send_command("set_gametime_command")
 			IGT.send_command("split_command")
 		else:
-			var seconds := 15.0 if collectible == "finished_intro" else 17.0
-			Tools.timer_p(seconds,"send_command",IGT,"set_gametime_command")
-			Tools.timer_p(seconds,"send_command",IGT,"split_command")
-
+			# Thing I have to change -Xorn
+			IGT.can_split = true
 func animate_boss_or_reploid() -> void:
 	if death_animation != "":
 		character.play_animation(death_animation)

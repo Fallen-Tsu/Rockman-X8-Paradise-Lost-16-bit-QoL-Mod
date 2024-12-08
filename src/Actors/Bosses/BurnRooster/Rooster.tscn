@@ -126,7 +126,7 @@ material = ExtResource( 14 )
 z_index = 1
 frames = ExtResource( 17 )
 animation = "appear_loop"
-frame = 12
+frame = 4
 playing = true
 flip_h = true
 
