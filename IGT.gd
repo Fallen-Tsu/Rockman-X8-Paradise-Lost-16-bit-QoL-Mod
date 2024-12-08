@@ -2,6 +2,8 @@ extends Node
 
 const sections := 13
 
+var can_split : bool = false
+
 var active_connection = null
 
 var already_started: bool = false
