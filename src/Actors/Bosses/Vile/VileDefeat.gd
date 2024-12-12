@@ -18,9 +18,7 @@ func start() -> void:
 			IGT.send_command("set_gametime_command")
 			IGT.send_command("split_command")
 		else:
-			var seconds := 8.0
-			Tools.timer_p(seconds,"send_command",IGT,"set_gametime_command")
-			Tools.timer_p(seconds,"send_command",IGT,"split_command")
+			IGT.can_split = true
 	ExecuteOnce()
 
 func _Setup() -> void:
