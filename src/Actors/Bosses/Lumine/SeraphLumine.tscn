@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://src/Actors/Panda.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Bosses/Lumine/lumine_main.res" type="SpriteFrames" id=2]
@@ -10,8 +10,7 @@
 [ext_resource path="res://src/Actors/Bosses/Lumine/lumine_frontwings.res" type="SpriteFrames" id=8]
 [ext_resource path="res://src/Actors/Bosses/GigaboltManowar/Space.gd" type="Script" id=9]
 [ext_resource path="res://src/Actors/Bosses/Lumine/SeraphIntro.gd" type="Script" id=10]
-[ext_resource path="res://src/Sounds/OST - SeraphLumine - Loop.ogg" type="AudioStream" id=11]
-[ext_resource path="res://src/Sounds/OST - SeraphLumine - Intro.ogg" type="AudioStream" id=12]
+[ext_resource path="res://Alt Music/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg" type="AudioStream" id=11]
 [ext_resource path="res://src/Actors/Bosses/SatanSigma/flash.gd" type="Script" id=13]
 [ext_resource path="res://src/Levels/PitchBlack/light.png" type="Texture" id=14]
 [ext_resource path="res://src/Actors/NewStateMachine/audioplayer.gd" type="Script" id=15]
@@ -26,7 +25,7 @@
 [ext_resource path="res://src/Sounds/HIT_BOSS.wav" type="AudioStream" id=24]
 [ext_resource path="res://src/Effects/Materials/default_material.tres" type="Material" id=25]
 [ext_resource path="res://src/Effects/Materials/feather_particles2.tres" type="Material" id=26]
-[ext_resource path="res://src/Sounds/OST - ParadiseLost.ogg" type="AudioStream" id=27]
+[ext_resource path="res://Alt Music/Ys I&II Chronicles OST - Final Battle.ogg" type="AudioStream" id=27]
 [ext_resource path="res://src/Effects/Materials/feather_exp2.tres" type="Material" id=28]
 [ext_resource path="res://src/Actors/Bosses/Lumine/LumineDeath.gd" type="Script" id=29]
 [ext_resource path="res://src/Effects/Textures/blue_explosion.png" type="Texture" id=30]
@@ -343,7 +342,7 @@ shape = SubResource( 49 )
 [node name="backWings" type="AnimatedSprite" parent="."]
 frames = ExtResource( 7 )
 animation = "idle"
-frame = 9
+frame = 11
 playing = true
 flip_h = true
 script = ExtResource( 32 )
@@ -440,7 +439,7 @@ playing = true
 z_index = 2
 frames = ExtResource( 8 )
 animation = "idle"
-frame = 10
+frame = 12
 playing = true
 flip_h = true
 script = ExtResource( 32 )
@@ -464,7 +463,6 @@ scale = Vector2( 4.35, 4.25 )
 
 [node name="Intro" type="Node2D" parent="."]
 script = ExtResource( 10 )
-intro = ExtResource( 12 )
 loop = ExtResource( 11 )
 
 [node name="flash" type="Sprite" parent="Intro"]

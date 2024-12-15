@@ -16,12 +16,15 @@ func unblink() -> void:
 
 func _on_ArrowDetector_body_entered(body: Node) -> void:
 	if active:
+		print(body.name)
 		if "DarkArrowCharged" in body.name:
 			on_darkarrow_hit(3)
 			body._OnHit(0)
 		elif "DarkArrow" in body.name:
 			on_darkarrow_hit(1)
 			body._OnHit(100)
+		elif "DamageArea" in body.name:
+			on_darkarrow_hit(3)
 
 func on_darkarrow_hit(amount : int) -> void:
 	blink()

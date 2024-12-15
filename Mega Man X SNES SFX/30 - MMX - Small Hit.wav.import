@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/30 - MMX - Small Hit.wav-a3744bb9632e7852d89a515ded9f5f40.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/30 - MMX - Small Hit.wav"
+dest_files=[ "res://.import/30 - MMX - Small Hit.wav-a3744bb9632e7852d89a515ded9f5f40.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

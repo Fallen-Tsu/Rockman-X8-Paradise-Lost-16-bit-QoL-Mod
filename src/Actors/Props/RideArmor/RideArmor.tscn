@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://src/Actors/NewStateMachine/InputListener.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Props/RideArmor/Punch.gd" type="Script" id=2]
@@ -62,8 +62,7 @@
 [ext_resource path="res://src/Sounds/59 - MMX - Enemy Die (4).wav" type="AudioStream" id=60]
 [ext_resource path="res://src/Actors/Props/RideArmor/CollisionUpperHalf.gd" type="Script" id=61]
 [ext_resource path="res://src/Actors/Props/RideArmor/CrushCheck.gd" type="Script" id=62]
-[ext_resource path="res://src/Sounds/OST - RideArmor - Loop.ogg" type="AudioStream" id=63]
-[ext_resource path="res://src/Sounds/OST - RideArmor - Intro.ogg" type="AudioStream" id=64]
+[ext_resource path="res://Alt Music/Kai no Kiseki [BGM RIP] - Boss Theme 4.ogg" type="AudioStream" id=63]
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 20, 26.5 )
@@ -102,7 +101,6 @@ z_index = 3
 collision_layer = 8192
 collision_mask = 536872705
 script = ExtResource( 21 )
-song_intro = ExtResource( 64 )
 song_loop = ExtResource( 63 )
 
 [node name="Hurtbox" type="KinematicBody2D" parent="." groups=["Player", "Props"]]

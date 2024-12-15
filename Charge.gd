@@ -3,7 +3,7 @@ class_name Charge
 
 
 export var super_charged_sound : AudioStream
-var super_charge_time := 3.0
+var super_charge_time := 2
 var maximum_charge_time := 5
 export var color : Color
 export var super_color : Color
@@ -13,9 +13,9 @@ var mid_charge : bool
 var charging := false
 
 
-export var minimum_charge_time := 0.5
+export var minimum_charge_time := 0.3
 export var level_3_charge := 1.75
-export var level_4_charge := 2.75
+export var level_4_charge := 2.15
 
 export var charge_time_reduction := 0.0
 

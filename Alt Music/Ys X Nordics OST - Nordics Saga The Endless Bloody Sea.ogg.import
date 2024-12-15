@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg-0afc74e6f2977b1304fc6d36c17bbb19.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg"
+dest_files=[ "res://.import/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg-0afc74e6f2977b1304fc6d36c17bbb19.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

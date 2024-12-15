@@ -1,13 +1,12 @@
-[gd_scene load_steps=155 format=2]
+[gd_scene load_steps=150 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/HUD/Hud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Levels/Inferno/Music Player.gd" type="Script" id=3]
-[ext_resource path="res://src/Sounds/OST - Inferno - Loop.ogg" type="AudioStream" id=4]
 [ext_resource path="res://src/System/StateCamera.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=6]
-[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=7]
-[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Alt Music/Ys IX Super Ultimate - Catch Me If You Can.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Alt Music/Ys Origin Super Arrange Version - Scarlet Tempest.ogg" type="AudioStream" id=8]
 [ext_resource path="res://src/Objects/FlyingPlatform/RoosterGuidedPlatform.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Levels/Test/test_tileset.tres" type="TileSet" id=10]
 [ext_resource path="res://src/Objects/LifeUp.tscn" type="PackedScene" id=11]
@@ -29,13 +28,9 @@
 [ext_resource path="res://src/Actors/Spawner.tscn" type="PackedScene" id=27]
 [ext_resource path="res://src/Levels/Checkpoint.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/Levels/Inferno/LavaStarter.gd" type="Script" id=29]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=30]
-[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=31]
+[ext_resource path="res://Alt Music/Ys： The Oath in Felghana OST - A Searing Struggle.ogg" type="AudioStream" id=30]
+[ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=31]
 [ext_resource path="res://src/Objects/Door/NewBossDoor.tscn" type="PackedScene" id=32]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=33]
-[ext_resource path="res://src/Sounds/OST - Inferno - Intro.ogg" type="AudioStream" id=34]
-[ext_resource path="res://src/Sounds/OST - Inferno - LavaIntro.ogg" type="AudioStream" id=35]
-[ext_resource path="res://src/Sounds/OST - Inferno - LavaLoop.ogg" type="AudioStream" id=36]
 [ext_resource path="res://src/Actors/Enemies/GroundPizza/SimplePizza.tscn" type="PackedScene" id=37]
 [ext_resource path="res://src/Actors/Enemies/Wheeler.tscn" type="PackedScene" id=38]
 [ext_resource path="res://src/Effects/enemy_shader.tres" type="Shader" id=39]
@@ -641,7 +636,7 @@ position = Vector2( 199, 258 )
 
 [node name="animatedSprite" parent="X" index="3"]
 material = SubResource( 46 )
-frame = 67
+frame = 70
 
 [node name="head_armor" parent="X/animatedSprite" index="0"]
 material = SubResource( 47 )
@@ -704,19 +699,14 @@ process_material = SubResource( 66 )
 
 [node name="Music Player" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
-stream = ExtResource( 4 )
 bus = "Music"
 script = ExtResource( 3 )
-boss_intro = ExtResource( 31 )
-boss_song = ExtResource( 6 )
-angry_boss_intro = ExtResource( 33 )
-angry_boss_song = ExtResource( 30 )
-stage_clear_song = ExtResource( 8 )
-capsule_song = ExtResource( 7 )
-stage_intro = ExtResource( 34 )
-stage_song = ExtResource( 4 )
-lava_intro = ExtResource( 35 )
-lava_song = ExtResource( 36 )
+boss_song_alt = ExtResource( 8 )
+stage_clear_song_alt = ExtResource( 7 )
+capsule_song_alt = ExtResource( 31 )
+stage_song_alt = ExtResource( 30 )
+lava_intro = ExtResource( 6 )
+lava_song = ExtResource( 6 )
 
 [node name="Scenery" type="Node" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://src/Levels/HUD.gd" type="Script" id=1]
 [ext_resource path="res://src/HUD/BossBar.gd" type="Script" id=2]
@@ -21,7 +21,6 @@
 [ext_resource path="res://src/Actors/Player/BossWeapons/firedash_palette.png" type="Texture" id=19]
 [ext_resource path="res://src/HUD/RidearmorBar.gd" type="Script" id=20]
 [ext_resource path="res://src/HUD/R2_bar.png" type="Texture" id=21]
-[ext_resource path="res://src/Effects/Materials/crt_shader_1.tres" type="Material" id=22]
 [ext_resource path="res://src/HUD/IGTDisplayScene.tscn" type="PackedScene" id=23]
 
 [sub_resource type="ShaderMaterial" id=1]
@@ -91,20 +90,20 @@ stretch_mode = 3
 
 [node name="Rec Info" type="RichTextLabel" parent="."]
 self_modulate = Color( 1, 1, 1, 0.780392 )
-margin_left = 88.0
+margin_left = 83.0
 margin_top = 204.0
-margin_right = 340.0
+margin_right = 335.0
 margin_bottom = 310.0
 mouse_filter = 2
 custom_fonts/normal_font = ExtResource( 8 )
-text = "X8FC 0.6.1.0 Demo03"
+text = "X8FC Fallen_Tsu QoL Alpha"
 
 [node name="Chronometer" type="RichTextLabel" parent="."]
 self_modulate = Color( 1, 1, 1, 0.780392 )
-margin_left = 347.0
-margin_top = 211.0
-margin_right = 564.0
-margin_bottom = 317.0
+margin_left = 338.0
+margin_top = 195.0
+margin_right = 555.0
+margin_bottom = 301.0
 mouse_filter = 2
 custom_fonts/normal_font = ExtResource( 8 )
 text = "MM:SS:MM"
@@ -241,15 +240,15 @@ margin_top = 24.0
 margin_right = 391.0
 margin_bottom = 108.0
 texture = ExtResource( 4 )
-patch_margin_top = 4
-patch_margin_bottom = 17
+patch_margin_top = 3
+patch_margin_bottom = 16
 script = ExtResource( 2 )
 
 [node name="textureProgress" type="TextureProgress" parent="Boss Bar"]
 margin_left = 4.0
 margin_top = 4.0
 margin_right = 10.0
-margin_bottom = 67.0
+margin_bottom = 127.0
 max_value = 32.0
 value = 32.0
 texture_progress = ExtResource( 7 )
@@ -293,13 +292,6 @@ margin_right = 255.2
 margin_bottom = 109.0
 mouse_filter = 2
 
-[node name="colorRect" type="ColorRect" parent="."]
-visible = false
-material = ExtResource( 22 )
-margin_right = 398.0
-margin_bottom = 224.0
-mouse_filter = 2
-
 [node name="Boss and Weapon Info" type="RichTextLabel" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0.780392 )
@@ -315,6 +307,7 @@ text = "Input Info"
 layer = 128
 
 [node name="DebugAndCheats" parent="Boss and Weapon Info/canvasLayer" instance=ExtResource( 11 )]
+visible = false
 margin_left = 397.0
 margin_right = 397.0
 

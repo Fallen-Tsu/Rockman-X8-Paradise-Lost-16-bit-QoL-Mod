@@ -10,14 +10,6 @@ script = ExtResource( 4 )
 
 [node name="tiled_press" parent="." instance=ExtResource( 1 )]
 
-[node name="Tile Layer 2" parent="tiled_press" index="0"]
-cell_y_sort = false
-compatibility_mode = true
-
-[node name="Tile Layer 1" parent="tiled_press" index="1"]
-cell_y_sort = false
-compatibility_mode = true
-
 [node name="Collision" type="TileMap" parent="tiled_press"]
 visible = false
 tile_set = ExtResource( 3 )
@@ -31,17 +23,9 @@ tile_data = PoolIntArray( 0, 7, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 65536, 7, 0, 65539
 position = Vector2( 0, 24 )
 z_index = -2
 
-[node name="Tile Layer 1" parent="tiled_corkscrew" index="0"]
-cell_y_sort = false
-compatibility_mode = true
-
 [node name="tiled_corkscrew2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 88 )
 z_index = -2
-
-[node name="Tile Layer 1" parent="tiled_corkscrew2" index="0"]
-cell_y_sort = false
-compatibility_mode = true
 
 [node name="audioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 attenuation = 4.0

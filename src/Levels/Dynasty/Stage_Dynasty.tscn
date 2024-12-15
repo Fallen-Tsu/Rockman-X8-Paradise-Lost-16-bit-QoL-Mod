@@ -1,8 +1,8 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=136 format=2]
 
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/Test/test_tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://src/Sounds/OST - Dynasty - Intro.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Alt Music/Ys The Oath in Felghana OST - Seal of Time.ogg" type="AudioStream" id=3]
 [ext_resource path="res://src/Levels/Dynasty/bg1.png" type="Texture" id=4]
 [ext_resource path="res://src/Levels/Dynasty/bg2.png" type="Texture" id=5]
 [ext_resource path="res://src/Objects/Door/NewDoor.tscn" type="PackedScene" id=6]
@@ -45,7 +45,7 @@
 [ext_resource path="res://src/Levels/Checkpoint.tscn" type="PackedScene" id=43]
 [ext_resource path="res://src/Objects/LifeUp.tscn" type="PackedScene" id=44]
 [ext_resource path="res://src/Levels/Dynasty/BreakableGlass.tscn" type="PackedScene" id=45]
-[ext_resource path="res://src/Sounds/OST - Dynasty - Loop.ogg" type="AudioStream" id=46]
+[ext_resource path="res://Alt Music/Ys IV The Dawn of Ys - A Great Ordeal.ogg" type="AudioStream" id=46]
 [ext_resource path="res://src/Levels/Dynasty/DynastyTileset.tsx" type="TileSet" id=47]
 [ext_resource path="res://src/DialogSystem/Dialogs/Capsules/IcarusBuster.tres" type="Resource" id=48]
 [ext_resource path="res://src/Objects/Door/boss_door.res" type="SpriteFrames" id=49]
@@ -87,6 +87,8 @@
 [ext_resource path="res://src/Levels/Primrose/portal.png" type="Texture" id=85]
 [ext_resource path="res://src/Levels/Primrose/portal_deactivated.png" type="Texture" id=86]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=87]
+[ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=88]
+[ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=89]
 
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 41.5, 19 )
@@ -251,8 +253,12 @@ extents = Vector2( 199, 112 )
 [node name="Dynasty" instance=ExtResource( 29 )]
 
 [node name="Music Player" parent="." index="1"]
-stage_intro = ExtResource( 3 )
-stage_song = ExtResource( 46 )
+debug_logs = null
+stop_song_on_dialogue = null
+boss_song_alt = ExtResource( 46 )
+stage_clear_song_alt = ExtResource( 88 )
+capsule_song_alt = ExtResource( 89 )
+stage_song_alt = ExtResource( 3 )
 
 [node name="X" parent="." index="3"]
 position = Vector2( 109, 270 )
@@ -1021,7 +1027,7 @@ rotate = false
 z_index = 5
 frames = ExtResource( 52 )
 animation = "roll_loop"
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 51 )
 duration = 14.0
@@ -1073,7 +1079,7 @@ rotate = false
 z_index = 5
 frames = ExtResource( 52 )
 animation = "roll_loop"
-frame = 1
+frame = 3
 playing = true
 script = ExtResource( 51 )
 duration = 16.0
@@ -1125,6 +1131,7 @@ rotate = false
 z_index = 5
 frames = ExtResource( 52 )
 animation = "roll_loop"
+frame = 2
 playing = true
 script = ExtResource( 51 )
 duration = 16.0
@@ -1167,6 +1174,7 @@ pause_mode = 2
 position = Vector2( 13666, -2158 )
 z_index = 2
 frames = SubResource( 187 )
+frame = 3
 playing = true
 script = ExtResource( 82 )
 

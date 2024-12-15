@@ -35,7 +35,7 @@ foward_start = 48.0
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "loop"
-frame = 3
+frame = 2
 playing = true
 
 [node name="line" type="AnimatedSprite" parent="animatedSprite"]
@@ -44,7 +44,7 @@ position = Vector2( 352.5, 16 )
 scale = Vector2( 19.5313, 1 )
 frames = ExtResource( 2 )
 animation = "loop"
-frame = 4
+frame = 3
 playing = true
 offset = Vector2( 0, -15 )
 script = ExtResource( 7 )

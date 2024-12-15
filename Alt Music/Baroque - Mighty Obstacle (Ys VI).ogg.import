@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Baroque - Mighty Obstacle (Ys VI).ogg-8b74c79d677f9bfe6bda7d611d18c7a0.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Baroque - Mighty Obstacle (Ys VI).ogg"
+dest_files=[ "res://.import/Baroque - Mighty Obstacle (Ys VI).ogg-8b74c79d677f9bfe6bda7d611d18c7a0.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

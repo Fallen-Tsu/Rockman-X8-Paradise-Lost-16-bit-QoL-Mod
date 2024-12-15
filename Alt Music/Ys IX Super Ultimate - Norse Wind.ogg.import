@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys IX Super Ultimate - Norse Wind.ogg-ce0ae6aad4044ffa985f1bd985cda002.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys IX Super Ultimate - Norse Wind.ogg"
+dest_files=[ "res://.import/Ys IX Super Ultimate - Norse Wind.ogg-ce0ae6aad4044ffa985f1bd985cda002.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

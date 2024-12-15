@@ -89,7 +89,7 @@ position = Vector2( 2, 0 )
 z_index = 10
 frames = ExtResource( 4 )
 animation = "front"
-frame = 5
+frame = 4
 playing = true
 
 [node name="animatedSprite2" type="AnimatedSprite" parent="."]
@@ -98,7 +98,7 @@ position = Vector2( 2, 0 )
 z_index = -6
 frames = ExtResource( 4 )
 animation = "back"
-frame = 5
+frame = 4
 playing = true
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]

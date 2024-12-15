@@ -1,7 +1,5 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=1]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=2]
 [ext_resource path="res://src/Levels/music_player.gd" type="Script" id=3]
 [ext_resource path="res://src/System/StateCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/Levels/StageSegmentManager.gd" type="Script" id=5]
@@ -10,11 +8,7 @@
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/HUD/intro.res" type="SpriteFrames" id=9]
 [ext_resource path="res://src/Levels/Test/test_tileset.tres" type="TileSet" id=10]
-[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=11]
 [ext_resource path="res://src/Sounds/38 - MMX - Boss Alert.wav" type="AudioStream" id=12]
-[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=13]
-[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=14]
-[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=15]
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=16]
 [ext_resource path="res://src/Actors/Bosses/BambooPandamonium/Panda.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Actors/Bosses/Yeti.tscn" type="PackedScene" id=18]
@@ -38,13 +32,6 @@ extents = Vector2( 199, 112 )
 pause_mode = 2
 bus = "Music"
 script = ExtResource( 3 )
-boss_intro = ExtResource( 14 )
-boss_song = ExtResource( 13 )
-angry_boss_intro = ExtResource( 2 )
-angry_boss_song = ExtResource( 1 )
-stage_clear_song = ExtResource( 15 )
-capsule_song = ExtResource( 11 )
-play_angry_boss_theme = false
 
 [node name="StateCamera" parent="." instance=ExtResource( 4 )]
 

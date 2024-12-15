@@ -82,7 +82,7 @@ shape = SubResource( 1 )
 material = ExtResource( 27 )
 frames = ExtResource( 7 )
 animation = "icestorm_loop"
-frame = 1
+frame = 9
 playing = true
 flip_h = true
 

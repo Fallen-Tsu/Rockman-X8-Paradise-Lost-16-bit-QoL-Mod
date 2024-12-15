@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg-bb82e36d095fafdc5a58894a73069a19.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg"
+dest_files=[ "res://.import/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg-bb82e36d095fafdc5a58894a73069a19.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

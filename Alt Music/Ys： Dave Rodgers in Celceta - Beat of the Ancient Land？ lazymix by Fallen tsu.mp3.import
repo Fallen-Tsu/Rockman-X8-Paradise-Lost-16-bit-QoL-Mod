@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Ys： Dave Rodgers in Celceta - Beat of the Ancient Land？ lazymix by Fallen tsu.mp3-9b80a6fed75343e475949635678ae16e.mp3str"
+
+[deps]
+
+source_file="res://Alt Music/Ys： Dave Rodgers in Celceta - Beat of the Ancient Land？ lazymix by Fallen tsu.mp3"
+dest_files=[ "res://.import/Ys： Dave Rodgers in Celceta - Beat of the Ancient Land？ lazymix by Fallen tsu.mp3-9b80a6fed75343e475949635678ae16e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

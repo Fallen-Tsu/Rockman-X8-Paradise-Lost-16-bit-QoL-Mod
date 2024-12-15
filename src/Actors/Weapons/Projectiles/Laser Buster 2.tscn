@@ -26,7 +26,6 @@ shape = SubResource( 1 )
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 7 )
 animation = "loop"
-frame = 2
 playing = true
 
 [node name="animatedSprite2" type="AnimatedSprite" parent="animatedSprite"]
@@ -34,6 +33,7 @@ position = Vector2( 353.5, 1 )
 scale = Vector2( 19.5938, 1 )
 frames = ExtResource( 6 )
 animation = "loop"
+frame = 4
 playing = true
 
 [node name="visibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

@@ -20,6 +20,7 @@ script = ExtResource( 2 )
 damage = 5.0
 damage_to_bosses = 5.0
 damage_to_weakness = 10.0
+time_outside_screen = 0.01
 fire_sound = ExtResource( 3 )
 
 [node name="animatedSprite" type="AnimatedSprite" parent="."]

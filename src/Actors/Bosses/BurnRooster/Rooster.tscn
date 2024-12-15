@@ -126,7 +126,7 @@ material = ExtResource( 14 )
 z_index = 1
 frames = ExtResource( 17 )
 animation = "appear_loop"
-frame = 4
+frame = 25
 playing = true
 flip_h = true
 
@@ -537,6 +537,7 @@ shape = SubResource( 55 )
 
 [node name="BossDeath" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 8 )
+explosion_duration = 1.5
 death_animation = "death"
 collectible = "rooster_weapon"
 

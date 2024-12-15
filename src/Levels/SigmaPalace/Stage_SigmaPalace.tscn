@@ -1,9 +1,9 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/BossSpawner.gd" type="Script" id=2]
-[ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=3]
-[ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Alt Music/Ys The Oath in Felghana OST - Valestein Castle.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=4]
 [ext_resource path="res://src/Actors/Spawner.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/Levels/base_stage.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Objects/Door/door.res" type="SpriteFrames" id=7]
@@ -24,8 +24,8 @@
 [ext_resource path="res://src/Effects/Materials/Finalstage_introparticles.tres" type="Material" id=22]
 [ext_resource path="res://src/Objects/Spikes/DestructibleSpikeP.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/Objects/Void.tscn" type="PackedScene" id=24]
-[ext_resource path="res://src/Sounds/OST - SigmaPalace - Intro.ogg" type="AudioStream" id=25]
-[ext_resource path="res://src/Sounds/OST - SigmaPalace - Loop.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Alt Music/Ys X Nordics OST - Berserk Battle Ax Roar .ogg" type="AudioStream" id=25]
+[ext_resource path="res://Alt Music/Baroque - To Make the End of Battle (Ys II).ogg" type="AudioStream" id=26]
 [ext_resource path="res://src/Actors/Enemies/SigmaEnemy/SigmaEnemy.tscn" type="PackedScene" id=27]
 [ext_resource path="res://src/Actors/Enemies/SigmaEnemy/DefenderSigmaEnemy.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/System/Respawn/Respawner.tscn" type="PackedScene" id=29]
@@ -44,14 +44,12 @@
 [ext_resource path="res://src/Levels/SigmaPalace/SigmaStarter.gd" type="Script" id=42]
 [ext_resource path="res://src/Actors/Bosses/SatanSigma/Sigma.tscn" type="PackedScene" id=43]
 [ext_resource path="res://src/Actors/Bosses/Lumine/Lumine.tscn" type="PackedScene" id=44]
-[ext_resource path="res://src/Sounds/OST - TrueSigma - Loop.ogg" type="AudioStream" id=45]
+[ext_resource path="res://Alt Music/Ys Heavens Sanctuary OST ~J.D.K. Band Edition - To Make the End of Battle.ogg" type="AudioStream" id=45]
 [ext_resource path="res://src/Effects/enemy_shader.tres" type="Shader" id=46]
 [ext_resource path="res://src/Actors/Bosses/SatanSigma/SigmaWall.tscn" type="PackedScene" id=47]
 [ext_resource path="res://src/Levels/SigmaPalace/PlayerMover.gd" type="Script" id=48]
 [ext_resource path="res://src/Levels/SigmaPalace/MusicSilencer.gd" type="Script" id=49]
 [ext_resource path="res://src/Levels/SigmaPalace/MusicStarter.gd" type="Script" id=50]
-[ext_resource path="res://src/Sounds/OST - SigmaDemo - Loop.ogg" type="AudioStream" id=51]
-[ext_resource path="res://src/Sounds/OST - SigmaDemo.ogg" type="AudioStream" id=52]
 [ext_resource path="res://src/Levels/SigmaPalace/seraph_bg.png" type="Texture" id=53]
 [ext_resource path="res://src/System/BossOrder.tscn" type="PackedScene" id=54]
 [ext_resource path="res://src/Levels/SigmaPalace/finalfightBG.gd" type="Script" id=55]
@@ -287,13 +285,10 @@ emit_capsule_signal = false
 
 [node name="Music Player" parent="." index="1"]
 debug_logs = true
-boss_intro = ExtResource( 45 )
-boss_song = ExtResource( 45 )
-stage_intro = ExtResource( 25 )
-stage_song = ExtResource( 26 )
-miniboss_intro = ExtResource( 4 )
-miniboss_song = ExtResource( 3 )
-play_angry_boss_theme = false
+boss_song_alt = ExtResource( 25 )
+stage_clear_song_alt = ExtResource( 4 )
+stage_song_alt = ExtResource( 3 )
+miniboss_song_alt = ExtResource( 26 )
 
 [node name="BossOrder" parent="StateCamera" index="14" instance=ExtResource( 54 )]
 pause_mode = 2
@@ -1916,8 +1911,8 @@ position = Vector2( 7524, -1028 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 50 )
-intro = ExtResource( 52 )
-loop = ExtResource( 51 )
+intro = ExtResource( 45 )
+loop = ExtResource( 45 )
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="Objects/MusicStarter" index="0"]
 position = Vector2( 88, -109 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://src/Actors/Bosses/Lumine/lumine.res" type="SpriteFrames" id=1]
 [ext_resource path="res://src/Actors/NewStateMachine/audioplayer.gd" type="Script" id=2]
@@ -92,8 +92,7 @@
 [ext_resource path="res://src/Sounds/Lumine - Pick.wav" type="AudioStream" id=90]
 [ext_resource path="res://src/Sounds/Lumine - Transform.wav" type="AudioStream" id=91]
 [ext_resource path="res://src/DialogSystem/Dialogs/Stages/Lumine_Dialogue.tres" type="Resource" id=92]
-[ext_resource path="res://src/Sounds/OST - Lumine - Intro.ogg" type="AudioStream" id=93]
-[ext_resource path="res://src/Sounds/OST - Lumine - Loop.ogg" type="AudioStream" id=94]
+[ext_resource path="res://Alt Music/Ys VIII Lacrimosa of DANA - A-to-Z .ogg" type="AudioStream" id=93]
 [ext_resource path="res://src/HUD/Lumine_bar.png" type="Texture" id=95]
 [ext_resource path="res://src/Actors/Bosses/Lumine/lumine_transform.res" type="SpriteFrames" id=96]
 [ext_resource path="res://src/Actors/Bosses/Lumine/DeathTransform.gd" type="Script" id=97]
@@ -480,8 +479,7 @@ scale = Vector2( 4.35, 4.25 )
 script = ExtResource( 39 )
 debug_logs = true
 dialogue = ExtResource( 92 )
-song_intro = ExtResource( 93 )
-song_loop = ExtResource( 94 )
+song_loop = ExtResource( 93 )
 boss_bar = ExtResource( 95 )
 
 [node name="Damage" type="Node2D" parent="."]

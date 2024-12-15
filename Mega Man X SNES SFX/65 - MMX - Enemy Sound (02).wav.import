@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/65 - MMX - Enemy Sound (02).wav-b12d3207b118c5f56e731d42932c7f2f.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/65 - MMX - Enemy Sound (02).wav"
+dest_files=[ "res://.import/65 - MMX - Enemy Sound (02).wav-b12d3207b118c5f56e731d42932c7f2f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

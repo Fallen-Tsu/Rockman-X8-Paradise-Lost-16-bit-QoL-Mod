@@ -242,7 +242,6 @@ script = ExtResource( 39 )
 self_modulate = Color( 0.972549, 0.662745, 1, 1 )
 position = Vector2( 123, 30 )
 frames = SubResource( 85 )
-frame = 1
 playing = true
 flip_h = true
 
@@ -294,6 +293,7 @@ script = ExtResource( 39 )
 self_modulate = Color( 0.972549, 0.662745, 1, 1 )
 position = Vector2( 123, 30 )
 frames = SubResource( 85 )
+frame = 8
 playing = true
 flip_h = true
 
@@ -595,6 +595,7 @@ damage = 10.0
 
 [node name="BossDeath" parent="." instance=ExtResource( 36 )]
 position = Vector2( 0, 0 )
+explosion_duration = 1.5
 death_animation = "death"
 force_reploid_death = true
 defeated_flag = "copy_sigma_defeated"

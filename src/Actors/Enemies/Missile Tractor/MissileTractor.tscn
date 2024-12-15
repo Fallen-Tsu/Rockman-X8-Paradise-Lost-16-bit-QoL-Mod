@@ -59,7 +59,7 @@ position = Vector2( 2, 0 )
 z_index = 1
 frames = ExtResource( 11 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]

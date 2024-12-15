@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys I & II Chronicles OST - First Step Towards Wars.ogg-cb3695638d41046c4c5fbaa3c5c21319.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys I & II Chronicles OST - First Step Towards Wars.ogg"
+dest_files=[ "res://.import/Ys I & II Chronicles OST - First Step Towards Wars.ogg-cb3695638d41046c4c5fbaa3c5c21319.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

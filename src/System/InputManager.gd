@@ -130,7 +130,6 @@ func define_event_type(event):
 		return InputEventKey
 	elif event is InputEventMouseButton:
 		return InputEventMouseButton
-	push_error("Unable to find type for event " + str(event))
 	
 signal double_check(event_text,action_name)
 signal double_detected(event_text,actionname)

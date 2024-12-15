@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys： Foliage Ocean in Celceta OST - Battle #58 (Ys IV).ogg-a83fa9911416c4463307ca2db185439d.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys： Foliage Ocean in Celceta OST - Battle #58 (Ys IV).ogg"
+dest_files=[ "res://.import/Ys： Foliage Ocean in Celceta OST - Battle #58 (Ys IV).ogg-a83fa9911416c4463307ca2db185439d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys Origin Super Arrange Version - Scars of the Divine Wing.ogg-46a23627e94a3a1e22d1dc06455e9690.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys Origin Super Arrange Version - Scars of the Divine Wing.ogg"
+dest_files=[ "res://.import/Ys Origin Super Arrange Version - Scars of the Divine Wing.ogg-46a23627e94a3a1e22d1dc06455e9690.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -282,7 +282,7 @@ shape = SubResource( 1 )
 material = ExtResource( 4 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 5
+frame = 9
 playing = true
 flip_h = true
 
@@ -664,6 +664,7 @@ damage = 6.0
 
 [node name="BossDeath" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, 0 )
+explosion_duration = 1.5
 death_animation = "death"
 collectible = "yeti_weapon"
 

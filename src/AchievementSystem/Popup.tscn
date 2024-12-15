@@ -2,7 +2,7 @@
 
 [ext_resource path="res://src/AchievementSystem/Popup.gd" type="Script" id=1]
 [ext_resource path="res://src/Effects/Materials/AchieveIcon_mat.tres" type="Material" id=2]
-[ext_resource path="res://src/Sounds/FX - Achievement.wav" type="AudioStream" id=3]
+[ext_resource path="res://Mega Man X SNES SFX/45 - MMX - Beep (3).wav" type="AudioStream" id=3]
 [ext_resource path="res://src/AchievementSystem/icon_bg.png" type="Texture" id=4]
 [ext_resource path="res://src/AchievementSystem/Icons/achievicon_default.png" type="Texture" id=5]
 [ext_resource path="res://src/System/save_icon.png" type="Texture" id=6]

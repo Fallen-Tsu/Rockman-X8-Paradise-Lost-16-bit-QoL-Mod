@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys X −Nordics− OST - And the Adventure Begins (Second Part).ogg-5efb9a436db17b7c2bebea6b3f5db9f5.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys X −Nordics− OST - And the Adventure Begins (Second Part).ogg"
+dest_files=[ "res://.import/Ys X −Nordics− OST - And the Adventure Begins (Second Part).ogg-5efb9a436db17b7c2bebea6b3f5db9f5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/47 - MMX - Beep (5).wav-1ae44ffd3377c4da2571c55cf116a9e5.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/47 - MMX - Beep (5).wav"
+dest_files=[ "res://.import/47 - MMX - Beep (5).wav-1ae44ffd3377c4da2571c55cf116a9e5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Baroque - Holders of Power (Ys I).ogg-a094ad14a69daacde72256e42c8321bf.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Baroque - Holders of Power (Ys I).ogg"
+dest_files=[ "res://.import/Baroque - Holders of Power (Ys I).ogg-a094ad14a69daacde72256e42c8321bf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

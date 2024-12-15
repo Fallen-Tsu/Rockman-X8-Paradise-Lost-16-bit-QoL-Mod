@@ -1,4 +1,4 @@
-[gd_scene load_steps=133 format=2]
+[gd_scene load_steps=132 format=2]
 
 [ext_resource path="res://src/Actors/Player/x_sprites/x.res" type="SpriteFrames" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
@@ -119,7 +119,6 @@
 [ext_resource path="res://src/Actors/Bosses/SatanSigma/flash.gd" type="Script" id=117]
 [ext_resource path="res://src/Effects/Textures/elec_particles.png" type="Texture" id=118]
 [ext_resource path="res://src/Effects/Materials/xdrive_particles.tres" type="Material" id=119]
-[ext_resource path="res://src/Actors/helmetDing.gd" type="Script" id=120]
 
 [sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 6.995, 7 )
@@ -280,9 +279,8 @@ position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 69
+frame = 79
 playing = true
-script = ExtResource( 120 )
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
 visible = false
@@ -636,6 +634,8 @@ arm_pointing_sprites = ExtResource( 10 )
 
 [node name="Icarus Buster" parent="Shot" instance=ExtResource( 43 )]
 active = false
+max_shots_alive = 3
+max_ammo = 3.0
 
 [node name="Hermes Buster" parent="Shot" instance=ExtResource( 37 )]
 
@@ -730,7 +730,7 @@ weapon = ExtResource( 101 )
 
 [node name="break_vfx" type="AnimatedSprite" parent="Shot/XDrive"]
 modulate = Color( 0.258824, 0.705882, 1, 0.654902 )
-position = Vector2( -1, 3 )
+position = Vector2( -1, 1 )
 z_index = 25
 frames = ExtResource( 95 )
 frame = 9
@@ -805,8 +805,8 @@ super_charged_sound = ExtResource( 27 )
 color = Color( 0, 0.25098, 0.941176, 1 )
 super_color = Color( 0.282353, 0.533333, 0.698039, 1 )
 minimum_charge_time = 0.75
-level_3_charge = 2.0
-level_4_charge = 3.0
+level_3_charge = 1.65
+level_4_charge = 3.2
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="Charge"]
 pause_mode = 2
@@ -833,7 +833,9 @@ arm_pointing_sprites = ExtResource( 10 )
 [node name="Icarus Buster" parent="AltFire" instance=ExtResource( 43 )]
 active = false
 shots = [ ExtResource( 115 ) ]
+max_shots_alive = 3
 max_charged_shots_alive = 0
+max_ammo = 3.0
 
 [node name="DashWallJump" type="Node2D" parent="."]
 script = ExtResource( 20 )
@@ -844,9 +846,10 @@ sound = ExtResource( 3 )
 horizontal_velocity = 210.0
 shot_pos_adjust = Vector2( 4, 0 )
 leeway_time = 0.0
+fullspeed_proportion = 0.39
 minimum_upwards_time = 0.235
 start_delay = 0.116
-move_away_duration = 0.134
+move_away_duration = 0.13
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="DashWallJump"]
 pause_mode = 2
@@ -875,8 +878,9 @@ conflicting_moves = [ "DashWallJump", "WallJump", "WallSlide", "DashJump", "AirD
 actions = [ "dash" ]
 animation = "dash"
 sound = ExtResource( 6 )
-horizontal_velocity = 210.0
-dash_duration = 0.475
+horizontal_velocity = 260.0
+jump_velocity = 380.0
+dash_duration = 0.65
 leeway = 0.0
 shot_pos_adjust = Vector2( 14, 4 )
 
@@ -955,7 +959,8 @@ conflicting_moves = [ "WallSlide", "WallJump", "DashWallJump", "AirJump", "AirDa
 actions = [ "jump" ]
 animation = "jump"
 sound = ExtResource( 3 )
-horizontal_velocity = 210.0
+horizontal_velocity = 260.0
+jump_velocity = 380.0
 shot_pos_adjust = Vector2( 4, 0 )
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="DashJump"]
@@ -983,8 +988,9 @@ conflicting_moves = [ "WallSlide", "AirDash" ]
 actions = [ "jump" ]
 animation = "jump"
 sound = ExtResource( 3 )
-jump_velocity = 190.0
+jump_velocity = 350.0
 shot_pos_adjust = Vector2( 4, 0 )
+max_jump_time = 0.8
 leeway_time = 0.0
 fullspeed_proportion = 0.3
 
@@ -1016,6 +1022,8 @@ actions = [ "dash" ]
 animation = "dash"
 sound = ExtResource( 6 )
 horizontal_velocity = 210.0
+jump_velocity = 420.0
+dash_duration = 0.75
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="Dash"]
 pause_mode = 2

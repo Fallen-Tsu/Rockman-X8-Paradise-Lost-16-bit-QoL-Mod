@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Baroque - Protectors (Ys II).ogg-9d7280b0e1da22516491448de4b9b2f4.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Baroque - Protectors (Ys II).ogg"
+dest_files=[ "res://.import/Baroque - Protectors (Ys II).ogg-9d7280b0e1da22516491448de4b9b2f4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

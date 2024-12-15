@@ -114,7 +114,7 @@ break_guards = true
 
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 32 )
-frame = 4
+frame = 14
 playing = true
 flip_h = true
 

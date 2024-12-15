@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys IX -Monstrum NOX- OST - Cloaca Maxima.ogg-3808242bcf0f0586f723f86b9e4f7191.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys IX -Monstrum NOX- OST - Cloaca Maxima.ogg"
+dest_files=[ "res://.import/Ys IX -Monstrum NOX- OST - Cloaca Maxima.ogg-3808242bcf0f0586f723f86b9e4f7191.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

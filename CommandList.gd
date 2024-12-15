@@ -36,4 +36,3 @@ func UndoAll():
 		for command in _executedCommands:
 			command.Undo()
 		Clear()
-

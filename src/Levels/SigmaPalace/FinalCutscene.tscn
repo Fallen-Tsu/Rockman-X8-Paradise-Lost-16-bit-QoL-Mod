@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://src/DialogSystem/Dialogs/Stages/Lumine_End_Dialogue.tres" type="Resource" id=1]
 [ext_resource path="res://src/DialogSystem/DialogBox.tscn" type="PackedScene" id=2]
@@ -25,7 +25,7 @@
 [ext_resource path="res://src/Levels/SigmaPalace/sigmapalace_nearbg2.png" type="Texture" id=23]
 [ext_resource path="res://src/Levels/SigmaPalace/sigmapalace_farbg.png" type="Texture" id=24]
 [ext_resource path="res://src/Levels/SigmaPalace/FinalCutscene.gd" type="Script" id=25]
-[ext_resource path="res://src/Sounds/OST - Ending - Intro.ogg" type="AudioStream" id=26]
+[ext_resource path="res://Alt Music/Ys I&II Chronicles OST - The Morning Grow.ogg" type="AudioStream" id=26]
 [ext_resource path="res://src/Actors/Weapons/Projectiles/heavy_shot.res" type="SpriteFrames" id=27]
 [ext_resource path="res://src/Actors/Bosses/SatanSigma/flash.gd" type="Script" id=28]
 [ext_resource path="res://src/Levels/PitchBlack/light.png" type="Texture" id=29]
@@ -39,14 +39,8 @@
 [ext_resource path="res://src/Effects/Materials/buster_charged_particles.tres" type="Material" id=37]
 [ext_resource path="res://src/Effects/Textures/follow_shot.png" type="Texture" id=38]
 [ext_resource path="res://src/Levels/music_player.gd" type="Script" id=39]
-[ext_resource path="res://src/Sounds/OST - Ending - Loop.ogg" type="AudioStream" id=40]
 [ext_resource path="res://src/Effects/Textures/smoke.png" type="Texture" id=41]
-[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=42]
-[ext_resource path="res://src/Sounds/OST - TrueSigma - Loop.ogg" type="AudioStream" id=43]
-[ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=44]
-[ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=45]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=46]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=47]
+[ext_resource path="res://Alt Music/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg" type="AudioStream" id=42]
 [ext_resource path="res://src/Effects/Materials/mecha_smokes.tres" type="Material" id=48]
 [ext_resource path="res://src/Effects/Materials/mat_smokeparticle.tres" type="Material" id=49]
 [ext_resource path="res://src/Effects/Textures/wallwave.png" type="Texture" id=50]
@@ -14683,7 +14677,7 @@ script = ExtResource( 25 )
 charge_color1 = Color( 0, 0.25098, 0.941176, 1 )
 charge_color2 = Color( 0.282353, 0.533333, 0.698039, 1 )
 song_intro = ExtResource( 26 )
-song_loop = ExtResource( 40 )
+song_loop = ExtResource( 26 )
 text_second_dialog = ExtResource( 11 )
 
 [node name="DialogBox" parent="." instance=ExtResource( 2 )]
@@ -14784,7 +14778,7 @@ position = Vector2( 163, 191 )
 z_index = 1
 frames = ExtResource( 27 )
 animation = "Tag"
-frame = 1
+frame = 4
 playing = true
 
 [node name="shot" type="AudioStreamPlayer2D" parent="ChargeShot"]
@@ -14811,7 +14805,6 @@ position = Vector2( 149, 189 )
 z_index = 1
 frames = ExtResource( 8 )
 animation = "weak"
-frame = 1
 playing = true
 
 [node name="charge" type="AudioStreamPlayer2D" parent="X"]
@@ -14830,7 +14823,7 @@ bus = "SFX"
 visible = false
 position = Vector2( 2, 2 )
 frames = SubResource( 38 )
-frame = 9
+frame = 3
 playing = true
 
 [node name="shot" type="AudioStreamPlayer2D" parent="X"]
@@ -15012,14 +15005,8 @@ pause_mode = 2
 bus = "Music"
 script = ExtResource( 39 )
 debug_logs = true
-boss_intro = ExtResource( 43 )
-boss_song = ExtResource( 43 )
-angry_boss_intro = ExtResource( 46 )
-angry_boss_song = ExtResource( 47 )
-capsule_song = ExtResource( 42 )
-miniboss_intro = ExtResource( 45 )
-miniboss_song = ExtResource( 44 )
-play_angry_boss_theme = false
+stop_song_on_dialogue = false
+boss_song_alt = ExtResource( 42 )
 
 [node name="fire" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.4 )

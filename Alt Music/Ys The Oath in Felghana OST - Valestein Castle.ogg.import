@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys The Oath in Felghana OST - Valestein Castle.ogg-940eb32b528557642d958ce15ff207a1.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys The Oath in Felghana OST - Valestein Castle.ogg"
+dest_files=[ "res://.import/Ys The Oath in Felghana OST - Valestein Castle.ogg-940eb32b528557642d958ce15ff207a1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

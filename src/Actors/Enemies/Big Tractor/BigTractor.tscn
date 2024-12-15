@@ -62,7 +62,7 @@ position = Vector2( 0, -16 )
 z_index = 1
 frames = ExtResource( 21 )
 animation = "idle"
-frame = 6
+frame = 1
 playing = true
 flip_h = true
 

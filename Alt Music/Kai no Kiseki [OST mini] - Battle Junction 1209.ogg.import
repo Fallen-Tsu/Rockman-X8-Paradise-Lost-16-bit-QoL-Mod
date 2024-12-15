@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kai no Kiseki [OST mini] - Battle Junction 1209.ogg-cefadf64c9337928a920f3414c54f519.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Kai no Kiseki [OST mini] - Battle Junction 1209.ogg"
+dest_files=[ "res://.import/Kai no Kiseki [OST mini] - Battle Junction 1209.ogg-cefadf64c9337928a920f3414c54f519.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

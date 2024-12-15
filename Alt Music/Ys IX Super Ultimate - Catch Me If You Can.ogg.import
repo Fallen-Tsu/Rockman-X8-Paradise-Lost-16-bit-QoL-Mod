@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys IX Super Ultimate - Catch Me If You Can.ogg-302a78a5fdcae218599edbfe27227068.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys IX Super Ultimate - Catch Me If You Can.ogg"
+dest_files=[ "res://.import/Ys IX Super Ultimate - Catch Me If You Can.ogg-302a78a5fdcae218599edbfe27227068.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

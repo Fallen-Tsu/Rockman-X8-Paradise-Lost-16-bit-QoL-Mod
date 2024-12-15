@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/14 - MMX - X Sub Tank-Heart Powerup.wav-c0b49449850b2b2a113fd7a1bc769988.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/14 - MMX - X Sub Tank-Heart Powerup.wav"
+dest_files=[ "res://.import/14 - MMX - X Sub Tank-Heart Powerup.wav-c0b49449850b2b2a113fd7a1bc769988.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

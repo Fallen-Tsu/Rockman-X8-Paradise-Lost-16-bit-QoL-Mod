@@ -14558,7 +14558,7 @@ material = ExtResource( 19 )
 z_index = 1
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 13
+frame = 9
 playing = true
 flip_h = true
 
@@ -14690,6 +14690,7 @@ damage = 8.0
 [node name="BossDeath" parent="." instance=ExtResource( 38 )]
 position = Vector2( 0, 8 )
 script = ExtResource( 7 )
+explosion_duration = 1.5
 death_animation = "death"
 
 [node name="Explosion Particles" parent="BossDeath" index="0"]
@@ -14930,7 +14931,7 @@ visible = false
 scale = Vector2( 24.8125, 1 )
 frames = SubResource( 68 )
 animation = "ready"
-frame = 7
+frame = 5
 speed_scale = 2.0
 playing = true
 offset = Vector2( 16, 0 )

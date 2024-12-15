@@ -181,6 +181,7 @@ damage = 6.0
 
 [node name="BossDeath" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 8 )
+explosion_duration = 1.5
 
 [node name="Explosion Particles" parent="BossDeath" index="0"]
 amount = 24

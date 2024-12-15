@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys Seven OST - An Assault.ogg-1f397e328f7f84428f7071c685d6fc4f.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys Seven OST - An Assault.ogg"
+dest_files=[ "res://.import/Ys Seven OST - An Assault.ogg-1f397e328f7f84428f7071c685d6fc4f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys Heavens Sanctuary OST ~J.D.K. Band Edition - To Make the End of Battle.ogg-f01173e36c3ebed052a9df39fa80c028.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys Heavens Sanctuary OST ~J.D.K. Band Edition - To Make the End of Battle.ogg"
+dest_files=[ "res://.import/Ys Heavens Sanctuary OST ~J.D.K. Band Edition - To Make the End of Battle.ogg-f01173e36c3ebed052a9df39fa80c028.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

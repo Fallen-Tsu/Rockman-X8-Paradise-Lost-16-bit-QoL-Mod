@@ -1016,7 +1016,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Mega Man X8 16-bit Speedrun"
+config/name="Rockman X8 Paradise Lost Mod 16-Bit - (Tsu) Alpha"
+config/description="A mod on a mod, Modified version of Tchy's Speedrun mod by Fallen_Tsu
+Original fangame by AlyssonDaPaz"
 run/main_scene="res://src/Title/DisclaimerScreen.tscn"
 run/low_processor_mode=true
 boot_splash/show_image=false

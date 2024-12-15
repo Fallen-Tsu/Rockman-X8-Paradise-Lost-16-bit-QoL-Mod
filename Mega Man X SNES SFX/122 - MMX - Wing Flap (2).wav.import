@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/122 - MMX - Wing Flap (2).wav-c30a5c34ee5b100796100d851a19c6fe.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/122 - MMX - Wing Flap (2).wav"
+dest_files=[ "res://.import/122 - MMX - Wing Flap (2).wav-c30a5c34ee5b100796100d851a19c6fe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

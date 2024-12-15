@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/115 - MMX - Underwater Bubble.wav-7a6b6a75b185d7bb58c8fa54a6ef8cf7.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/115 - MMX - Underwater Bubble.wav"
+dest_files=[ "res://.import/115 - MMX - Underwater Bubble.wav-7a6b6a75b185d7bb58c8fa54a6ef8cf7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

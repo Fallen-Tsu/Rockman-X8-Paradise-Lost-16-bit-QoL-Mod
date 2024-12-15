@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys X Nordics OST - Berserk Battle Ax Roar .ogg-ae840da17bc1abfd4ba234fd19718dcc.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys X Nordics OST - Berserk Battle Ax Roar .ogg"
+dest_files=[ "res://.import/Ys X Nordics OST - Berserk Battle Ax Roar .ogg-ae840da17bc1abfd4ba234fd19718dcc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -10,7 +10,7 @@ var finished = false
 func _physics_process(delta: float) -> void:
 	total_timer += delta
 	
-	if finished or not total_timer > 40 or not IGT.clocked_all_stages():
+	if finished or not total_timer > 15:
 		return
 	visual_skip.fill(skip_timer)
 	if Input.is_action_pressed("pause"):

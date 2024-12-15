@@ -124,7 +124,7 @@ material = ExtResource( 11 )
 z_index = 1
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 4
+frame = 1
 playing = true
 flip_h = true
 
@@ -205,7 +205,6 @@ visible = false
 position = Vector2( 15, -4 )
 z_index = 1
 frames = SubResource( 75 )
-frame = 4
 playing = true
 
 [node name="bolt" type="AudioStreamPlayer2D" parent="GigaLightning"]
@@ -313,6 +312,7 @@ damage = 4.0
 
 [node name="BossDeath" parent="." instance=ExtResource( 8 )]
 position = Vector2( 0, 8 )
+explosion_duration = 1.5
 death_animation = "death"
 collectible = "manowar_weapon"
 

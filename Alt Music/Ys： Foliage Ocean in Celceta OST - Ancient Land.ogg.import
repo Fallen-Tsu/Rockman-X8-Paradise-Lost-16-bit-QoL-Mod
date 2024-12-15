@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys： Foliage Ocean in Celceta OST - Ancient Land.ogg-e769587e68f253df27e1a2334b2e4eef.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys： Foliage Ocean in Celceta OST - Ancient Land.ogg"
+dest_files=[ "res://.import/Ys： Foliage Ocean in Celceta OST - Ancient Land.ogg-e769587e68f253df27e1a2334b2e4eef.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

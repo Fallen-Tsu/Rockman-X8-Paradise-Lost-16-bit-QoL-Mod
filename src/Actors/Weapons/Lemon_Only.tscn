@@ -9,6 +9,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 shots = [ ExtResource( 5 ) ]
+max_shots_alive = 6
 max_charged_shots_alive = 0
-max_ammo = 3.0
+max_ammo = 6.0
 ammo_per_shot = 0.0

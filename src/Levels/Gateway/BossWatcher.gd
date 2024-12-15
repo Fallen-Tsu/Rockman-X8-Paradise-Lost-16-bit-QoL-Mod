@@ -23,6 +23,8 @@ func _ready() -> void:
 			child.visible = false
 	
 func update_based_on_savedata() -> void:
+	if Configurations.get("GatewaySkip"):
+		GatewayManager.beaten_bosses = ["antonion","panda","sunflower","mantis","manowar","trilobyte","yeti","rooster"]
 	for boss in GatewayManager.beaten_bosses:
 		print("Boss defeated: " + boss)
 		Event.emit_signal("gateway_boss_defeated",boss)

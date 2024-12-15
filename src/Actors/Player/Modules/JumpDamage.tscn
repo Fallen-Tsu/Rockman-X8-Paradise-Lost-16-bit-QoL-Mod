@@ -25,7 +25,7 @@ visible = false
 scale = Vector2( 0.8, 0.8 )
 frames = ExtResource( 3 )
 animation = "New Anim"
-frame = 5
+frame = 6
 playing = true
 
 [node name="DamageArea" type="RigidBody2D" parent="." groups=["Player Projectile"]]

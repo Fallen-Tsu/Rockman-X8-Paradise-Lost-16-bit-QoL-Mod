@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/113 - MMX - Submarine 2.wav-1c2b5b942a91c67b1a1d0cd65d9db383.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/113 - MMX - Submarine 2.wav"
+dest_files=[ "res://.import/113 - MMX - Submarine 2.wav-1c2b5b942a91c67b1a1d0cd65d9db383.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Ys Origin OST - Samsara and Paramnesia.mp3-fa3ce9149ab3e563ea2d5dce61c088ca.mp3str"
+
+[deps]
+
+source_file="res://Alt Music/Ys Origin OST - Samsara and Paramnesia.mp3"
+dest_files=[ "res://.import/Ys Origin OST - Samsara and Paramnesia.mp3-fa3ce9149ab3e563ea2d5dce61c088ca.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

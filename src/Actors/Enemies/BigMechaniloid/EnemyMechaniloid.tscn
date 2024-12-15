@@ -89,7 +89,7 @@ position = Vector2( 0, -16 )
 z_index = 1
 frames = ExtResource( 1 )
 animation = "punch_loop"
-frame = 1
+frame = 2
 playing = true
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]

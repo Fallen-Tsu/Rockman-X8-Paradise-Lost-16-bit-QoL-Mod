@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys IX Super Ultimate - Crossing AA.ogg-ff5c3b9a0d7759307cf1093eb1d71667.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys IX Super Ultimate - Crossing AA.ogg"
+dest_files=[ "res://.import/Ys IX Super Ultimate - Crossing AA.ogg-ff5c3b9a0d7759307cf1093eb1d71667.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

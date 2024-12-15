@@ -29,7 +29,7 @@ collision_layer = 4
 collision_mask = 0
 script = ExtResource( 2 )
 damage = 10.0
-damage_to_bosses = 10.0
+damage_to_bosses = 8.0
 damage_to_weakness = 15.0
 horizontal_velocity = 420.0
 fire_sound = ExtResource( 3 )
@@ -51,7 +51,7 @@ shape = SubResource( 7 )
 z_index = 2
 frames = ExtResource( 1 )
 animation = "Tag"
-frame = 5
+frame = 1
 playing = true
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,6 +1,6 @@
 extends Movement
 class_name Fall
-
+var dash_momentum = 210
 
 export var shot_pos_adjust := Vector2 (4,-5)
 
@@ -31,7 +31,7 @@ func _Update(_delta: float) -> void:
 	change_animation_if_falling("fall")
 	zero_bonus_horizontal_speed()
 	if character.dashfall:
-		set_movement_and_direction(210, _delta)
+		set_movement_and_direction(dash_momentum, _delta)
 	else:
 		set_movement_and_direction(horizontal_velocity, _delta)
 	#decay_bonus_horizontal_speed()
@@ -62,4 +62,3 @@ func _EndCondition() -> bool:
 	if character.is_on_floor():
 		return true
 	return false
-

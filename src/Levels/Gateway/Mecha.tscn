@@ -32,7 +32,7 @@ shape = SubResource( 3 )
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 3 )
 animation = "idle"
-frame = 8
+frame = 6
 playing = true
 flip_h = true
 

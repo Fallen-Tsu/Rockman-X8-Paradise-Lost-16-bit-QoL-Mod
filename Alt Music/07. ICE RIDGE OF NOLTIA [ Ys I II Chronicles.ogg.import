@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/07. ICE RIDGE OF NOLTIA [ Ys I II Chronicles.ogg-3043d480dfa04063a1bfc1dd60dc5653.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/07. ICE RIDGE OF NOLTIA [ Ys I II Chronicles.ogg"
+dest_files=[ "res://.import/07. ICE RIDGE OF NOLTIA [ Ys I II Chronicles.ogg-3043d480dfa04063a1bfc1dd60dc5653.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

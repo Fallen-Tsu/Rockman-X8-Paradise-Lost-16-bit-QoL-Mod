@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kuro no Kiseki OST - Rise of the Grendel.ogg-05cb92888370433b0a25eb65d491d3fa.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Kuro no Kiseki OST - Rise of the Grendel.ogg"
+dest_files=[ "res://.import/Kuro no Kiseki OST - Rise of the Grendel.ogg-05cb92888370433b0a25eb65d491d3fa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

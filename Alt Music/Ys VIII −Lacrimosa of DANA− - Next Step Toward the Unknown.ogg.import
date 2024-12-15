@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys VIII −Lacrimosa of DANA− - Next Step Toward the Unknown.ogg-351895d41a09af230b5d0ebd41bd0056.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys VIII −Lacrimosa of DANA− - Next Step Toward the Unknown.ogg"
+dest_files=[ "res://.import/Ys VIII −Lacrimosa of DANA− - Next Step Toward the Unknown.ogg-351895d41a09af230b5d0ebd41bd0056.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

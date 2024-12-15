@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=2]
+[gd_scene load_steps=112 format=2]
 
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Bosses/Vile/VileJakob.tscn" type="PackedScene" id=2]
@@ -8,8 +8,8 @@
 [ext_resource path="res://src/Levels/JakobElevator/innerBackgroundSwap.gd" type="Script" id=6]
 [ext_resource path="res://src/Levels/JakobElevator/jakob_bg2.png" type="Texture" id=7]
 [ext_resource path="res://src/Levels/JakobElevator/SkyLimitBackgroundSwap.gd" type="Script" id=8]
-[ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=9]
-[ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Alt Music/Ys III Chronicles - Palace of Destruction.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=10]
 [ext_resource path="res://src/Levels/JakobElevator/jakob_bg1.png" type="Texture" id=11]
 [ext_resource path="res://src/Effects/Materials/Finalstage_introparticles.tres" type="Material" id=12]
 [ext_resource path="res://addons/PaletteSwap/PaletteSwap.gdshader" type="Shader" id=13]
@@ -19,8 +19,7 @@
 [ext_resource path="res://src/Levels/Primrose/FloatingBlock.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/System/Respawn/Respawner.tscn" type="PackedScene" id=18]
 [ext_resource path="res://src/Objects/Void.tscn" type="PackedScene" id=19]
-[ext_resource path="res://src/Sounds/OST - Jakob - Intro.ogg" type="AudioStream" id=20]
-[ext_resource path="res://src/Sounds/OST - Jakob - Loop.ogg" type="AudioStream" id=21]
+[ext_resource path="res://Alt Music/Ys Origin - Over Drive.ogg" type="AudioStream" id=20]
 [ext_resource path="res://src/Levels/JakobElevator/jakob_bg3.png" type="Texture" id=22]
 [ext_resource path="res://src/Levels/JakobElevator/StartBackgroundSwap.gd" type="Script" id=23]
 [ext_resource path="res://src/Levels/JakobElevator/MidSkyBackgroundSwap.gd" type="Script" id=24]
@@ -202,12 +201,9 @@ extents = Vector2( 59.5, 24.5 )
 
 [node name="Music Player" parent="." index="1"]
 debug_logs = true
-boss_intro = ExtResource( 9 )
-boss_song = ExtResource( 10 )
-stage_intro = ExtResource( 20 )
-stage_song = ExtResource( 21 )
-miniboss_intro = ExtResource( 9 )
-miniboss_song = ExtResource( 10 )
+boss_song_alt = ExtResource( 20 )
+stage_clear_song_alt = ExtResource( 10 )
+stage_song_alt = ExtResource( 9 )
 
 [node name="X" parent="." index="3"]
 position = Vector2( 597, 1202 )

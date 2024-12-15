@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys Origin Super Arrange Version - Silent Desert.ogg-0b4ab53ee42a268c568154a173ff43ba.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys Origin Super Arrange Version - Silent Desert.ogg"
+dest_files=[ "res://.import/Ys Origin Super Arrange Version - Silent Desert.ogg-0b4ab53ee42a268c568154a173ff43ba.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

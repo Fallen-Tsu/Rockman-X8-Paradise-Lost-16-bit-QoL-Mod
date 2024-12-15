@@ -3,17 +3,37 @@ class_name MusicPlayer
 
 export var debug_logs := false
 export var stop_song_on_dialogue := true
-export var boss_intro : AudioStream
-export var boss_song : AudioStream
-export var angry_boss_intro : AudioStream
-export var angry_boss_song : AudioStream
-export var stage_clear_song : AudioStream
-export var capsule_song : AudioStream
-export var stage_intro : AudioStream
-export var stage_song : AudioStream
-export var miniboss_intro : AudioStream
-export var miniboss_song : AudioStream
-export var play_angry_boss_theme := true
+export var boss_intro_og : AudioStream
+export var boss_intro_alt : AudioStream
+export var boss_song_og : AudioStream
+export var boss_song_alt : AudioStream
+export var angry_boss_intro_og : AudioStream
+export var angry_boss_intro_alt : AudioStream
+export var angry_boss_song_og : AudioStream
+export var angry_boss_song_alt : AudioStream
+export var stage_clear_song_og : AudioStream
+export var stage_clear_song_alt : AudioStream
+export var capsule_song_og : AudioStream
+export var capsule_song_alt : AudioStream
+export var stage_intro_og : AudioStream
+export var stage_intro_alt : AudioStream
+export var stage_song_og : AudioStream
+export var stage_song_alt : AudioStream
+export var miniboss_intro_og : AudioStream 
+export var miniboss_intro_alt : AudioStream
+export var miniboss_song_og : AudioStream
+export var miniboss_song_alt : AudioStream
+var boss_intro : AudioStream
+var boss_song : AudioStream
+var angry_boss_intro : AudioStream
+var angry_boss_song : AudioStream
+var stage_clear_song : AudioStream
+var capsule_song : AudioStream
+var stage_intro : AudioStream
+var stage_song : AudioStream
+var miniboss_intro : AudioStream 
+var miniboss_song : AudioStream
+var play_angry_boss_theme := true
 var fade_in := false
 var fade_out := false
 var slow_fade_out := false
@@ -30,6 +50,28 @@ func Log(message) -> void:
 		print("Music: " + message)
 
 func _ready() -> void:
+	if Configurations.get("AltMusic"):
+		boss_intro=boss_intro_alt
+		boss_song=boss_song_alt
+		angry_boss_intro=angry_boss_intro_alt
+		angry_boss_song=angry_boss_song_alt
+		stage_clear_song=stage_clear_song_alt
+		capsule_song=capsule_song_alt
+		stage_intro=stage_intro_alt
+		stage_song=stage_song_alt
+		miniboss_intro=miniboss_intro_alt
+		miniboss_song=miniboss_song_alt
+	else:
+		boss_intro=boss_intro_og
+		boss_song=boss_song_og
+		angry_boss_intro=angry_boss_intro_og
+		angry_boss_song=angry_boss_song_og
+		stage_clear_song=stage_clear_song_og
+		capsule_song=capsule_song_og
+		stage_intro=stage_intro_og
+		stage_song=stage_song_og
+		miniboss_intro=miniboss_intro_og
+		miniboss_song=miniboss_song_og
 	Event.listen("cutscene_start",self,"start_fade_out")
 	Event.listen("end_cutscene_start",self,"start_fade_out")
 	Event.listen("boss_door_open",self,"start_fade_out")
@@ -85,6 +127,8 @@ func play_stage_song_regardless_of_volume():
 	play()
 
 func play_angry_boss_song():
+	if Configurations.get("AltMusic"):
+			return
 	if play_angry_boss_theme:
 		if stream == angry_boss_intro:
 			return

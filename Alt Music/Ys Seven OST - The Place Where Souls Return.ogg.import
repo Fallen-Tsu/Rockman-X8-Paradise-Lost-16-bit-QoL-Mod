@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys Seven OST - The Place Where Souls Return.ogg-5f8d7d54ee1788dcc4d12e7081e5d755.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys Seven OST - The Place Where Souls Return.ogg"
+dest_files=[ "res://.import/Ys Seven OST - The Place Where Souls Return.ogg-5f8d7d54ee1788dcc4d12e7081e5d755.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

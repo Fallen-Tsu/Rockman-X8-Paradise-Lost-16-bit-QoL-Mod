@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=121 format=2]
 
 [ext_resource path="res://src/Actors/Enemies/BigMechaniloid/EnemyMechaniloid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Pickups/SubTank.tscn" type="PackedScene" id=2]
@@ -28,12 +28,12 @@
 [ext_resource path="res://src/Effects/Textures/explosion.png" type="Texture" id=26]
 [ext_resource path="res://src/Effects/Materials/RemainsParticle.tres" type="Material" id=27]
 [ext_resource path="res://src/Effects/Textures/remains_purple.png" type="Texture" id=28]
-[ext_resource path="res://src/Sounds/OST - MiniBoss - Intro.ogg" type="AudioStream" id=29]
-[ext_resource path="res://src/Sounds/OST - MiniBoss - Loop.ogg" type="AudioStream" id=30]
+[ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=29]
+[ext_resource path="res://Alt Music/Ys The Oath in Felghana OST - The Boy Who Had Wings'.ogg" type="AudioStream" id=30]
 [ext_resource path="res://src/Levels/Checkpoint.tscn" type="PackedScene" id=31]
 [ext_resource path="res://src/Levels/MetalValley/SpecialCameraTranslator.gd" type="Script" id=32]
-[ext_resource path="res://src/Sounds/OST - Metal Valley 2 - Intro.ogg" type="AudioStream" id=33]
-[ext_resource path="res://src/Sounds/OST - Metal Valley 2 - Loop.ogg" type="AudioStream" id=34]
+[ext_resource path="res://Alt Music/Ys I&II Chronicles OST - Termination.ogg" type="AudioStream" id=33]
+[ext_resource path="res://Alt Music/Ys Origin Super Arrange Version - Scars of the Divine Wing.ogg" type="AudioStream" id=34]
 [ext_resource path="res://src/Objects/Box/BreakBox.tscn" type="PackedScene" id=35]
 [ext_resource path="res://src/Objects/Box/DeflectBox.tscn" type="PackedScene" id=36]
 [ext_resource path="res://src/Levels/MetalValley/bg_underground1.png" type="Texture" id=37]
@@ -70,6 +70,7 @@
 [ext_resource path="res://src/Effects/Textures/sand.png" type="Texture" id=68]
 [ext_resource path="res://src/Levels/MetalValley/sandstorm.gd" type="Script" id=69]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=70]
+[ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=71]
 [ext_resource path="res://src/Actors/Enemies/Respawner.gd" type="Script" id=74]
 
 [sub_resource type="CanvasItemMaterial" id=109]
@@ -288,10 +289,12 @@ __meta__ = {
 }
 
 [node name="Music Player" parent="." index="1"]
-stage_intro = ExtResource( 33 )
-stage_song = ExtResource( 34 )
-miniboss_intro = ExtResource( 29 )
-miniboss_song = ExtResource( 30 )
+stream = null
+boss_song_alt = ExtResource( 34 )
+stage_clear_song_alt = ExtResource( 29 )
+capsule_song_alt = ExtResource( 71 )
+stage_song_alt = ExtResource( 30 )
+miniboss_song_alt = ExtResource( 33 )
 
 [node name="sandstorm" type="Particles2D" parent="StateCamera" index="14"]
 material = SubResource( 109 )

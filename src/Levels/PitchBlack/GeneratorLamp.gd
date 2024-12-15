@@ -16,7 +16,7 @@ func _ready() -> void:
 	
 
 func energize() -> void:
-	if charge_level < 4:
+	if charge_level < 0:
 		flash()
 	elif not fully_energized:
 		full_energy()

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys： Foliage Ocean in Celceta OST - Burning Sword (Ys IV).ogg-19e7c33ea9c03006477f1bb778be059b.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys： Foliage Ocean in Celceta OST - Burning Sword (Ys IV).ogg"
+dest_files=[ "res://.import/Ys： Foliage Ocean in Celceta OST - Burning Sword (Ys IV).ogg-19e7c33ea9c03006477f1bb778be059b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

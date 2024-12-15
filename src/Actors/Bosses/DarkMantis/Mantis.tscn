@@ -400,6 +400,7 @@ bus = "SFX"
 
 [node name="BossDeath" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 0 )
+explosion_duration = 1.5
 death_animation = "death"
 collectible = "mantis_weapon"
 

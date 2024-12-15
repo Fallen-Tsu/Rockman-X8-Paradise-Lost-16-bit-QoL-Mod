@@ -1,16 +1,15 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://src/HUD/intro_text.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/music_player.gd" type="Script" id=2]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=3]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Alt Music/Baroque - Protectors (Ys II).ogg" type="AudioStream" id=4]
 [ext_resource path="res://src/Levels/StageSegmentManager.gd" type="Script" id=5]
 [ext_resource path="res://src/Levels/Test/test_tileset.tres" type="TileSet" id=6]
 [ext_resource path="res://src/HUD/intro.res" type="SpriteFrames" id=7]
-[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=8]
-[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=9]
-[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=10]
-[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=11]
+[ext_resource path="res://Alt Music/Ys Origin Super Arrange Version - Prelude to the Omen.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Alt Music/Kuro no Kiseki OST - Rise of the Grendel.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=10]
 [ext_resource path="res://src/Sounds/38 - MMX - Boss Alert.wav" type="AudioStream" id=12]
 [ext_resource path="res://src/HUD/Hud.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/System/StateCamera.tscn" type="PackedScene" id=14]
@@ -24,8 +23,6 @@
 [ext_resource path="res://src/Actors/Enemies/Servbot/Servbot.tscn" type="PackedScene" id=22]
 [ext_resource path="res://src/Levels/Primrose/room3.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/Levels/Primrose/TouchButton180.tscn" type="PackedScene" id=24]
-[ext_resource path="res://src/Sounds/OST - Primrose - Intro.ogg" type="AudioStream" id=25]
-[ext_resource path="res://src/Sounds/OSt - Primrose - Loop.ogg" type="AudioStream" id=26]
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=27]
 [ext_resource path="res://src/Actors/Enemies/Missile Tractor/MissileTractor.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/Actors/Spawner.tscn" type="PackedScene" id=29]
@@ -53,8 +50,6 @@
 [ext_resource path="res://src/Actors/Bosses/Vile/Vile.tscn" type="PackedScene" id=51]
 [ext_resource path="res://src/Objects/Door/NewDoor.tscn" type="PackedScene" id=52]
 [ext_resource path="res://src/Objects/Door/NewBossDoor.tscn" type="PackedScene" id=53]
-[ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=54]
-[ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=55]
 [ext_resource path="res://src/DialogSystem/Dialogs/Stages/Vile_antonion_Dialogue.tres" type="Resource" id=56]
 [ext_resource path="res://src/Actors/Enemies/SmallCrab/AtiradorCrab.tscn" type="PackedScene" id=57]
 [ext_resource path="res://src/Actors/Enemies/Turret/Turret.tscn" type="PackedScene" id=58]
@@ -190,16 +185,11 @@ extents = Vector2( 78, 85 )
 pause_mode = 2
 bus = "Music"
 script = ExtResource( 2 )
-boss_intro = ExtResource( 11 )
-boss_song = ExtResource( 8 )
-angry_boss_intro = ExtResource( 3 )
-angry_boss_song = ExtResource( 4 )
-stage_clear_song = ExtResource( 10 )
-capsule_song = ExtResource( 9 )
-stage_intro = ExtResource( 25 )
-stage_song = ExtResource( 26 )
-miniboss_intro = ExtResource( 54 )
-miniboss_song = ExtResource( 55 )
+boss_song_alt = ExtResource( 9 )
+stage_clear_song_alt = ExtResource( 3 )
+capsule_song_alt = ExtResource( 10 )
+stage_song_alt = ExtResource( 8 )
+miniboss_song_alt = ExtResource( 4 )
 
 [node name="X" parent="." instance=ExtResource( 15 )]
 position = Vector2( 4435, 301 )

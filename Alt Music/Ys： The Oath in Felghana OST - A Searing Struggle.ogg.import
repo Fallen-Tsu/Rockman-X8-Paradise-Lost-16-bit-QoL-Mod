@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys： The Oath in Felghana OST - A Searing Struggle.ogg-bc946ed61e1980e0dc7323c164662c30.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys： The Oath in Felghana OST - A Searing Struggle.ogg"
+dest_files=[ "res://.import/Ys： The Oath in Felghana OST - A Searing Struggle.ogg-bc946ed61e1980e0dc7323c164662c30.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

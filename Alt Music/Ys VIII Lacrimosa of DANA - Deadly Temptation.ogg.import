@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys VIII Lacrimosa of DANA - Deadly Temptation.ogg-4c9f0504da3504ec8f90f6cfca4d2504.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys VIII Lacrimosa of DANA - Deadly Temptation.ogg"
+dest_files=[ "res://.import/Ys VIII Lacrimosa of DANA - Deadly Temptation.ogg-4c9f0504da3504ec8f90f6cfca4d2504.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

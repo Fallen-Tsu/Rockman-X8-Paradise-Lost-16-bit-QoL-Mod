@@ -143,7 +143,7 @@ extents = Vector2( 6, 6 )
 z_index = 5
 collision_layer = 8
 script = ExtResource( 16 )
-max_health = 140.0
+max_health = 150.0
 
 [node name="BossAI" type="Node2D" parent="."]
 script = ExtResource( 1 )
@@ -162,7 +162,6 @@ position = Vector2( 0, -5 )
 z_index = 1
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 5
 playing = true
 flip_h = true
 script = ExtResource( 5 )
@@ -337,7 +336,7 @@ input_pickable = false
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="EnemyShield/hittable_area"]
 process_priority = -5
-position = Vector2( 0.125, -5.8125 )
+position = Vector2( 5.125, -5.812 )
 shape = SubResource( 69 )
 
 [node name="hitSound" type="AudioStreamPlayer2D" parent="EnemyShield"]
@@ -384,7 +383,7 @@ script = ExtResource( 6 )
 [node name="DamageOnTouch" type="Node2D" parent="."]
 visible = false
 script = ExtResource( 4 )
-damage = 2.0
+damage = 3.0
 
 [node name="area2D" type="Area2D" parent="DamageOnTouch"]
 collision_layer = 0
@@ -406,6 +405,7 @@ jump_velocity = 100.0
 [node name="BossDeath" parent="." instance=ExtResource( 12 )]
 position = Vector2( 0, 8 )
 script = ExtResource( 42 )
+explosion_duration = 1.5
 death_animation = "death"
 collectible = "trilobyte_weapon"
 

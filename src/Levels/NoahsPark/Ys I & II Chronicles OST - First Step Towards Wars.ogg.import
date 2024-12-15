@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys I & II Chronicles OST - First Step Towards Wars.ogg-1cbff9186639565b0d33520b3361c56c.oggstr"
+
+[deps]
+
+source_file="res://src/Levels/NoahsPark/Ys I & II Chronicles OST - First Step Towards Wars.ogg"
+dest_files=[ "res://.import/Ys I & II Chronicles OST - First Step Towards Wars.ogg-1cbff9186639565b0d33520b3361c56c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

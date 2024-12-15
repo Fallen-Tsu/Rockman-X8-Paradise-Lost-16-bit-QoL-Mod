@@ -141,7 +141,7 @@ func process_flash(delta):
 			end_flash()
 	
 func equip_hermes_head_parts():
-	get_node("Charge").charge_time_reduction = 0.45
+	get_node("Charge").charge_time_reduction = 0.25
 	get_node("JumpDamage").deactivate()
 
 func equip_hermes_body_parts():
@@ -168,11 +168,22 @@ func equip_hermes_arms_parts(): #triple shot
 	#get_node("Charge").level_4_charge = 2.8
 
 func equip_hermes_legs_parts(): #ghost dash
-	get_node("Dash").upgraded = true
-	get_node("Dash").invulnerability_duration = 0.475
-	get_node("AirJump").set_max_air_jumps(0)
-	get_node("AirDash").max_airdashes = 1
-	get_node("AirDash").airdash_count = 2
+	var dash = get_node("Dash")
+	var air_dash = get_node("AirDash")
+	var air_jump = get_node("AirJump")
+	var fall = get_node("Fall")
+	var dashwalljump = get_node("DashWallJump")
+	fall.dash_momentum = 210
+	dashwalljump.horizontal_velocity = 300
+	dash.upgraded = true
+	dash.invulnerability_duration = 0.475
+	dash.horizontal_velocity = 350
+	air_dash.upgraded = true
+	air_dash.invulnerability_duration = 0.475
+	air_dash.max_airdashes = 2
+	air_dash.airdash_count = 2
+	air_dash.horizontal_velocity = 375
+	air_jump.set_max_air_jumps(0)
 
 func equip_icarus_head_parts():
 	get_node("Charge").charge_time_reduction = 0
@@ -204,11 +215,15 @@ func equip_icarus_legs_parts(): #double jump
 	var dash = get_node("Dash")
 	var airdash = get_node("AirDash")
 	get_node("AirJump").set_max_air_jumps(2)
+	var fall = get_node("Fall")
+	fall.dash_momentum = 210
 	dash.upgraded = false
 	dash.dash_duration = 0.55
 	dash.invulnerability_duration = 0
+	dash.horizontal_velocity = 300
 	airdash.upgraded = false
-	airdash.max_airdashes = 2
+	airdash.max_airdashes = 1
+	airdash.horizontal_velocity = 300
 	airdash.invulnerability_duration = 0
 
 func is_full_armor() -> String:
@@ -232,6 +247,7 @@ func equip_parts(collectible : String):
 		call("equip_" + collectible + "_parts")
 		get_node("Armor").display(collectible)
 		emit_signal("equipped_armor")
+		recover_health(max_health - current_health)
 		using_upgrades = true
 		
 	elif is_heart(collectible):

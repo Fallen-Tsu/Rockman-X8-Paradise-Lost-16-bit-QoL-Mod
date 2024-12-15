@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys Origin Super Arrange Version - Prelude to the Omen.ogg-181fcd7b476efe65c11d3a4095b25566.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys Origin Super Arrange Version - Prelude to the Omen.ogg"
+dest_files=[ "res://.import/Ys Origin Super Arrange Version - Prelude to the Omen.ogg-181fcd7b476efe65c11d3a4095b25566.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

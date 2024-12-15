@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/21 - MMX - X Chameleon Sting.wav-43073765ea41e334f534a117d6d202c8.sample"
+
+[deps]
+
+source_file="res://Mega Man X SNES SFX/21 - MMX - X Chameleon Sting.wav"
+dest_files=[ "res://.import/21 - MMX - X Chameleon Sting.wav-43073765ea41e334f534a117d6d202c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

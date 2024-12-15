@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Falcom Boss Rush - Deadly Temptation (Ys VIII).ogg-cf931c1ece04ff48d6e01fdfcd81241d.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Falcom Boss Rush - Deadly Temptation (Ys VIII).ogg"
+dest_files=[ "res://.import/Falcom Boss Rush - Deadly Temptation (Ys VIII).ogg-cf931c1ece04ff48d6e01fdfcd81241d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

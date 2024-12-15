@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys IV： The Dawn of Ys - Treasure Box.ogg-af7371c5a678214aa863723707650095.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys IV： The Dawn of Ys - Treasure Box.ogg"
+dest_files=[ "res://.import/Ys IV： The Dawn of Ys - Treasure Box.ogg-af7371c5a678214aa863723707650095.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

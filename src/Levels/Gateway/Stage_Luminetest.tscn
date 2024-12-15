@@ -5,8 +5,8 @@
 [ext_resource path="res://src/Actors/Bosses/Lumine/Lumine.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/BossSpawner.gd" type="Script" id=4]
 [ext_resource path="res://src/Actors/Spawner.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Sounds/OST - Lumine - Intro.ogg" type="AudioStream" id=6]
-[ext_resource path="res://src/Sounds/OST - Lumine - Loop.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Alt Music/Ys VIII Lacrimosa of DANA - A-to-Z .ogg" type="AudioStream" id=6]
+[ext_resource path="res://Alt Music/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg" type="AudioStream" id=7]
 [ext_resource path="res://addons/PaletteSwap/PaletteSwap.gdshader" type="Shader" id=8]
 [ext_resource path="res://src/Levels/SigmaPalace/sigmapalace_nearbg1.png" type="Texture" id=9]
 [ext_resource path="res://src/Levels/SigmaPalace/sigmapalace_farbg.png" type="Texture" id=10]
@@ -30,8 +30,9 @@ extents = Vector2( 199, 112 )
 [node name="Luminetest" instance=ExtResource( 1 )]
 
 [node name="Music Player" parent="." index="1"]
-boss_intro = ExtResource( 6 )
-boss_song = ExtResource( 7 )
+stream = null
+boss_song_alt = ExtResource( 6 )
+angry_boss_song_alt = ExtResource( 7 )
 
 [node name="X" parent="." index="3"]
 position = Vector2( 661, 72 )

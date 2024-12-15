@@ -89,7 +89,7 @@ position = Vector2( 0, -19 )
 z_index = 1
 frames = ExtResource( 8 )
 animation = "flight"
-frame = 5
+frame = 4
 playing = true
 
 [node name="visibilityNotifier2D" type="VisibilityNotifier2D" parent="."]

@@ -127,7 +127,7 @@ material = ExtResource( 9 )
 z_index = 1
 frames = ExtResource( 6 )
 animation = "idle"
-frame = 7
+frame = 2
 playing = true
 script = ExtResource( 7 )
 head_l_frames = ExtResource( 10 )
@@ -137,7 +137,7 @@ position = Vector2( 0, 44 )
 z_index = -1
 frames = ExtResource( 5 )
 animation = "idle"
-frame = 7
+frame = 2
 playing = true
 script = ExtResource( 8 )
 
@@ -287,6 +287,7 @@ bus = "SFX"
 
 [node name="EnemyDeath" type="Node2D" parent="."]
 script = ExtResource( 26 )
+explosion_duration = 1.5
 
 [node name="Explosion Particles" type="Particles2D" parent="EnemyDeath"]
 material = SubResource( 71 )

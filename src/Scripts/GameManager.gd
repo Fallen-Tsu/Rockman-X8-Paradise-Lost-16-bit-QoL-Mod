@@ -1,8 +1,8 @@
 extends Node
 
 const codename := "X8FC"
-const version := "1.0.0.9 - Tchy & Rose Xorn's Speedrun Version V.1.0.0.7"
-const current_demo := "16-bit"
+const version := "1.5.11 - Fallen_Tsu's QoL Mod 'Alpha'"
+const current_demo := "Tchy's Speedrun Mod v7.-"
 
 var player : Character
 var camera : Camera2D

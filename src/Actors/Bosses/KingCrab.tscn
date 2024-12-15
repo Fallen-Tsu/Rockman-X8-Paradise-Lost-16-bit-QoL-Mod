@@ -86,7 +86,7 @@ position = Vector2( -1, -96 )
 z_index = 2
 frames = ExtResource( 18 )
 animation = "idle"
-frame = 13
+frame = 6
 playing = true
 flip_h = true
 
@@ -321,6 +321,7 @@ attenuation = 1e-05
 bus = "SFX"
 
 [node name="BossDeath" parent="." instance=ExtResource( 2 )]
+explosion_duration = 1.5
 collectible = "finished_intro"
 
 [node name="Damage" type="Node2D" parent="."]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys Origin OST - Feena (Harmonica).ogg-4db5c9dc73db12ce1ab782d48ed34be6.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg"
+dest_files=[ "res://.import/Ys Origin OST - Feena (Harmonica).ogg-4db5c9dc73db12ce1ab782d48ed34be6.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

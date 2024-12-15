@@ -97,7 +97,7 @@ material = ExtResource( 13 )
 z_index = 1
 frames = ExtResource( 6 )
 animation = "idle"
-frame = 13
+frame = 10
 playing = true
 flip_h = true
 
@@ -248,14 +248,19 @@ damage = 5.0
 
 [node name="BossDeath" parent="." instance=ExtResource( 36 )]
 position = Vector2( 0, 8 )
+explosion_duration = 1.0
+explosion_time = 1.0
 death_animation = "death"
 collectible = "sunflower_weapon"
 
 [node name="Explosion Particles" parent="BossDeath" index="0"]
-amount = 24
+amount = 14
+lifetime = 0.5
 process_material = ExtResource( 8 )
 
 [node name="Smoke Particles" parent="BossDeath" index="1"]
+amount = 15
+lifetime = 0.25
 process_material = ExtResource( 7 )
 
 [node name="Remains" parent="BossDeath" index="4"]

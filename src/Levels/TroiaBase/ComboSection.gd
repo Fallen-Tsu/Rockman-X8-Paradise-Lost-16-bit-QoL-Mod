@@ -23,8 +23,8 @@ onready var player: KinematicBody2D = $"../../X"
 onready var visual: Label = $"../../X/combo_label"
 onready var visual_ranking: Node2D = $"../../StateCamera/VisualRanking"
 
-const intro = preload("res://src/Sounds/OST - TroiaBase 2 - Intro.ogg")
-const loop = preload("res://src/Sounds/OST - TroiaBase 2 - Loop.ogg")
+const intro = preload("res://Alt Music//Ys Seven OST - To Reveal the Way to Go.ogg")
+const loop = preload("res://Alt Music//Ys Seven OST - To Reveal the Way to Go.ogg")
 
 signal started
 signal combo_value_changed

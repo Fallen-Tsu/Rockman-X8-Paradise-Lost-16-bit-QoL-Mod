@@ -38,7 +38,7 @@ func lerp_to_neutral_colors(delta) -> void:
 		transition_time = 0
 	
 func go_to_neutral_colors():
-	going_to_neutral_colors = true
+	going_to_neutral_colors = false
 	original_color1 = material.get_shader_param("R_MainColor4")
 	original_color2 = material.get_shader_param("R_MainColor5")
 	original_color3 = material.get_shader_param("R_MainColor6")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://src/Actors/BossSpawner.gd" type="Script" id=1]
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=2]
@@ -12,12 +12,13 @@
 [ext_resource path="res://src/Levels/SigmaPalace/sigmapalace_farbg.png" type="Texture" id=10]
 [ext_resource path="res://src/Levels/SigmaPalace/sigmapalace_skypalette.png" type="Texture" id=11]
 [ext_resource path="res://src/Levels/SigmaPalace/sigmapalace_nearbg2.png" type="Texture" id=12]
-[ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Alt Music/Ys IX Super Ultimate - Norse Wind.ogg" type="AudioStream" id=13]
 [ext_resource path="res://src/Effects/Textures/long_smoke.png" type="Texture" id=14]
-[ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=15]
+[ext_resource path="res://Alt Music/Ys Origin OST - Samsara and Paramnesia.mp3" type="AudioStream" id=15]
 [ext_resource path="res://src/Effects/Materials/Finalstage_introparticles.tres" type="Material" id=16]
 [ext_resource path="res://src/Actors/Bosses/Vile/VileFinal.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/IA/PlayerIA.gd" type="Script" id=18]
+[ext_resource path="res://Alt Music/Baroque - Illburns Ruins (Ys III).ogg" type="AudioStream" id=19]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 6 )
@@ -32,8 +33,9 @@ extents = Vector2( 199, 112 )
 [node name="Luminetest" instance=ExtResource( 3 )]
 
 [node name="Music Player" parent="." index="1"]
-boss_intro = ExtResource( 13 )
-boss_song = ExtResource( 15 )
+boss_song_alt = ExtResource( 19 )
+stage_song_alt = ExtResource( 13 )
+miniboss_song_alt = ExtResource( 15 )
 
 [node name="X" parent="." index="3"]
 position = Vector2( 661, 72 )

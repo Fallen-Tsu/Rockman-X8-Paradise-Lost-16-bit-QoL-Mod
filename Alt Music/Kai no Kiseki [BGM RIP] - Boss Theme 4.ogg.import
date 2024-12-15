@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Kai no Kiseki [BGM RIP] - Boss Theme 4.ogg-233b2fe7cafcdde5605c298ac234dac9.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Kai no Kiseki [BGM RIP] - Boss Theme 4.ogg"
+dest_files=[ "res://.import/Kai no Kiseki [BGM RIP] - Boss Theme 4.ogg-233b2fe7cafcdde5605c298ac234dac9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

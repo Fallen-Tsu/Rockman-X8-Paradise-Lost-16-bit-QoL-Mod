@@ -512,6 +512,7 @@ bus = "SFX"
 
 [node name="BossDeath" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 8 )
+explosion_duration = 1.5
 death_animation = "death"
 collectible = "panda_weapon"
 

@@ -56,7 +56,7 @@ position = Vector2( 199, 112 )
 z_index = -1
 frames = ExtResource( 8 )
 animation = " tag"
-frame = 10
+frame = 11
 playing = true
 
 [node name="sparks" type="AnimatedSprite" parent="."]
@@ -64,7 +64,7 @@ position = Vector2( 199, 112 )
 z_index = -1
 frames = ExtResource( 7 )
 animation = " tag"
-frame = 2
+frame = 9
 playing = true
 
 [node name="boss" type="AnimatedSprite" parent="."]
@@ -72,7 +72,7 @@ position = Vector2( 198, 100 )
 z_index = 5
 frames = ExtResource( 9 )
 animation = "idle"
-frame = 8
+frame = 10
 playing = true
 
 [node name="objects" type="Node2D" parent="."]

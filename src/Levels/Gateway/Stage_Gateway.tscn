@@ -1,12 +1,12 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://src/Levels/base_stage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=2]
 [ext_resource path="res://src/Actors/Bosses/CopySigma/CopySigma.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/Actors/BossSpawner.gd" type="Script" id=4]
 [ext_resource path="res://src/Actors/Spawner.tscn" type="PackedScene" id=5]
-[ext_resource path="res://src/Sounds/OST - CopySigma - Intro.ogg" type="AudioStream" id=6]
-[ext_resource path="res://src/Sounds/OST - CopySigma - Loop.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Alt Music/Ys： Dave Rodgers in Celceta - Beat of the Ancient Land？ lazymix by Fallen tsu.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=7]
 [ext_resource path="res://addons/PaletteSwap/PaletteSwap.gdshader" type="Shader" id=8]
 [ext_resource path="res://src/Levels/Gateway/gateway_farbg.png" type="Texture" id=9]
 [ext_resource path="res://src/Effects/Materials/gateway_sat_mat.tres" type="Material" id=10]
@@ -30,8 +30,8 @@
 [ext_resource path="res://src/Levels/PitchBlack/Darkness.gd" type="Script" id=28]
 [ext_resource path="res://src/Levels/Gateway/StageLights.gd" type="Script" id=29]
 [ext_resource path="res://src/Levels/Gateway/gateway_map.tscn" type="PackedScene" id=30]
-[ext_resource path="res://src/Sounds/OST - Gateway - Intro.ogg" type="AudioStream" id=31]
-[ext_resource path="res://src/Sounds/OST - Gateway - Loop.ogg" type="AudioStream" id=32]
+[ext_resource path="res://Alt Music/Ys： Foliage Ocean in Celceta OST - Ancient Land.ogg" type="AudioStream" id=31]
+[ext_resource path="res://Alt Music/Kuro no Kiseki OST - Hard Desperation.ogg" type="AudioStream" id=32]
 [ext_resource path="res://src/Levels/Gateway/gateway_sunf.tscn" type="PackedScene" id=33]
 [ext_resource path="res://src/Levels/Gateway/gateway_trilo.tscn" type="PackedScene" id=34]
 [ext_resource path="res://src/Levels/Gateway/gateway_yeti.tscn" type="PackedScene" id=35]
@@ -55,15 +55,11 @@
 [ext_resource path="res://src/Levels/Gateway/GatewayBossDoor.tscn" type="PackedScene" id=53]
 [ext_resource path="res://src/Levels/Gateway/CameraTranslator.gd" type="Script" id=54]
 [ext_resource path="res://src/Levels/Gateway/VisualUnlock.gd" type="Script" id=55]
-[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=56]
-[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=57]
 [ext_resource path="res://src/Levels/Gateway/gateway_panda.tscn" type="PackedScene" id=58]
 [ext_resource path="res://src/Levels/Gateway/gateway_manowar.tscn" type="PackedScene" id=59]
 [ext_resource path="res://src/Levels/Gateway/gateway_mantis.tscn" type="PackedScene" id=60]
 [ext_resource path="res://src/Levels/PitchBlack/X_Lightsource.gd" type="Script" id=61]
 [ext_resource path="res://src/Levels/PitchBlack/light.png" type="Texture" id=62]
-[ext_resource path="res://src/Sounds/OST - GatewayEscape - Intro.ogg" type="AudioStream" id=63]
-[ext_resource path="res://src/Sounds/OST - GatewayEscape - Loop.ogg" type="AudioStream" id=64]
 [ext_resource path="res://src/Levels/Checkpoint.tscn" type="PackedScene" id=65]
 [ext_resource path="res://src/Actors/Bosses/SatanSigma/charge_circle.gd" type="Script" id=66]
 [ext_resource path="res://src/Effects/Textures/circle.png" type="Texture" id=67]
@@ -222,12 +218,11 @@ extents = Vector2( 296, 351.5 )
 
 [node name="Music Player" parent="." index="1"]
 debug_logs = true
-boss_intro = ExtResource( 6 )
-boss_song = ExtResource( 7 )
-angry_boss_intro = ExtResource( 56 )
-angry_boss_song = ExtResource( 57 )
-stage_intro = ExtResource( 31 )
-stage_song = ExtResource( 32 )
+boss_song_alt = ExtResource( 6 )
+angry_boss_song_alt = ExtResource( 6 )
+stage_clear_song_alt = ExtResource( 7 )
+stage_song_alt = ExtResource( 31 )
+miniboss_song_alt = ExtResource( 32 )
 
 [node name="SigmaFinale" type="Particles2D" parent="StateCamera" index="14"]
 material = SubResource( 32 )
@@ -1471,157 +1466,148 @@ position = Vector2( 145, 134 )
 [node name="spikes" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="0" instance=ExtResource( 19 )]
 position = Vector2( -171, 0 )
 z_index = 2
-frame = 0
+frame = 5
 flip_h = true
 
 [node name="spikes2" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="1" instance=ExtResource( 19 )]
 position = Vector2( -151, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes3" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="2" instance=ExtResource( 19 )]
 position = Vector2( -131, 0 )
 z_index = 2
-frame = 0
+frame = 5
 flip_h = true
 
 [node name="spikes4" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="3" instance=ExtResource( 19 )]
 position = Vector2( -111, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes5" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="4" instance=ExtResource( 19 )]
 position = Vector2( -91, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes6" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="5" instance=ExtResource( 19 )]
 position = Vector2( -71, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes7" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="6" instance=ExtResource( 19 )]
 position = Vector2( -51, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes8" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="7" instance=ExtResource( 19 )]
 position = Vector2( -31, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes9" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="8" instance=ExtResource( 19 )]
 position = Vector2( -11, 0 )
 z_index = 2
-frame = 0
+frame = 5
 flip_h = true
 
 [node name="spikes10" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="9" instance=ExtResource( 19 )]
 position = Vector2( 9, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes11" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="10" instance=ExtResource( 19 )]
 position = Vector2( 29, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes12" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="11" instance=ExtResource( 19 )]
 position = Vector2( 49, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes13" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="12" instance=ExtResource( 19 )]
 position = Vector2( 69, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes14" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="13" instance=ExtResource( 19 )]
 position = Vector2( 89, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes15" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="14" instance=ExtResource( 19 )]
 position = Vector2( 109, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes16" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="15" instance=ExtResource( 19 )]
 position = Vector2( 129, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes17" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="16" instance=ExtResource( 19 )]
 position = Vector2( 149, 0 )
 z_index = 2
-frame = 7
+frame = 2
 flip_h = true
 
 [node name="spikes18" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="17" instance=ExtResource( 19 )]
 position = Vector2( 169, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes19" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="18" instance=ExtResource( 19 )]
 position = Vector2( 189, 0 )
 z_index = 2
-frame = 7
+frame = 2
 flip_h = true
 
 [node name="spikes20" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="19" instance=ExtResource( 19 )]
 position = Vector2( 209, 0 )
 z_index = 2
-frame = 6
+frame = 1
 flip_h = true
 
 [node name="spikes21" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="20" instance=ExtResource( 19 )]
 position = Vector2( 227, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes22" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="21" instance=ExtResource( 19 )]
 position = Vector2( 247, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes23" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="22" instance=ExtResource( 19 )]
 position = Vector2( 267, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes24" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="23" instance=ExtResource( 19 )]
 position = Vector2( 287, 0 )
 z_index = 2
-frame = 7
+frame = 2
 flip_h = true
 
 [node name="spikes25" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="24" instance=ExtResource( 19 )]
 position = Vector2( 307, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes26" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="25" instance=ExtResource( 19 )]
 position = Vector2( 327, 0 )
 z_index = 2
-frame = 7
+frame = 2
 flip_h = true
 
 [node name="Conveyor Belt6" parent="Objects/ConveyorBelts/SpikeConveyorBelt" index="26" instance=ExtResource( 18 )]
@@ -1648,121 +1634,115 @@ position = Vector2( 657, 55 )
 [node name="spikes" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="0" instance=ExtResource( 19 )]
 position = Vector2( -171, 0 )
 z_index = 2
-frame = 0
+frame = 5
 flip_h = true
 
 [node name="spikes2" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="1" instance=ExtResource( 19 )]
 position = Vector2( -151, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes3" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="2" instance=ExtResource( 19 )]
 position = Vector2( -131, 0 )
 z_index = 2
-frame = 0
+frame = 5
 flip_h = true
 
 [node name="spikes4" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="3" instance=ExtResource( 19 )]
 position = Vector2( -111, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes5" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="4" instance=ExtResource( 19 )]
 position = Vector2( -91, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes6" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="5" instance=ExtResource( 19 )]
 position = Vector2( -71, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes7" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="6" instance=ExtResource( 19 )]
 position = Vector2( -51, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes8" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="7" instance=ExtResource( 19 )]
 position = Vector2( -31, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes9" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="8" instance=ExtResource( 19 )]
 position = Vector2( -11, 0 )
 z_index = 2
-frame = 0
+frame = 5
 flip_h = true
 
 [node name="spikes10" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="9" instance=ExtResource( 19 )]
 position = Vector2( 9, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes11" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="10" instance=ExtResource( 19 )]
 position = Vector2( 29, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes12" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="11" instance=ExtResource( 19 )]
 position = Vector2( 49, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes13" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="12" instance=ExtResource( 19 )]
 position = Vector2( 69, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes14" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="13" instance=ExtResource( 19 )]
 position = Vector2( 89, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes15" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="14" instance=ExtResource( 19 )]
 position = Vector2( 109, 0 )
 z_index = 2
-frame = 9
+frame = 4
 flip_h = true
 
 [node name="spikes16" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="15" instance=ExtResource( 19 )]
 position = Vector2( 129, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes17" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="16" instance=ExtResource( 19 )]
 position = Vector2( 149, 0 )
 z_index = 2
-frame = 7
+frame = 2
 flip_h = true
 
 [node name="spikes18" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="17" instance=ExtResource( 19 )]
 position = Vector2( 169, 0 )
 z_index = 2
-frame = 8
 flip_h = true
 
 [node name="spikes19" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="18" instance=ExtResource( 19 )]
 position = Vector2( 189, 0 )
 z_index = 2
-frame = 7
+frame = 2
 flip_h = true
 
 [node name="spikes20" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="19" instance=ExtResource( 19 )]
 position = Vector2( 209, 0 )
 z_index = 2
-frame = 6
+frame = 1
 flip_h = true
 
 [node name="Conveyor Belt6" parent="Objects/ConveyorBelts/SpikeConveyorBelt2" index="20" instance=ExtResource( 18 )]
@@ -1824,8 +1804,8 @@ disabled = true
 
 [node name="BossWatcher" parent="Objects" index="30" instance=ExtResource( 42 )]
 position = Vector2( 1369, -233 )
-final_section_intro = ExtResource( 63 )
-final_section_loop = ExtResource( 64 )
+final_section_intro = ExtResource( 6 )
+final_section_loop = ExtResource( 6 )
 
 [node name="Highlight" type="Node" parent="Objects/BossWatcher" index="8"]
 pause_mode = 2

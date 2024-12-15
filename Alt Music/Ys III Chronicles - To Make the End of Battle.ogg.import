@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys III Chronicles - To Make the End of Battle.ogg-025f5157f086fd09074058a4feeef060.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys III Chronicles - To Make the End of Battle.ogg"
+dest_files=[ "res://.import/Ys III Chronicles - To Make the End of Battle.ogg-025f5157f086fd09074058a4feeef060.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

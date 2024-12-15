@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Sora no Kiseki FC Evolution OST - Silver Will.ogg-bf4ec0cf292f4c4a307e5e6277757f2d.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Sora no Kiseki FC Evolution OST - Silver Will.ogg"
+dest_files=[ "res://.import/Sora no Kiseki FC Evolution OST - Silver Will.ogg-bf4ec0cf292f4c4a307e5e6277757f2d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

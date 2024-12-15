@@ -80,7 +80,6 @@ func _EndCondition() -> bool:
 	if Has_time_ran_out() or prevent_knockbacks:
 		return true
 	if character.is_colliding_with_wall():
-		if character.get_just_pressed_axis() == character.is_colliding_with_wall():
 			character.set_vertical_speed(0)
 			return true
 	return false

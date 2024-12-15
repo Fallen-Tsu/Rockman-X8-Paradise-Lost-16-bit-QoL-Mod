@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://addons/PaletteSwap/PaletteSwap.gdshader" type="Shader" id=1]
 [ext_resource path="res://src/Actors/charge_shader.tres" type="Shader" id=2]
@@ -15,17 +15,11 @@
 [ext_resource path="res://src/WeaponGet/flash.png" type="Texture" id=13]
 [ext_resource path="res://src/Effects/Textures/simple_gradient2.png" type="Texture" id=14]
 [ext_resource path="res://src/Levels/music_player.gd" type="Script" id=15]
-[ext_resource path="res://src/Sounds/OST - MainTheme E-Capcom Remix.ogg" type="AudioStream" id=16]
-[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=17]
-[ext_resource path="res://src/Sounds/OST - TrueSigma - Loop.ogg" type="AudioStream" id=18]
-[ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=19]
-[ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=20]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=21]
-[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=22]
+[ext_resource path="res://images/f3e61d9d6ec11558d2bcd47ebbf8af08.png" type="Texture" id=16]
+[ext_resource path="res://Alt Music/Ys X −Nordics− OST - And the Adventure Begins (Second Part).ogg" type="AudioStream" id=17]
 [ext_resource path="res://src/Levels/PitchBlack/light.png" type="Texture" id=23]
 [ext_resource path="res://src/Sounds/Bike - RunLoop.wav" type="AudioStream" id=24]
 [ext_resource path="res://src/Fonts/X8bitmapfont.fnt" type="BitmapFont" id=25]
-[ext_resource path="res://src/Title/title_megaman.png" type="Texture" id=26]
 [ext_resource path="res://src/Title/title_x8_06.png" type="Texture" id=27]
 [ext_resource path="res://src/Effects/Textures/simple_gradient4.png" type="Texture" id=28]
 [ext_resource path="res://src/Levels/NoahsPark/VisuaSkip.gd" type="Script" id=29]
@@ -70,7 +64,7 @@ shader_param/palette = ExtResource( 6 )
 
 [node name="CreditsScene" type="Node2D"]
 script = ExtResource( 12 )
-song = ExtResource( 16 )
+song = ExtResource( 17 )
 
 [node name="Visuals" type="Node2D" parent="."]
 
@@ -85,7 +79,7 @@ position = Vector2( 26, -30 )
 z_index = 1
 frames = ExtResource( 9 )
 animation = "idle"
-frame = 25
+frame = 68
 playing = true
 flip_h = true
 
@@ -124,13 +118,13 @@ z_index = 50
 z_as_relative = false
 
 [node name="megaman" type="Sprite" parent="Credits"]
-visible = false
-position = Vector2( -62, 0 )
-texture = ExtResource( 26 )
+position = Vector2( -10, 47 )
+scale = Vector2( 0.426181, 0.47 )
+texture = ExtResource( 16 )
 
 [node name="x8" type="Sprite" parent="Credits"]
 visible = false
-position = Vector2( 39, -2 )
+position = Vector2( 73, -2 )
 texture = ExtResource( 27 )
 
 [node name="richTextLabel" type="RichTextLabel" parent="Credits"]
@@ -138,55 +132,55 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -123.0
-margin_top = 257.0
-margin_right = 123.0
-margin_bottom = 1541.0
+margin_left = -122.0
+margin_top = 350.0
+margin_right = 124.0
+margin_bottom = 1634.0
 custom_colors/font_color_shadow = Color( 0.105882, 0, 0.54902, 0.486275 )
 custom_fonts/normal_font = ExtResource( 25 )
 bbcode_enabled = true
-bbcode_text = "[center]Mega Man X8
+bbcode_text = "[center]
+[color=#47a1fc]Rockman X8[/color]
+[color=#FF00FF]Paradise Lost[/color]
 16-bit
 
+[color=#FF00FF]Fallen_Tsu[/color]'s QoL Mod
+
+
+[color=#FF00FF]Beta Testers[/color]
+5d100
+Blaztoise
+JFIT
+jphpue
+Scyther
+Zatamataz
+
+
+
+[color=#47a1fc]Special Thanks to the Creator
+ of the Speedrun Mod[/color]
+Tchy
 
 
 
 
-
-
+[color=#47a1fc]Original Fangame Credits[/color]
 
 
 [color=#47a1fc]A fangame by[/color]
 Alysson da Paz
 
 
-
-
-
-
-
-
-
-
 [color=#47a1fc]Consulting and QA[/color]
 LuizMiguel
-
-
-
-
 
 
 [color=#47a1fc]Spanish Localization[/color]
 Roberto Carlos Martinez Escudero
 
 
-
-
-
 [color=#47a1fc]MM1 Boss Battle Remix[/color]
 Samuel \"Streg\" Oliveira
-
-
 
 
 
@@ -247,53 +241,53 @@ Speedrunning Community![/color]
 
 
 [color=#47a1fc]Based on[/color]
-MEGAMAN X8
+ROCKMAN X8
 Paradise Lost
 
 By CAPCOM
 [/center]"
-text = "Mega Man X8
+text = "
+Rockman X8
+Paradise Lost
 16-bit
 
+Fallen_Tsu's QoL Mod
+
+
+Beta Testers
+5d100
+Blaztoise
+JFIT
+jphpue
+Scyther
+Zatamataz
+
+
+
+Special Thanks to the Creator
+ of the Speedrun Mod
+Tchy
 
 
 
 
-
-
+Original Fangame Credits
 
 
 A fangame by
 Alysson da Paz
 
 
-
-
-
-
-
-
-
-
 Consulting and QA
 LuizMiguel
-
-
-
-
 
 
 Spanish Localization
 Roberto Carlos Martinez Escudero
 
 
-
-
-
 MM1 Boss Battle Remix
 Samuel \"Streg\" Oliveira
-
-
 
 
 
@@ -354,7 +348,7 @@ Speedrunning Community!
 
 
 Based on
-MEGAMAN X8
+ROCKMAN X8
 Paradise Lost
 
 By CAPCOM
@@ -366,13 +360,13 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -106.0
-margin_top = 1546.0
+margin_top = 1660.0
 margin_right = 106.0
-margin_bottom = 5218.0
+margin_bottom = 5334.0
 custom_colors/font_color_shadow = Color( 0.105882, 0, 0.54902, 0.486275 )
 custom_fonts/normal_font = ExtResource( 25 )
 bbcode_enabled = true
-bbcode_text = "[center][color=#47a1fc]Original Megaman X8 Staff[/color]
+bbcode_text = "[center][color=#47a1fc]Original Rockman X8 Staff[/color]
 
 [color=#47a1fc]Director[/color]
 Eiro Shirahama
@@ -675,7 +669,7 @@ and CAPCOM All Staff!
 
 Thanks for Playing!
 [/center]"
-text = "Original Megaman X8 Staff
+text = "Original Rockman X8 Staff
 
 Director
 Eiro Shirahama
@@ -1089,14 +1083,6 @@ texture = ExtResource( 13 )
 pause_mode = 2
 bus = "Music"
 script = ExtResource( 15 )
-boss_intro = ExtResource( 18 )
-boss_song = ExtResource( 18 )
-angry_boss_intro = ExtResource( 21 )
-angry_boss_song = ExtResource( 22 )
-capsule_song = ExtResource( 17 )
-miniboss_intro = ExtResource( 20 )
-miniboss_song = ExtResource( 19 )
-play_angry_boss_theme = false
 
 [node name="screencover" type="Sprite" parent="."]
 visible = false

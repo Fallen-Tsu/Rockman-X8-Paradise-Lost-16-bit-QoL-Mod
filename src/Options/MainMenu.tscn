@@ -11,7 +11,7 @@
 [ext_resource path="res://src/Options/AutonomousMenuButton.gd" type="Script" id=9]
 [ext_resource path="res://src/Sounds/CHARGED_SHOT.wav" type="AudioStream" id=10]
 [ext_resource path="res://src/Sounds/FX - Menu Switch.ogg" type="AudioStream" id=11]
-[ext_resource path="res://src/Title/title_megaman.png" type="Texture" id=12]
+[ext_resource path="res://images/rockman logo.png" type="Texture" id=12]
 [ext_resource path="res://src/Title/title_bg.png" type="Texture" id=13]
 [ext_resource path="res://src/Fonts/x8_bitmapfont.tres" type="BitmapFont" id=14]
 [ext_resource path="res://src/Actors/Player/x_sprites/x.res" type="SpriteFrames" id=15]
@@ -49,17 +49,18 @@ margin_bottom = 226.0
 texture = ExtResource( 13 )
 
 [node name="MegaMan" type="TextureRect" parent="Menu"]
-margin_left = 83.0
-margin_top = 12.0
-margin_right = 236.0
+margin_left = 43.0
+margin_top = 24.0
+margin_right = 314.0
 margin_bottom = 107.0
 texture = ExtResource( 12 )
+expand = true
 
 [node name="X8" type="TextureRect" parent="Menu"]
-margin_left = 135.0
-margin_top = -34.0
-margin_right = 385.0
-margin_bottom = 146.0
+margin_left = 177.0
+margin_top = -29.0
+margin_right = 427.0
+margin_bottom = 151.0
 texture = ExtResource( 6 )
 
 [node name="Title" type="Control" parent="Menu"]
@@ -232,15 +233,16 @@ text = "16-bit"
 align = 1
 
 [node name="demo_03" type="Label" parent="Menu"]
-visible = false
-margin_left = 176.0
+margin_left = 159.0
 margin_top = 119.0
-margin_right = 232.0
-margin_bottom = 146.0
+margin_right = 242.0
+margin_bottom = 149.0
 custom_colors/font_color = Color( 0.639216, 0.713726, 0.898039, 1 )
 custom_colors/font_color_shadow = Color( 0.270588, 0.270588, 0.270588, 1 )
 custom_fonts/font = ExtResource( 14 )
-text = "16-bit"
+text = "Paradise Lost
+16-bit
+"
 align = 1
 
 [node name="MegamanCursor" type="AnimatedSprite" parent="."]
@@ -256,7 +258,7 @@ position = Vector2( 13, 2 )
 z_index = -1
 frames = ExtResource( 17 )
 animation = "loop"
-frame = 1
+frame = 7
 playing = true
 
 [node name="choice" type="AudioStreamPlayer" parent="."]

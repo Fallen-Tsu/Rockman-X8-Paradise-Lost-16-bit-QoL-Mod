@@ -13,8 +13,9 @@ __meta__ = {
 }
 chargeable_without_ammo = true
 shots = [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ]
+max_shots_alive = 6
 max_charged_shots_alive = 16
-max_ammo = 3.0
+max_ammo = 6.0
 ammo_per_shot = 0.0
 MainColor1 = Color( 0, 0.501961, 0.972549, 1 )
 MainColor2 = Color( 0, 0.25098, 0.941176, 1 )
