@@ -2,6 +2,7 @@ extends Node
 
 signal value_changed(key)
 var debug := false
+var used_cheat_code: bool = false 
 var variables := {}
 
 func set(key,value) -> void:

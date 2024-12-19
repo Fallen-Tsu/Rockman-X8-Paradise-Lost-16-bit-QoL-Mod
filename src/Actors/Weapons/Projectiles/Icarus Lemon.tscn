@@ -27,7 +27,6 @@ fire_sound = ExtResource( 2 )
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 3 )
 animation = "Tag"
-frame = 3
 playing = true
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]

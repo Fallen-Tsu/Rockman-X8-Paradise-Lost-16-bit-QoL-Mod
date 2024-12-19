@@ -58,7 +58,7 @@ script = ExtResource( 10 )
 position = Vector2( 0, -146 )
 frames = ExtResource( 2 )
 animation = "idle"
-frame = 5
+frame = 21
 playing = true
 
 [node name="staticBody2D" type="StaticBody2D" parent="."]

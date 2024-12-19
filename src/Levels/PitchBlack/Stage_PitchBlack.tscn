@@ -6418,7 +6418,7 @@ armor_part = "hermes_body"
 dialogue = ExtResource( 26 )
 
 [node name="animatedSprite" parent="Objects/Capsule" index="1"]
-frame = 22
+frame = 12
 
 [node name="collisionShape2D" parent="Objects/Capsule/area2D" index="0"]
 shape = SubResource( 49 )

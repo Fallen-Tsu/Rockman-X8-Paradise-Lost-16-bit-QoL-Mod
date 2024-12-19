@@ -1,7 +1,7 @@
 extends Node
 
 const codename := "X8FC"
-const version := "1.5.11 - Fallen_Tsu's QoL Mod 'Alpha'"
+const version := "1.6.12 - Fallen_Tsu's QoL Mod 'Alpha'"
 const current_demo := "Tchy's Speedrun Mod v7.-"
 
 var player : Character
@@ -14,6 +14,8 @@ var collectibles := []
 var equip_exceptions := []
 var equip_hearts := true
 var equip_subtanks := true
+var used_cheat_code := false
+var ultimate_armor_received := false
 var seen_dialogues = []
 var current_level : String
 const heal_spawn = preload("res://src/Objects/Heal.tscn")
@@ -294,9 +296,23 @@ func set_player(object):
 
 func add_collectibles_to_player():
 	if player:
+		if used_cheat_code and not ultimate_armor_received:
+			ultimate_armor_received = true
+			var icarus="icarus_"
+			var hermes="hermes_"
+			var parts=["legs","body","arms","head"]
+			for part in parts:
+				Event.emit_signal("collected",hermes+part)
+			for part in parts:
+				Event.emit_signal("collected",icarus+part)
 		for collectible in collectibles:
 			if not has_equip_exception(collectible): 
 				player.equip_parts(collectible)
+		if used_cheat_code:
+			player.equip_ultimate_head_parts()
+			player.equip_ultimate_body_parts()
+			player.equip_ultimate_arms_parts()
+			player.equip_ultimate_legs_parts()
 		player.finished_equipping()
 
 func has_equip_exception(collectible : String) -> bool:

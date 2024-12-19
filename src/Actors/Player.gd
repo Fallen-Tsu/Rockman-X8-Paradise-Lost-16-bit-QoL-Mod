@@ -226,6 +226,56 @@ func equip_icarus_legs_parts(): #double jump
 	airdash.horizontal_velocity = 300
 	airdash.invulnerability_duration = 0
 
+
+func equip_ultimate_head_parts():
+	get_node("Charge").charge_time_reduction = 0.45
+	get_node("JumpDamage").activate()
+
+
+func equip_ultimate_body_parts():
+	var dmg = get_node("Damage")
+	dmg.damage_reduction = 50 #used to be 40
+	dmg.prevent_knockbacks = true
+	dmg.conflicting_moves = ["Death", "Nothing"]
+	get_node("LifeSteal").activate()
+
+
+func equip_ultimate_arms_parts():
+	var cannon = get_node("Shot")
+	var icarus_Buster = cannon.get_node("Icarus Buster")
+	var hermes_Buster = cannon.get_node("Hermes Buster")
+	var ultimate_Buster = cannon.get_node("UltimateBuster")
+	var altfire = get_node("AltFire")
+	icarus_Buster.active = false
+	hermes_Buster.active = false
+	cannon.upgraded = true
+	cannon.infinite_charged_ammo = true
+	cannon.infinite_regular_ammo = false
+	cannon.update_list_of_weapons()
+	cannon.set_current_weapon(ultimate_Buster)
+	altfire.switch_to_icarus()
+
+
+func equip_ultimate_legs_parts():
+	var dash = get_node("Dash")
+	var airdash = get_node("AirDash")
+	get_node("AirJump").set_max_air_jumps(2)
+	var fall = get_node("Fall")
+	fall.dash_momentum = 210
+	dash.dash_duration = 0.55
+	airdash.horizontal_velocity = 300
+	var air_jump = get_node("AirJump")
+	var dashwalljump = get_node("DashWallJump")
+	dashwalljump.horizontal_velocity = 300
+	dash.upgraded = true
+	dash.invulnerability_duration = 0.475
+	dash.horizontal_velocity = 350
+	airdash.upgraded = true
+	airdash.invulnerability_duration = 0.475
+	airdash.max_airdashes = 3
+	airdash.airdash_count = 4
+	airdash.horizontal_velocity = 375
+
 func is_full_armor() -> String:
 	var armor_set := 0
 	for piece in current_armor:

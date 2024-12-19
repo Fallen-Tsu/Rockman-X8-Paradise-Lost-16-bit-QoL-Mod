@@ -15,11 +15,15 @@ export var HermesColor3 : Color
 export var IcarusColor1 : Color
 export var IcarusColor2 : Color
 export var IcarusColor3 : Color
+export var UltimateColor1 : Color
+export var UltimateColor2 : Color
+export var UltimateColor3 : Color
 export var BodyColor1 : Color
 export var BodyColor2 : Color
 onready var NeutralColors = [NeutralColor1,NeutralColor2,NeutralColor3]
 onready var HermesColors = [HermesColor1,HermesColor2,HermesColor3]
 onready var IcarusColors = [IcarusColor1,IcarusColor2,IcarusColor3]
+onready var UltimateColors = [UltimateColor1,UltimateColor2,UltimateColor3]
 onready var BodyColors = [Color.pink, BodyColor1,BodyColor2]
 var transition_time = 0.0
 

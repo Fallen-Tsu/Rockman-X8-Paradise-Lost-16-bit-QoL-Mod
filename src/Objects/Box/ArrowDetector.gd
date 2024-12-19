@@ -23,7 +23,7 @@ func _on_ArrowDetector_body_entered(body: Node) -> void:
 		elif "DarkArrow" in body.name:
 			on_darkarrow_hit(1)
 			body._OnHit(100)
-		elif "DamageArea" in body.name:
+		elif "DamageArea" in body.name or "PlasmaShot" in body.name:
 			on_darkarrow_hit(3)
 
 func on_darkarrow_hit(amount : int) -> void:

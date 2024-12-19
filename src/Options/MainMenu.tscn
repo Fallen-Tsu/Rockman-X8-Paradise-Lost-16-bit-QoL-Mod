@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://src/Fonts/Xclassicfont.fnt" type="BitmapFont" id=1]
 [ext_resource path="res://src/Fonts/X8Bossfont.fnt" type="BitmapFont" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://src/Actors/Weapons/Projectiles/medium_shot.res" type="SpriteFrames" id=17]
 [ext_resource path="res://src/Actors/Player/x_sprites/x_crystal_pallette.png" type="Texture" id=18]
 [ext_resource path="res://addons/PaletteSwap/PaletteSwap.gdshader" type="Shader" id=19]
+[ext_resource path="res://Alt Music/y7se_000.wav" type="AudioStream" id=20]
 
 [sub_resource type="ShortCut" id=1]
 
@@ -258,7 +259,7 @@ position = Vector2( 13, 2 )
 z_index = -1
 frames = ExtResource( 17 )
 animation = "loop"
-frame = 7
+frame = 6
 playing = true
 
 [node name="choice" type="AudioStreamPlayer" parent="."]
@@ -280,6 +281,10 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 5 )
 menu = NodePath("../Menu")
+
+[node name="CheatSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+bus = "SFX"
 
 [connection signal="focus_entered" from="Menu/OptionHolder/GameStart" to="Menu/OptionHolder/GameStart" method="_on_focus_entered"]
 [connection signal="focus_exited" from="Menu/OptionHolder/GameStart" to="Menu/OptionHolder/GameStart" method="_on_focus_exited"]
