@@ -250,7 +250,7 @@ func equip_ultimate_arms_parts():
 	hermes_Buster.active = false
 	cannon.upgraded = true
 	cannon.infinite_charged_ammo = true
-	cannon.infinite_regular_ammo = false
+	cannon.infinite_regular_ammo = true
 	cannon.update_list_of_weapons()
 	cannon.set_current_weapon(ultimate_Buster)
 	altfire.switch_to_icarus()
