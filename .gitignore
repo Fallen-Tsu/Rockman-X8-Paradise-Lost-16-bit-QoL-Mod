@@ -48,5 +48,20 @@ Thumbs.db
 *.mov
 *.wmv
 
-.import/
 Mega Man X SNES SFX/winpinator_setup_0.1.2_x64.exe.zip
+
+# Godot 4+ specific ignores
+.godot/
+
+# Godot-specific ignores
+.import/
+export.cfg
+export_presets.cfg
+
+# Imported translations (automatically generated from CSV files)
+*.translation
+
+# Mono-specific ignores
+.mono/
+data_*/
+mono_crash.*.json
