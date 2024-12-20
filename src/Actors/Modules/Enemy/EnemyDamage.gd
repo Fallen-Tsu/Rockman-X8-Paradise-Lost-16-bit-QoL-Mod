@@ -50,6 +50,8 @@ func set_damage_reduction (value):
 func _on_area2D_body_entered(_body: Node) -> void:
 	if active and character.has_health():
 		if _body.is_in_group("Player Projectile"):
+			if _body.has_method("create_ball"):
+				_body.create_ball(self)
 			if should_call_hit(_body):
 				_body.hit(self)
 			else:
