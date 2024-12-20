@@ -18,7 +18,7 @@ var damaged_by_special_weapon := false
 var has_upgrades := false
 var using_desperation := false
 var last_hit := "none"
-const busters := ["Lemon","Medium","Charged Buster","Laser Buster","Triple Buster","Aux Buster","JumpDamage"]
+const busters := ["Lemon","Medium","Charged Buster","Laser Buster","Triple Buster","Aux Buster","JumpDamage", "PlasmaShot", "PlasmaBall"]
 
 func _ready() -> void:
 	connect_node("Intro","ability_end","start")
