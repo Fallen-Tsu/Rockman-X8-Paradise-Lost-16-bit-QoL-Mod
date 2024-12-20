@@ -49,7 +49,7 @@ margin_right = 261.0
 margin_bottom = 65.0
 custom_colors/font_color = Color( 0.639216, 0.713726, 0.898039, 1 )
 custom_fonts/font = ExtResource( 1 )
-text = "A FANGAME BY"
+text = "MADE_BY"
 align = 1
 
 [node name="bg" type="Sprite" parent="."]
