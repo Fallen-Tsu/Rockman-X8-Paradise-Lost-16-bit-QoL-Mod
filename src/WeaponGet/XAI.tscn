@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=2]
+[gd_scene load_steps=118 format=2]
 
 [ext_resource path="res://src/Actors/x_collision_box.tres" type="Shape2D" id=1]
 [ext_resource path="res://src/Effects/Materials/x_dash_smoke.tres" type="Material" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://src/Sounds/JUMP.wav" type="AudioStream" id=18]
 [ext_resource path="res://src/Actors/Enemy Collision Detector.gd" type="Script" id=19]
 [ext_resource path="res://Damage.gd" type="Script" id=20]
+[ext_resource path="res://src/Actors/Weapons/UltimateBuster.tscn" type="PackedScene" id=21]
 [ext_resource path="res://SpriteEffect.gd" type="Script" id=22]
 [ext_resource path="res://src/Effects/Textures/smoke.png" type="Texture" id=23]
 [ext_resource path="res://src/Actors/CrushCheck.gd" type="Script" id=24]
@@ -422,7 +423,7 @@ position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 4 )
 animation = "idle"
-frame = 52
+frame = 21
 playing = true
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
@@ -779,6 +780,10 @@ arm_pointing_sprites = ExtResource( 3 )
 active = false
 
 [node name="Hermes Buster" parent="Shot" instance=ExtResource( 72 )]
+
+[node name="UltimateBuster" parent="Shot" instance=ExtResource( 21 )]
+max_shots_alive = 8
+max_ammo = 8.0
 
 [node name="OpticShield" type="Node" parent="Shot"]
 script = ExtResource( 90 )
