@@ -281,7 +281,7 @@ position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 51
+frame = 18
 playing = true
 script = ExtResource( 121 )
 
@@ -635,12 +635,13 @@ arm_pointing_sprites = ExtResource( 10 )
 
 [node name="Icarus Buster" parent="Shot" instance=ExtResource( 43 )]
 active = false
-max_shots_alive = 3
 max_ammo = 3.0
 
 [node name="Hermes Buster" parent="Shot" instance=ExtResource( 37 )]
 
 [node name="UltimateBuster" parent="Shot" instance=ExtResource( 120 )]
+max_shots_alive = 8
+max_ammo = 8.0
 
 [node name="OpticShield" type="Node" parent="Shot"]
 script = ExtResource( 91 )
@@ -832,13 +833,14 @@ normal_sprites = ExtResource( 1 )
 arm_pointing_sprites = ExtResource( 10 )
 
 [node name="Buster" parent="AltFire" instance=ExtResource( 21 )]
+max_shots_alive = 9
 
 [node name="Icarus Buster" parent="AltFire" instance=ExtResource( 43 )]
 active = false
 shots = [ ExtResource( 115 ) ]
-max_shots_alive = 3
+max_shots_alive = 8
 max_charged_shots_alive = 0
-max_ammo = 3.0
+max_ammo = 8.0
 
 [node name="DashWallJump" type="Node2D" parent="."]
 script = ExtResource( 20 )
