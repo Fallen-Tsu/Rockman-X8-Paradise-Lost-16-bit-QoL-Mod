@@ -18,8 +18,8 @@ z_index = 6
 collision_layer = 4
 collision_mask = 0
 script = ExtResource( 1 )
-damage = 5.0
-damage_to_bosses = 2.0
+damage = 6.0
+damage_to_bosses = 4.0
 damage_to_weakness = 4.2
 time_outside_screen = 0.01
 fire_sound = ExtResource( 2 )
@@ -27,6 +27,7 @@ fire_sound = ExtResource( 2 )
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 3 )
 animation = "Tag"
+frame = 2
 playing = true
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
