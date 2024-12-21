@@ -259,21 +259,20 @@ func equip_ultimate_arms_parts():
 func equip_ultimate_legs_parts():
 	var dash = get_node("Dash")
 	var airdash = get_node("AirDash")
-	get_node("AirJump").set_max_air_jumps(2)
 	var fall = get_node("Fall")
 	fall.dash_momentum = 210
 	dash.dash_duration = 0.55
 	airdash.horizontal_velocity = 300
 	var air_jump = get_node("AirJump")
 	var dashwalljump = get_node("DashWallJump")
+	air_jump.set_max_air_jumps(2)
 	dashwalljump.horizontal_velocity = 300
 	dash.upgraded = true
 	dash.invulnerability_duration = 0.475
 	dash.horizontal_velocity = 350
 	airdash.upgraded = true
 	airdash.invulnerability_duration = 0.475
-	airdash.max_airdashes = 3
-	airdash.airdash_count = 4
+	airdash.max_airdashes = 4
 	airdash.horizontal_velocity = 375
 
 func is_full_armor() -> String:
@@ -356,7 +355,7 @@ func add_part_to_current_armor(collectible: String):
 	GameManager.remove_equip_exception(part_location)
 
 func is_armor_part(collectible : String) -> bool:
-	return "icarus" in collectible or "hermes" in collectible
+	return "icarus" in collectible or "hermes" in collectible or "ultimate" in collectible
 
 func finished_equipping() -> void:
 	get_node("Shot").update_list_of_weapons()
