@@ -8,6 +8,7 @@ onready var glass: CollisionShape2D = $glass/collisionShape2D
 export var debug_logs := false
 export var armor_part := "icarus_head"
 export var dialogue : Resource
+export var ultimate_capsule := false
 
 signal lightning
 
@@ -112,7 +113,12 @@ func _process(delta: float) -> void:
 		elif charge_state == 3:
 			if timer > 0.4:
 				if not gave_armor:
-					Event.emit_signal("collected", armor_part)
+					if ultimate_capsule : 
+						var parts=["legs","body","arms","head"]
+						for part in parts:
+							Event.emit_signal("collected","ultimate_"+part)
+					else : 
+						Event.emit_signal("collected", armor_part)
 					Savefile.save()
 					player.play_animation_once("armor_receive")
 					gave_armor = true
