@@ -110,7 +110,7 @@ func direct_weapon_select(weapon_resource):
 func update_character_palette() -> void:
 	if not current_weapon:
 		set_buster_as_weapon()
-	if current_weapon_is_buster():
+	if current_weapon_is_buster() and not "Ultimate" in current_weapon.name:
 		character.change_palette(current_weapon.get_palette(),false)
 	else:
 		character.change_palette(current_weapon.get_palette())

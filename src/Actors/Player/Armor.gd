@@ -15,15 +15,18 @@ export var HermesColor3 : Color
 export var IcarusColor1 : Color
 export var IcarusColor2 : Color
 export var IcarusColor3 : Color
-export var UltimateColor1 : Color
-export var UltimateColor2 : Color
-export var UltimateColor3 : Color
+export var UltimateColor1 : Color = Color("#132247")
+export var UltimateColor2 : Color = Color("#d479e4")
+export var UltimateColor3 : Color = Color("#60008d")
+export var UltimateColor4: Color = Color("#29345b")
+export var UltimateInner1 : Color = Color("#687ccc")
+export var UltimateInner2 : Color = Color("#2c3956")
 export var BodyColor1 : Color
 export var BodyColor2 : Color
 onready var NeutralColors = [NeutralColor1,NeutralColor2,NeutralColor3]
 onready var HermesColors = [HermesColor1,HermesColor2,HermesColor3]
 onready var IcarusColors = [IcarusColor1,IcarusColor2,IcarusColor3]
-onready var UltimateColors = [UltimateColor1,UltimateColor2,UltimateColor3]
+onready var UltimateColors = [UltimateColor1,UltimateColor2,UltimateColor3,UltimateColor4]
 onready var BodyColors = [Color.pink, BodyColor1,BodyColor2]
 var transition_time = 0.0
 
@@ -45,10 +48,12 @@ func collected(collectible : String):
 		last_armor_collected = collectible.replace("hermes_","")
 	elif "icarus" in collectible:
 		last_armor_collected = collectible.replace("icarus_","")
+	elif "ultimate" in collectible:
+		last_armor_collected = collectible.replace("ultimate_","")
 
 
 func display(full_part_name : String):
-	var part_location = full_part_name.replace("icarus_","").replace("hermes_","")
+	var part_location = full_part_name.replace("icarus_","").replace("hermes_","").replace("ultimate_","")
 	call("display_" + part_location)
 	
 	for part in armor:
@@ -69,6 +74,12 @@ func display(full_part_name : String):
 					change_colors(part,HermesColors)
 					turn_yellow_over_time()
 					part.family = "hermes"
+			elif "ultimate" in full_part_name:
+				change_ultimate_colors(part,UltimateColors)
+				part.family = "ultimate"
+	if "ultimate" in full_part_name:
+		playerSprite.material.set_shader_param("R_MainColor4", UltimateInner1)
+		playerSprite.material.set_shader_param("R_MainColor5", UltimateInner2)
 
 func flash_family_colors():
 	if not is_using_full_set():
@@ -89,11 +100,25 @@ func apply_family_color(family_name : String) -> void:
 			change_colors(part,IcarusColors)
 		elif "hermes" in family_name:
 			change_colors(part,HermesColors)
+		elif "ultimate" in family_name:
+			change_ultimate_colors(part,UltimateColors)
 
 func change_colors(part, new_colors):
+	part.material.set_shader_param("R_MainColor1", Color("#808080"))
 	part.material.set_shader_param("R_MainColor4", new_colors[0])
 	part.material.set_shader_param("R_MainColor5", new_colors[1])
 	part.material.set_shader_param("R_MainColor6", new_colors[2])
+	part.material.set_shader_param("R_MainColor7", Color("#f0f0f0"))
+
+func change_ultimate_colors(part, new_colors):
+	part.material.set_shader_param("R_MainColor1", new_colors[0])
+	part.material.set_shader_param("R_MainColor2", new_colors[1])
+	part.material.set_shader_param("R_MainColor3", new_colors[2])
+	part.material.set_shader_param("R_MainColor4", NeutralColor1)
+	part.material.set_shader_param("R_MainColor5", NeutralColor2)
+	part.material.set_shader_param("R_MainColor6", NeutralColor3)
+	part.material.set_shader_param("MainColor7",Color("#f0f0f0"))
+	part.material.set_shader_param("R_MainColor7", new_colors[3])
 
 func _process(_delta: float) -> void:
 	handle_armor_visibleness()
@@ -103,12 +128,15 @@ func _process(_delta: float) -> void:
 func is_using_full_set():
 	var icarus_parts := 0
 	var hermes_parts := 0
+	var ultimate_parts := 0
 	for part in character.current_armor:
 		if "icarus" in part:
 			icarus_parts += 1
 		elif "hermes" in part:
 			hermes_parts += 1
-	return icarus_parts == 4 or hermes_parts == 4
+		elif "ultimate" in part:
+			ultimate_parts += 1
+	return icarus_parts == 4 or hermes_parts == 4 or ultimate_parts == 4
 
 func turn_yellow_over_time():
 	for part in armor:

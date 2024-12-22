@@ -155,8 +155,9 @@ func equip_hermes_arms_parts(): #triple shot
 	var cannon = get_node("Shot")
 	var hermes_Buster = cannon.get_node("Hermes Buster")
 	var icarus_Buster = cannon.get_node("Icarus Buster")
+	var ultimate_Buster = cannon.get_node("UltimateBuster")
 	var altfire = get_node("AltFire")
-	
+	ultimate_Buster.active = false
 	hermes_Buster.active = true
 	icarus_Buster.active = false
 	cannon.upgraded = true
@@ -200,9 +201,11 @@ func equip_icarus_arms_parts(): #laser shot
 	var cannon = get_node("Shot")
 	var icarus_Buster = cannon.get_node("Icarus Buster")
 	var hermes_Buster = cannon.get_node("Hermes Buster")
+	var ultimate_Buster = cannon.get_node("UltimateBuster")
 	var altfire = get_node("AltFire")
 	icarus_Buster.active = true
 	hermes_Buster.active = false
+	ultimate_Buster.active = false
 	cannon.upgraded = true
 	cannon.infinite_charged_ammo = true
 	cannon.infinite_regular_ammo = false
@@ -248,6 +251,7 @@ func equip_ultimate_arms_parts():
 	var altfire = get_node("AltFire")
 	icarus_Buster.active = false
 	hermes_Buster.active = false
+	ultimate_Buster.active = true
 	cannon.upgraded = true
 	cannon.infinite_charged_ammo = true
 	cannon.infinite_regular_ammo = true
@@ -283,11 +287,15 @@ func is_full_armor() -> String:
 			armor_set += 1
 		elif "icarus" in piece:
 			armor_set -= 1
+		elif "ultimate" in piece:
+			armor_set += 2
 
 	if armor_set == 4:
 		return "hermes"
 	elif armor_set == -4:
 		return "icarus"
+	elif armor_set == 8:
+		return "ultimate"
 	return "no_armor"
 
 func equip_parts(collectible : String):
@@ -347,7 +355,7 @@ func get_subtank_current_health(id) -> int:
 	return -1
 	
 func add_part_to_current_armor(collectible: String):
-	var part_location = collectible.replace("icarus_","").replace("hermes_","")
+	var part_location = collectible.replace("icarus_","").replace("hermes_","").replace("ultimate_","")
 	for location in current_armor:
 		if part_location in location:
 			current_armor.remove(current_armor.find(location))
@@ -373,6 +381,7 @@ func save_original_colors():
 	colors.append(animatedSprite.material.get_shader_param("MainColor4"))
 	colors.append(animatedSprite.material.get_shader_param("MainColor5"))
 	colors.append(animatedSprite.material.get_shader_param("MainColor6"))
+	colors.append(animatedSprite.material.get_shader_param("MainColor7"))
 
 func change_palette(new_colors, paint_armor := true):
 	if not animatedSprite:
