@@ -88,7 +88,7 @@ func unhide():
 		hermes_fill.visible = true
 		icarus_fill.visible = false
 		i_blink.visible = false
-	elif get_current_set() == "icarus":
+	elif get_current_set() == "icarus" or get_current_set() == "ultimate":
 		visible = true
 		set_process(true)
 		hermes_fill.visible = false
@@ -116,7 +116,7 @@ func hide_or_show(_d) -> void:
 
 func check():
 	print(get_current_set())
-	if get_current_set() == "hermes" or get_current_set() == "icarus":
+	if get_current_set() == "hermes" or get_current_set() == "icarus" or get_current_set() == "ultimate":
 		unhide()
 	else:
 		hide()
