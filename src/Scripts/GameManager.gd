@@ -298,21 +298,19 @@ func add_collectibles_to_player():
 	if player:
 		if used_cheat_code and not ultimate_armor_received:
 			ultimate_armor_received = true
-			var icarus="icarus_"
-			var hermes="hermes_"
+			var icarus = "icarus_"
+			var hermes = "hermes_"
+			var ultimate = "ultimate_"
 			var parts=["legs","body","arms","head"]
 			for part in parts:
 				Event.emit_signal("collected",hermes+part)
 			for part in parts:
 				Event.emit_signal("collected",icarus+part)
+			for part in parts:
+				Event.emit_signal("collected",ultimate+part)
 		for collectible in collectibles:
 			if not has_equip_exception(collectible): 
 				player.equip_parts(collectible)
-		if used_cheat_code:
-			player.equip_ultimate_head_parts()
-			player.equip_ultimate_body_parts()
-			player.equip_ultimate_arms_parts()
-			player.equip_ultimate_legs_parts()
 		player.finished_equipping()
 
 func has_equip_exception(collectible : String) -> bool:
@@ -570,7 +568,7 @@ func was_dialogue_seen(dialog) -> bool:
 	return dialog in seen_dialogues
 
 func is_armor(collectible_name : String) -> bool:
-	return "hermes" in collectible_name or "icarus" in collectible_name
+	return "hermes" in collectible_name or "icarus" in collectible_name or "ultimate" in collectible_name
 
 func is_heart(collectible_name : String) -> bool:
 	return "life_up" in collectible_name
