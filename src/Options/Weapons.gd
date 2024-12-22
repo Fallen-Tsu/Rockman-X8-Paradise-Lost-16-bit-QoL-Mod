@@ -42,7 +42,7 @@ func show_weapons() -> void:
 			weapon.visible = true
 		elif weapon.name == "Giga Impact":
 			if GameManager.is_player_in_scene():
-				weapon.visible = GameManager.player.is_full_armor() == "icarus"
+				weapon.visible = GameManager.player.is_full_armor() == "icarus" or GameManager.player.is_full_armor() == "ultimate" 
 		elif weapon.name == "X Drive":
 			if GameManager.is_player_in_scene():
 				weapon.visible = GameManager.player.is_full_armor() == "hermes"
