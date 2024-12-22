@@ -1,8 +1,14 @@
-[gd_resource type="VisualShader" load_steps=69 format=2]
+[gd_resource type="VisualShader" load_steps=71 format=2]
 
 [sub_resource type="VisualShaderNodeScalarOp" id=105]
 default_input_values = [ 0, 0.0, 1, 2.0 ]
 operator = 3
+
+[sub_resource type="VisualShaderNodeColorUniform" id=107]
+uniform_name = "MainColor7"
+
+[sub_resource type="VisualShaderNodeColorUniform" id=108]
+uniform_name = "R_MainColor7"
 
 [sub_resource type="VisualShaderNodeScalarFunc" id=37]
 function = 12
@@ -85,6 +91,7 @@ else if (replace (current_color, main_color_3, replace_color_3, final_color, tol
 else if (replace (current_color, main_color_4, replace_color_4, final_color, tolerance)){}
 else if (replace (current_color, main_color_5, replace_color_5, final_color, tolerance)){}
 else if (replace (current_color, main_color_6, replace_color_6, final_color, tolerance)){}
+else if (replace (current_color, main_color_7, replace_color_7, final_color, tolerance)){}
 else {final_color = current_color}"
 
 [sub_resource type="VisualShaderNodeColorUniform" id=68]
@@ -135,7 +142,7 @@ expression = "bool replace (vec3 color, vec3 main_color, vec3 replace_color, out
 {	vec3 diff3 = color - main_color;
 	float m = max(max(abs(diff3.r), abs(diff3.g)), abs(diff3.b));
 	
-	if ((step(m, tol) == 1.0)){ 
+	if ((step(m, tol) >= 0.0000000000001)){ 
 		color = mix(color, replace_color, step(m, tol));
 		output = color;
 		return true;
@@ -257,6 +264,8 @@ uniform float Alert;
 uniform vec4 R_CrystalColor2 : hint_color;
 uniform vec4 R_CrystalColor3 : hint_color;
 uniform float tolerance;
+uniform vec4 MainColor7 : hint_color;
+uniform vec4 R_MainColor7 : hint_color;
 uniform float Alpha;
 
 
@@ -265,7 +274,7 @@ uniform float Alpha;
 	{	vec3 diff3 = color - main_color;
 		float m = max(max(abs(diff3.r), abs(diff3.g)), abs(diff3.b));
 		
-		if ((step(m, tol) == 1.0)){ 
+		if ((step(m, tol) >= 0.0000000000001)){ 
 			color = mix(color, replace_color, step(m, tol));
 			output = color;
 			return true;
@@ -440,6 +449,14 @@ void fragment() {
 // ScalarUniform:72
 	float n_out72p0 = tolerance;
 
+// ColorUniform:101
+	vec3 n_out101p0 = MainColor7.rgb;
+	float n_out101p1 = MainColor7.a;
+
+// ColorUniform:102
+	vec3 n_out102p0 = R_MainColor7.rgb;
+	float n_out102p1 = R_MainColor7.a;
+
 // Expression:54
 	vec3 n_out54p0;
 	vec3 n_out54p1;
@@ -458,6 +475,7 @@ void fragment() {
 		else if (replace (current_color, n_out58p0, n_out68p0, n_out54p0, n_out72p0)){}
 		else if (replace (current_color, n_out59p0, n_out69p0, n_out54p0, n_out72p0)){}
 		else if (replace (current_color, n_out60p0, n_out70p0, n_out54p0, n_out72p0)){}
+		else if (replace (current_color, n_out101p0, n_out102p0, n_out54p0, n_out72p0)){}
 		else {n_out54p0 = current_color}
 	}
 
@@ -617,7 +635,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -1356.95, 727.088 )
+graph_offset = Vector2( -826.087, 76.3446 )
 mode = 1
 flags/light_only = false
 nodes/vertex/2/node = SubResource( 20 )
@@ -682,7 +700,7 @@ nodes/fragment/52/position = Vector2( 860, 1600 )
 nodes/fragment/54/node = SubResource( 67 )
 nodes/fragment/54/position = Vector2( -1260, 820 )
 nodes/fragment/54/size = Vector2( 1062.24, 1004.71 )
-nodes/fragment/54/input_ports = "0,1,main_color_1;1,1,main_color_2;2,1,main_color_3;3,1,main_color_4;4,1,main_color_5;5,1,main_color_6;6,1,replace_color_1;7,1,replace_color_2;8,1,replace_color_3;9,1,replace_color_4;10,1,replace_color_5;11,1,replace_color_6;12,1,crystal_color_1;13,1,crystal_color_2;14,1,crystal_color_3;15,1,crystal_replace_1;16,1,crystal_replace_2;17,1,crystal_replace_3;18,0,tolerance;"
+nodes/fragment/54/input_ports = "0,1,main_color_1;1,1,main_color_2;2,1,main_color_3;3,1,main_color_4;4,1,main_color_5;5,1,main_color_6;6,1,replace_color_1;7,1,replace_color_2;8,1,replace_color_3;9,1,replace_color_4;10,1,replace_color_5;11,1,replace_color_6;12,1,crystal_color_1;13,1,crystal_color_2;14,1,crystal_color_3;15,1,crystal_replace_1;16,1,crystal_replace_2;17,1,crystal_replace_3;18,0,tolerance;19,1,main_color_7;20,1,replace_color_7;"
 nodes/fragment/54/output_ports = "0,1,final_color;1,1,crystal_colors;"
 nodes/fragment/54/expression = "vec3 current_color = texture(TEXTURE, UV).rgb;
 
@@ -696,6 +714,7 @@ else if (replace (current_color, main_color_3, replace_color_3, final_color, tol
 else if (replace (current_color, main_color_4, replace_color_4, final_color, tolerance)){}
 else if (replace (current_color, main_color_5, replace_color_5, final_color, tolerance)){}
 else if (replace (current_color, main_color_6, replace_color_6, final_color, tolerance)){}
+else if (replace (current_color, main_color_7, replace_color_7, final_color, tolerance)){}
 else {final_color = current_color}"
 nodes/fragment/55/node = SubResource( 68 )
 nodes/fragment/55/position = Vector2( -1920, 220 )
@@ -730,7 +749,7 @@ nodes/fragment/71/expression = "bool replace (vec3 color, vec3 main_color, vec3 
 {	vec3 diff3 = color - main_color;
 	float m = max(max(abs(diff3.r), abs(diff3.g)), abs(diff3.b));
 	
-	if ((step(m, tol) == 1.0)){ 
+	if ((step(m, tol) >= 0.0000000000001)){ 
 		color = mix(color, replace_color, step(m, tol));
 		output = color;
 		return true;
@@ -787,4 +806,8 @@ nodes/fragment/99/node = SubResource( 106 )
 nodes/fragment/99/position = Vector2( 360, 1520 )
 nodes/fragment/100/node = SubResource( 105 )
 nodes/fragment/100/position = Vector2( 520, 1520 )
-nodes/fragment/connections = PoolIntArray( 6, 0, 9, 0, 7, 0, 12, 0, 12, 0, 16, 0, 16, 0, 15, 0, 9, 0, 7, 0, 15, 0, 14, 0, 23, 0, 38, 1, 17, 0, 14, 1, 34, 0, 23, 3, 34, 0, 23, 5, 30, 0, 23, 4, 38, 0, 40, 0, 2, 1, 42, 0, 14, 0, 37, 0, 47, 0, 48, 0, 48, 0, 43, 0, 46, 0, 42, 1, 41, 0, 50, 0, 42, 0, 51, 0, 52, 0, 51, 1, 2, 1, 50, 4, 2, 1, 50, 3, 42, 0, 50, 5, 55, 0, 54, 0, 56, 0, 54, 1, 57, 0, 54, 2, 58, 0, 54, 3, 59, 0, 54, 4, 60, 0, 54, 5, 65, 0, 54, 6, 66, 0, 54, 7, 67, 0, 54, 8, 68, 0, 54, 9, 69, 0, 54, 10, 70, 0, 54, 11, 54, 0, 23, 0, 54, 0, 40, 1, 39, 0, 38, 0, 72, 0, 54, 18, 77, 0, 54, 12, 78, 0, 54, 13, 73, 0, 54, 14, 79, 0, 81, 0, 81, 0, 80, 0, 74, 0, 87, 0, 75, 0, 88, 0, 76, 0, 89, 0, 87, 0, 54, 15, 88, 0, 54, 16, 89, 0, 54, 17, 40, 0, 37, 4, 85, 0, 90, 0, 90, 0, 86, 1, 85, 0, 91, 0, 92, 0, 91, 3, 92, 0, 91, 5, 86, 0, 91, 4, 91, 0, 89, 1, 91, 0, 88, 1, 91, 0, 87, 1, 54, 0, 37, 5, 80, 0, 93, 0, 93, 0, 86, 0, 95, 0, 96, 0, 95, 0, 96, 4, 37, 0, 96, 5, 96, 0, 0, 0, 95, 0, 97, 0, 50, 0, 97, 5, 97, 0, 0, 1, 98, 1, 97, 4, 43, 0, 99, 0, 99, 0, 100, 0, 100, 0, 46, 0, 6, 0, 9, 0, 7, 0, 12, 0, 12, 0, 16, 0, 16, 0, 15, 0, 9, 0, 7, 0, 15, 0, 14, 0, 23, 0, 38, 1, 17, 0, 14, 1, 34, 0, 23, 3, 34, 0, 23, 5, 30, 0, 23, 4, 38, 0, 40, 0, 2, 1, 42, 0, 14, 0, 37, 0, 47, 0, 48, 0, 48, 0, 43, 0, 46, 0, 42, 1, 41, 0, 50, 0, 42, 0, 51, 0, 52, 0, 51, 1, 2, 1, 50, 4, 2, 1, 50, 3, 42, 0, 50, 5, 55, 0, 54, 0, 56, 0, 54, 1, 57, 0, 54, 2, 58, 0, 54, 3, 59, 0, 54, 4, 60, 0, 54, 5, 65, 0, 54, 6, 66, 0, 54, 7, 67, 0, 54, 8, 68, 0, 54, 9, 69, 0, 54, 10, 70, 0, 54, 11, 54, 0, 23, 0, 54, 0, 40, 1, 39, 0, 38, 0, 72, 0, 54, 18, 77, 0, 54, 12, 78, 0, 54, 13, 73, 0, 54, 14, 79, 0, 81, 0, 81, 0, 80, 0, 74, 0, 87, 0, 75, 0, 88, 0, 76, 0, 89, 0, 87, 0, 54, 15, 88, 0, 54, 16, 89, 0, 54, 17, 40, 0, 37, 4, 85, 0, 90, 0, 90, 0, 86, 1, 85, 0, 91, 0, 92, 0, 91, 3, 92, 0, 91, 5, 86, 0, 91, 4, 91, 0, 89, 1, 91, 0, 88, 1, 91, 0, 87, 1, 54, 0, 37, 5, 80, 0, 93, 0, 93, 0, 86, 0, 95, 0, 96, 0, 95, 0, 96, 4, 37, 0, 96, 5, 96, 0, 0, 0, 95, 0, 97, 0, 50, 0, 97, 5, 97, 0, 0, 1, 98, 1, 97, 4, 43, 0, 99, 0, 99, 0, 100, 0, 100, 0, 46, 0 )
+nodes/fragment/101/node = SubResource( 107 )
+nodes/fragment/101/position = Vector2( -2260, 720 )
+nodes/fragment/102/node = SubResource( 108 )
+nodes/fragment/102/position = Vector2( -2300, 1280 )
+nodes/fragment/connections = PoolIntArray( 6, 0, 9, 0, 7, 0, 12, 0, 12, 0, 16, 0, 16, 0, 15, 0, 9, 0, 7, 0, 15, 0, 14, 0, 23, 0, 38, 1, 17, 0, 14, 1, 34, 0, 23, 3, 34, 0, 23, 5, 30, 0, 23, 4, 38, 0, 40, 0, 2, 1, 42, 0, 14, 0, 37, 0, 47, 0, 48, 0, 48, 0, 43, 0, 46, 0, 42, 1, 41, 0, 50, 0, 42, 0, 51, 0, 52, 0, 51, 1, 2, 1, 50, 4, 2, 1, 50, 3, 42, 0, 50, 5, 55, 0, 54, 0, 56, 0, 54, 1, 57, 0, 54, 2, 58, 0, 54, 3, 59, 0, 54, 4, 60, 0, 54, 5, 65, 0, 54, 6, 66, 0, 54, 7, 67, 0, 54, 8, 68, 0, 54, 9, 69, 0, 54, 10, 70, 0, 54, 11, 54, 0, 23, 0, 54, 0, 40, 1, 39, 0, 38, 0, 72, 0, 54, 18, 77, 0, 54, 12, 78, 0, 54, 13, 73, 0, 54, 14, 79, 0, 81, 0, 81, 0, 80, 0, 74, 0, 87, 0, 75, 0, 88, 0, 76, 0, 89, 0, 87, 0, 54, 15, 88, 0, 54, 16, 89, 0, 54, 17, 40, 0, 37, 4, 85, 0, 90, 0, 90, 0, 86, 1, 85, 0, 91, 0, 92, 0, 91, 3, 92, 0, 91, 5, 86, 0, 91, 4, 91, 0, 89, 1, 91, 0, 88, 1, 91, 0, 87, 1, 54, 0, 37, 5, 80, 0, 93, 0, 93, 0, 86, 0, 95, 0, 96, 0, 95, 0, 96, 4, 37, 0, 96, 5, 96, 0, 0, 0, 95, 0, 97, 0, 50, 0, 97, 5, 97, 0, 0, 1, 98, 1, 97, 4, 43, 0, 99, 0, 99, 0, 100, 0, 100, 0, 46, 0, 6, 0, 9, 0, 7, 0, 12, 0, 12, 0, 16, 0, 16, 0, 15, 0, 9, 0, 7, 0, 15, 0, 14, 0, 23, 0, 38, 1, 17, 0, 14, 1, 34, 0, 23, 3, 34, 0, 23, 5, 30, 0, 23, 4, 38, 0, 40, 0, 2, 1, 42, 0, 14, 0, 37, 0, 47, 0, 48, 0, 48, 0, 43, 0, 46, 0, 42, 1, 41, 0, 50, 0, 42, 0, 51, 0, 52, 0, 51, 1, 2, 1, 50, 4, 2, 1, 50, 3, 42, 0, 50, 5, 55, 0, 54, 0, 56, 0, 54, 1, 57, 0, 54, 2, 58, 0, 54, 3, 59, 0, 54, 4, 60, 0, 54, 5, 65, 0, 54, 6, 66, 0, 54, 7, 67, 0, 54, 8, 68, 0, 54, 9, 69, 0, 54, 10, 70, 0, 54, 11, 54, 0, 23, 0, 54, 0, 40, 1, 39, 0, 38, 0, 72, 0, 54, 18, 77, 0, 54, 12, 78, 0, 54, 13, 73, 0, 54, 14, 79, 0, 81, 0, 81, 0, 80, 0, 74, 0, 87, 0, 75, 0, 88, 0, 76, 0, 89, 0, 87, 0, 54, 15, 88, 0, 54, 16, 89, 0, 54, 17, 40, 0, 37, 4, 85, 0, 90, 0, 90, 0, 86, 1, 85, 0, 91, 0, 92, 0, 91, 3, 92, 0, 91, 5, 86, 0, 91, 4, 91, 0, 89, 1, 91, 0, 88, 1, 91, 0, 87, 1, 54, 0, 37, 5, 80, 0, 93, 0, 93, 0, 86, 0, 95, 0, 96, 0, 95, 0, 96, 4, 37, 0, 96, 5, 96, 0, 0, 0, 95, 0, 97, 0, 50, 0, 97, 5, 97, 0, 0, 1, 98, 1, 97, 4, 43, 0, 99, 0, 99, 0, 100, 0, 100, 0, 46, 0, 101, 0, 54, 19, 102, 0, 54, 20 )
