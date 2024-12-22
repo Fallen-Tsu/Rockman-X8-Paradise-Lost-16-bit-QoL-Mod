@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys Seven OST - An Assault.ogg-1f397e328f7f84428f7071
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

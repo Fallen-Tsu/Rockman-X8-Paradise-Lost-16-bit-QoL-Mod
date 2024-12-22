@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys I&II Chronicles OST - Holders of Power.ogg-c76a64
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

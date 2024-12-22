@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys III Chronicles - Palace of Destruction.ogg-fbe045
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

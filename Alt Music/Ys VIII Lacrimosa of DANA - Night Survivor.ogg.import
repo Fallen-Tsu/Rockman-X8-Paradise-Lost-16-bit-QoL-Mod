@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys VIII Lacrimosa of DANA - Night Survivor.ogg-d915c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

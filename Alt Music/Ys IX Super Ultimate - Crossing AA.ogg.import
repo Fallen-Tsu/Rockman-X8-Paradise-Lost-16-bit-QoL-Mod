@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys IX Super Ultimate - Crossing AA.ogg-ff5c3b9a0d775
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

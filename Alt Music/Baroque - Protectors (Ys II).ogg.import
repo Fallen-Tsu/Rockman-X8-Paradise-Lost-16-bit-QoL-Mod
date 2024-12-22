@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Baroque - Protectors (Ys II).ogg-9d7280b0e1da2251649
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Kai no Kiseki [BGM RIP] - Boss Theme 5.ogg-9cc6d0fbb
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

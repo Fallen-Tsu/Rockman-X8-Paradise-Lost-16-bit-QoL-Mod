@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys The Oath in Felghana OST - Valestein Castle.ogg-9
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

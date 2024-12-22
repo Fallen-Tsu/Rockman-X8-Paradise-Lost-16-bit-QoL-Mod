@@ -11,5 +11,5 @@ dest_files=[ "res://.import/07. ICE RIDGE OF NOLTIA [ Ys I II Chronicles.ogg-304
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

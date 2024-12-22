@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys VI The Ark of Napishtim OST - Mighty Obstacle.ogg
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

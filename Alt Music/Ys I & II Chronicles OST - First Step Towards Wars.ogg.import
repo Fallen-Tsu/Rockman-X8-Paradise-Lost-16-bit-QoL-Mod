@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys I & II Chronicles OST - First Step Towards Wars.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

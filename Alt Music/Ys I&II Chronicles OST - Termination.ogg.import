@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys I&II Chronicles OST - Termination.ogg-8276573b8c7
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

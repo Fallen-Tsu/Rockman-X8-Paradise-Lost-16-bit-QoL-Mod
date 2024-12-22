@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys IV The Dawn of Ys - A Great Ordeal.ogg-36b90ad867
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

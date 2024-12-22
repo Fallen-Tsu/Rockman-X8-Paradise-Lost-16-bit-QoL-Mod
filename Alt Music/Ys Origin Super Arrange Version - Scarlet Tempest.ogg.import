@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys Origin Super Arrange Version - Scarlet Tempest.og
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

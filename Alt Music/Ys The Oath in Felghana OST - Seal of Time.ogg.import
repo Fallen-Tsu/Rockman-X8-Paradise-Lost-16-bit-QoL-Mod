@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys The Oath in Felghana OST - Seal of Time.ogg-b2d9d
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

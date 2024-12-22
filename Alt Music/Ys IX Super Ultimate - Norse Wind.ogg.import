@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys IX Super Ultimate - Norse Wind.ogg-ce0ae6aad4044f
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Kuro no Kiseki OST - Rise of the Grendel.ogg-05cb928
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

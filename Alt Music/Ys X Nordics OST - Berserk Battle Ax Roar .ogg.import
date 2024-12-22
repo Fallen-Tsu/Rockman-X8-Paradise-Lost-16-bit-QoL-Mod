@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys X Nordics OST - Berserk Battle Ax Roar .ogg-ae840
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

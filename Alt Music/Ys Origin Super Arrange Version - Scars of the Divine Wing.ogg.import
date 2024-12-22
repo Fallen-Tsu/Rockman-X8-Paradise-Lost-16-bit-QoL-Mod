@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys Origin Super Arrange Version - Scars of the Divin
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
