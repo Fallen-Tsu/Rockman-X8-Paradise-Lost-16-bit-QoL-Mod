@@ -36,7 +36,7 @@ func recharge(_d = null):
 			current_ammo = clamp(current_ammo + 1.0,0.0,max_ammo)
 
 func on_equip():
-	if character.is_full_armor() == "icarus":
+	if character.is_full_armor() == "icarus" or character.is_full_armor() == "ultimate":
 		active = true
 		current_ammo = max_ammo
 		Event.emit_signal("special_activated",self)
