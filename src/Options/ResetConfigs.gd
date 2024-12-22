@@ -34,7 +34,7 @@ func action() -> void:
 	IGT.reset()
 	IGT.send_command("reset_command")
 	#GameManager.rng.seed = 0000000000
-	GameManager.received_ultimate_armor = false
+	GameManager.ultimate_armor_received = false
 	GameManager.used_cheat_code = false
 	Savefile.save()
 	GameManager.go_to_intro()
