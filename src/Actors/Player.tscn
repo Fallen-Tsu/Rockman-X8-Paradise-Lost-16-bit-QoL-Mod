@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=2]
+[gd_scene load_steps=133 format=2]
 
 [ext_resource path="res://src/Actors/Player/x_sprites/x.res" type="SpriteFrames" id=1]
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=2]
@@ -120,7 +120,6 @@
 [ext_resource path="res://src/Effects/Textures/elec_particles.png" type="Texture" id=118]
 [ext_resource path="res://src/Effects/Materials/xdrive_particles.tres" type="Material" id=119]
 [ext_resource path="res://src/Actors/Weapons/UltimateBuster.tscn" type="PackedScene" id=120]
-[ext_resource path="res://src/Actors/animatedSprite.gd" type="Script" id=121]
 
 [sub_resource type="RectangleShape2D" id=32]
 extents = Vector2( 6.995, 7 )
@@ -281,9 +280,8 @@ position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 18
+frame = 69
 playing = true
-script = ExtResource( 121 )
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
 material = ExtResource( 23 )
@@ -301,7 +299,6 @@ __meta__ = {
 }
 
 [node name="arms_armor" type="AnimatedSprite" parent="animatedSprite"]
-visible = false
 material = ExtResource( 113 )
 frames = ExtResource( 46 )
 animation = "idle"
@@ -315,7 +312,6 @@ animation = "shot"
 script = ExtResource( 54 )
 
 [node name="legs_armor" type="AnimatedSprite" parent="animatedSprite"]
-visible = false
 material = ExtResource( 111 )
 frames = ExtResource( 50 )
 animation = "idle"
@@ -640,8 +636,15 @@ max_ammo = 3.0
 [node name="Hermes Buster" parent="Shot" instance=ExtResource( 37 )]
 
 [node name="UltimateBuster" parent="Shot" instance=ExtResource( 120 )]
+active = false
 max_shots_alive = 8
 max_ammo = 8.0
+MainColor1 = Color( 0.0745098, 0.133333, 0.278431, 1 )
+MainColor2 = Color( 0.831373, 0.47451, 0.894118, 1 )
+MainColor3 = Color( 0.376471, 0, 0.552941, 1 )
+MainColor4 = Color( 0.313726, 0.376471, 0.564706, 1 )
+MainColor5 = Color( 0.172549, 0.223529, 0.337255, 1 )
+MainColor6 = Color( 0, 0, 0, 1 )
 
 [node name="OpticShield" type="Node" parent="Shot"]
 script = ExtResource( 91 )
