@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Sora no Kiseki FC Evolution OST - Silver Will.ogg-bf
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

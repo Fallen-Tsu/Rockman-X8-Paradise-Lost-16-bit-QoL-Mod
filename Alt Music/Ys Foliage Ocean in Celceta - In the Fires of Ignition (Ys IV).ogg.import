@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys Foliage Ocean in Celceta - In the Fires of Igniti
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

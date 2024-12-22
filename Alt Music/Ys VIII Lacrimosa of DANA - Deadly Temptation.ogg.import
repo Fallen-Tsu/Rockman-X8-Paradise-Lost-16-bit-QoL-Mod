@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys VIII Lacrimosa of DANA - Deadly Temptation.ogg-4c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys Origin OST - Feena (Harmonica).ogg-4db5c9dc73db12
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
