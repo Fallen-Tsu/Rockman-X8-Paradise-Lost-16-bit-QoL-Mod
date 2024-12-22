@@ -61,6 +61,7 @@ signal fade_out
 
 signal full_hermes
 signal full_icarus
+signal full_ultimate
 signal mixed_set
 
 signal noahspark_cutscene_start

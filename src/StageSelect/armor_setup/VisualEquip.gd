@@ -2,9 +2,11 @@ extends HBoxContainer
 
 onready var part_options := get_children()
 onready var default_part = part_options[1]
-onready var armor: Control = $"../../../Armor"
+var armor: Control
 onready var tween := TweenController.new(self,false)
 onready var menu: CanvasLayer = $"../../../../.."
+export var is_ultimate = false
+
 
 var current_armor : Array
 
@@ -13,6 +15,10 @@ signal unlocked_icarus
 
 func _ready() -> void:
 	var _s = menu.connect("initialize",self,"initialize")
+	if !is_ultimate:
+		armor = $"../../../Armor"
+	else:
+		armor = $"../../../../textureRect/Armor"
 
 func initialize() -> void:
 	emit_unlocked_set_signals()
@@ -141,12 +147,12 @@ func align(part_name := "none") -> void:
 
 
 func is_armor(armor_name : String) -> bool:
-	return "icarus" in armor_name or "hermes" in armor_name
+	return "icarus" in armor_name or "hermes" in armor_name or "ultimate" in armor_name
 
 func get_body_part_name(collectible_name : String) -> String:
 	if collectible_name.length() <= 4:
 		return collectible_name
-	return collectible_name.substr(7)
+	return collectible_name.split("_")[1]
 
 func is_in_exceptions(armor_name : String) -> bool:
 	if get_body_part_name(armor_name) in GameManager.equip_exceptions:

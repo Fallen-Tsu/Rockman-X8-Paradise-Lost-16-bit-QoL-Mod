@@ -3,13 +3,20 @@ extends X8TextureButton
 onready var parent := get_parent()
 export var legible_name : String
 export var description : String
-onready var name_display: Label = $"../../../../Description/name"
-onready var disc_display: Label = $"../../../../Description/disc"
+var name_display: Label
+var disc_display: Label
 onready var equip: AudioStreamPlayer = $"../../../../../../equip"
+export var is_ultimate = false
+
+func _ready():
+	if !is_ultimate:
+		name_display = $"../../../../Description/name"
+		disc_display = $"../../../../Description/disc"
 
 func _on_focus_entered() -> void:
 	play_sound()
-	display_info()
+	if !is_ultimate:
+		display_info()
 	flash()
 
 func _on_focus_exited() -> void:
@@ -31,10 +38,10 @@ func on_press() -> void:
 	parent.equip(self)
 
 func is_viable_armor(armor_name : String) -> bool:
-	return "icarus" in armor_name or "hermes" in armor_name
+	return "icarus" in armor_name or "hermes" in armor_name or "ultimate" in armor_name
 
 func get_body_part_name(collectible_name : String) -> String:
-	return collectible_name.substr(7)
+	return collectible_name.split("_")[1]
 
 func display_info() -> void:
 	name_display.text = legible_name

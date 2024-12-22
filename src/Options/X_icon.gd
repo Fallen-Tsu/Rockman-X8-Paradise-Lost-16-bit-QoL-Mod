@@ -28,6 +28,8 @@ func show_parts() -> void:
 	for part in armor_parts:
 		if GameManager.is_player_in_scene():
 			part.visible = part.name in GameManager.player.current_armor
+			if "icarus" in part.name and "ultimate" in GameManager.player.current_armor[0]:
+				part.visible = true
 	
 	update_colors()
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://src/Options/tank_holder.png" type="Texture" id=1]
 [ext_resource path="res://src/Options/KeymapExit.gd" type="Script" id=2]
@@ -48,6 +48,9 @@
 [ext_resource path="res://src/AchievementSystem/Icons/achievicon_xdrive.png" type="Texture" id=46]
 [ext_resource path="res://src/StageSelect/armor_setup/xdrive_icon.gd" type="Script" id=47]
 [ext_resource path="res://src/Effects/Textures/flash.png" type="Texture" id=48]
+[ext_resource path="res://src/Actors/Player/x_sprites/ultimate_x_sprite.png" type="Texture" id=49]
+[ext_resource path="res://src/StageSelect/armor_setup/special_holder3.gd" type="Script" id=50]
+[ext_resource path="res://src/StageSelect/armor_setup/ultimateButton.gd" type="Script" id=51]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -186,6 +189,18 @@ margin_right = 53.5
 margin_bottom = 92.0
 texture = ExtResource( 23 )
 
+[node name="ultimate_body" type="TextureRect" parent="Menu/textureRect/Armor"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -92.0
+margin_right = 53.5
+margin_bottom = 92.0
+texture = ExtResource( 23 )
+
 [node name="base_h" type="TextureRect" parent="Menu/textureRect/Armor"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -209,6 +224,18 @@ margin_bottom = 92.0
 texture = ExtResource( 18 )
 
 [node name="icarus_head" type="TextureRect" parent="Menu/textureRect/Armor"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -92.0
+margin_right = 53.5
+margin_bottom = 92.0
+texture = ExtResource( 12 )
+
+[node name="ultimate_head" type="TextureRect" parent="Menu/textureRect/Armor"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -256,6 +283,18 @@ margin_right = 53.5
 margin_bottom = 92.0
 texture = ExtResource( 16 )
 
+[node name="ultimate_body_neck" type="TextureRect" parent="Menu/textureRect/Armor"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -92.0
+margin_right = 53.5
+margin_bottom = 92.0
+texture = ExtResource( 16 )
+
 [node name="arms" type="TextureRect" parent="Menu/textureRect/Armor"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -291,6 +330,18 @@ margin_right = 53.5
 margin_bottom = 92.0
 texture = ExtResource( 24 )
 
+[node name="ultimate_arms" type="TextureRect" parent="Menu/textureRect/Armor"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -92.0
+margin_right = 53.5
+margin_bottom = 92.0
+texture = ExtResource( 24 )
+
 [node name="legs" type="TextureRect" parent="Menu/textureRect/Armor"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -315,6 +366,18 @@ margin_bottom = 92.0
 texture = ExtResource( 15 )
 
 [node name="icarus_legs" type="TextureRect" parent="Menu/textureRect/Armor"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -53.5
+margin_top = -92.0
+margin_right = 53.5
+margin_bottom = 92.0
+texture = ExtResource( 14 )
+
+[node name="ultimate_legs" type="TextureRect" parent="Menu/textureRect/Armor"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -533,6 +596,7 @@ margin_top = 200.0
 margin_right = 315.0
 margin_bottom = 212.0
 rect_min_size = Vector2( 0, 12 )
+focus_neighbour_left = NodePath("../special_holder3/ultimateButton")
 focus_neighbour_bottom = NodePath("../textureRect/Options Group/ArmorParts/HeadParts/head")
 action_mode = 0
 script = ExtResource( 2 )
@@ -695,6 +759,200 @@ frames = SubResource( 10 )
 frame = 3
 playing = true
 
+[node name="special_holder3" type="TextureRect" parent="Menu"]
+margin_left = -13.0
+margin_top = 144.0
+margin_right = 65.0
+margin_bottom = 228.0
+texture = ExtResource( 1 )
+stretch_mode = 5
+flip_h = true
+script = ExtResource( 50 )
+
+[node name="icon_bg" type="TextureRect" parent="Menu/special_holder3"]
+modulate = Color( 1, 1, 1, 0.752941 )
+margin_left = 32.0
+margin_top = 13.0
+margin_right = 62.0
+margin_bottom = 43.0
+texture = ExtResource( 44 )
+
+[node name="icon" type="TextureRect" parent="Menu/special_holder3"]
+modulate = Color( 1, 1, 1, 0.75 )
+material = SubResource( 5 )
+margin_left = 35.0
+margin_top = 15.0
+margin_right = 59.0
+margin_bottom = 40.0
+texture = ExtResource( 49 )
+expand = true
+stretch_mode = 6
+script = ExtResource( 47 )
+fullset_signal = "full_ultimate"
+
+[node name="animatedSprite" type="AnimatedSprite" parent="Menu/special_holder3"]
+position = Vector2( 48, 27 )
+z_index = 2
+frames = SubResource( 10 )
+frame = 3
+playing = true
+
+[node name="ultimateButton" type="TextureButton" parent="Menu/special_holder3"]
+margin_left = 33.0
+margin_top = 14.0
+margin_right = 62.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( -51, -1 )
+focus_neighbour_right = NodePath("../../exit")
+toggle_mode = true
+script = ExtResource( 51 )
+menu_path = NodePath("../../..")
+
+[node name="ArmorParts" type="VBoxContainer" parent="Menu/special_holder3/ultimateButton"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -133.5
+margin_top = -64.0
+margin_right = -38.5
+margin_bottom = 64.0
+custom_constants/separation = 2
+alignment = 1
+
+[node name="HeadParts" type="HBoxContainer" parent="Menu/special_holder3/ultimateButton/ArmorParts"]
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 31.0
+custom_constants/separation = 2
+alignment = 1
+script = ExtResource( 33 )
+is_ultimate = true
+
+[node name="ultimate_head" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts"]
+margin_left = 16.0
+margin_right = 46.0
+margin_bottom = 30.0
+focus_neighbour_top = NodePath("../../../../../exit")
+button_mask = 0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTHEAD_NAME"
+description = "DEFAULTHEAD_DISC"
+is_ultimate = true
+
+[node name="ultimate_head2" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts"]
+margin_left = 48.0
+margin_right = 78.0
+margin_bottom = 30.0
+focus_neighbour_top = NodePath("../../../../../exit")
+button_mask = 0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTHEAD_NAME"
+description = "DEFAULTHEAD_DISC"
+is_ultimate = true
+
+[node name="BodyParts" type="HBoxContainer" parent="Menu/special_holder3/ultimateButton/ArmorParts"]
+margin_top = 33.0
+margin_right = 95.0
+margin_bottom = 63.0
+custom_constants/separation = 2
+alignment = 1
+script = ExtResource( 33 )
+is_ultimate = true
+
+[node name="ultimate_body" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts"]
+margin_left = 16.0
+margin_right = 46.0
+margin_bottom = 30.0
+button_mask = 0
+texture_normal = ExtResource( 32 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTBODY_NAME"
+description = "DEFAULTBODY_DISC"
+is_ultimate = true
+
+[node name="ultimate_body2" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts"]
+margin_left = 48.0
+margin_right = 78.0
+margin_bottom = 30.0
+button_mask = 0
+texture_normal = ExtResource( 32 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTBODY_NAME"
+description = "DEFAULTBODY_DISC"
+is_ultimate = true
+
+[node name="ArmsParts" type="HBoxContainer" parent="Menu/special_holder3/ultimateButton/ArmorParts"]
+margin_top = 65.0
+margin_right = 95.0
+margin_bottom = 95.0
+custom_constants/separation = 2
+alignment = 1
+script = ExtResource( 33 )
+is_ultimate = true
+
+[node name="ultimate_arms" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts"]
+margin_left = 16.0
+margin_right = 46.0
+margin_bottom = 30.0
+button_mask = 0
+texture_normal = ExtResource( 30 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTARMS_NAME"
+description = "DEFAULTARMS_DISC"
+is_ultimate = true
+
+[node name="ultimate_arms2" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts"]
+margin_left = 48.0
+margin_right = 78.0
+margin_bottom = 30.0
+button_mask = 0
+texture_normal = ExtResource( 30 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTARMS_NAME"
+description = "DEFAULTARMS_DISC"
+is_ultimate = true
+
+[node name="LegsParts" type="HBoxContainer" parent="Menu/special_holder3/ultimateButton/ArmorParts"]
+margin_top = 97.0
+margin_right = 95.0
+margin_bottom = 127.0
+custom_constants/separation = 2
+alignment = 1
+script = ExtResource( 33 )
+is_ultimate = true
+
+[node name="ultimate_legs" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts"]
+margin_left = 16.0
+margin_right = 46.0
+margin_bottom = 30.0
+button_mask = 0
+texture_normal = ExtResource( 31 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTLEGS_NAME"
+description = "DEFAULTLEGS_DISC"
+is_ultimate = true
+
+[node name="ultimate_legs2" type="TextureButton" parent="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts"]
+margin_left = 48.0
+margin_right = 78.0
+margin_bottom = 30.0
+button_mask = 0
+texture_normal = ExtResource( 31 )
+script = ExtResource( 29 )
+menu_path = NodePath("../../../../../..")
+legible_name = "DEFAULTLEGS_NAME"
+description = "DEFAULTLEGS_DISC"
+is_ultimate = true
+
 [node name="Fader" type="ColorRect" parent="."]
 margin_right = 398.0
 margin_bottom = 224.0
@@ -793,3 +1051,47 @@ bus = "SFX"
 [connection signal="mouse_entered" from="Menu/heart_holder/heart_enabler" to="Menu/heart_holder/heart_enabler" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Menu/heart_holder/heart_enabler" to="Menu/heart_holder/heart_enabler" method="_on_mouse_exited"]
 [connection signal="pressed" from="Menu/heart_holder/heart_enabler" to="Menu/heart_holder/heart_enabler" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton" to="Menu/special_holder3/ultimateButton" method="_on_entered"]
+[connection signal="toggled" from="Menu/special_holder3/ultimateButton" to="Menu/special_holder3/ultimateButton" method="_on_ultimateButton_toggled"]
+[connection signal="unlocked_hermes" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts" to="Menu/special_holder/icon" method="display"]
+[connection signal="unlocked_icarus" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts" to="Menu/special_holder2/icon" method="display"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" to="Menu/special_holder3/ultimateButton/ArmorParts/HeadParts/ultimate_head2" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" to="Menu/special_holder3/ultimateButton/ArmorParts/BodyParts/ultimate_body2" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" to="Menu/special_holder3/ultimateButton/ArmorParts/ArmsParts/ultimate_arms2" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs" method="_on_pressed"]
+[connection signal="focus_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" method="_on_focus_entered"]
+[connection signal="focus_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" method="_on_focus_exited"]
+[connection signal="mouse_entered" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" method="_on_mouse_exited"]
+[connection signal="pressed" from="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" to="Menu/special_holder3/ultimateButton/ArmorParts/LegsParts/ultimate_legs2" method="_on_pressed"]
