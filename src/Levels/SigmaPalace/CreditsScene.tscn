@@ -53,6 +53,8 @@ shader_param/Alert = 0.0
 shader_param/R_CrystalColor2 = Color( 0.941176, 0.25098, 0.0627451, 1 )
 shader_param/R_CrystalColor3 = Color( 0.447059, 0.133333, 0.215686, 1 )
 shader_param/tolerance = 0.01
+shader_param/MainColor7 = null
+shader_param/R_MainColor7 = null
 shader_param/Alpha = 1.0
 
 [sub_resource type="ShaderMaterial" id=2]
@@ -79,7 +81,7 @@ position = Vector2( 26, -30 )
 z_index = 1
 frames = ExtResource( 9 )
 animation = "idle"
-frame = 55
+frame = 45
 playing = true
 flip_h = true
 
@@ -506,7 +508,7 @@ Hirokazu Teranishi
 
 [color=#47a1fc]Testers[/color]
 Naoki Kamura
-Shōji Araki
+Shoji Araki
 Tetsunori Matsuoka
 Masaki Tsujioka
 Takeshi Kawasaki
@@ -809,7 +811,7 @@ Hirokazu Teranishi
 
 Testers
 Naoki Kamura
-Shōji Araki
+Shoji Araki
 Tetsunori Matsuoka
 Masaki Tsujioka
 Takeshi Kawasaki
