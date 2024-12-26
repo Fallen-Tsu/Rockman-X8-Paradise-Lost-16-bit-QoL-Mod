@@ -1050,11 +1050,12 @@ bus = "SFX"
 
 [node name="Capsule" parent="Objects" index="19" instance=ExtResource( 21 )]
 position = Vector2( 1288, -1456 )
+armor_part = "ultimate_head"
 dialogue = ExtResource( 76 )
 ultimate_capsule = true
 
 [node name="animatedSprite" parent="Objects/Capsule" index="1"]
-frame = 8
+frame = 6
 
 [node name="Limits" parent="." index="8"]
 visible = false
