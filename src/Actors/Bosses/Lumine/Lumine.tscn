@@ -479,7 +479,8 @@ scale = Vector2( 4.35, 4.25 )
 script = ExtResource( 39 )
 debug_logs = true
 dialogue = ExtResource( 92 )
-song_loop = ExtResource( 93 )
+song_intro_alt = ExtResource( 93 )
+song_loop_alt = ExtResource( 93 )
 boss_bar = ExtResource( 95 )
 
 [node name="Damage" type="Node2D" parent="."]

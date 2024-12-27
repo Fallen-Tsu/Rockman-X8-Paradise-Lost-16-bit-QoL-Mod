@@ -4,9 +4,22 @@ onready var tween := TweenController.new(self,false)
 onready var space: Node = $"../Space"
 onready var rotating_crystals: Node2D = $"../RotatingCrystals"
 
-export var song_intro : AudioStream
-export var song_loop : AudioStream
+const song_intro_og = "res://src/Sounds/OST - Lumine - Intro.ogg"
+const song_loop_og = "res://src/Sounds/OST - Lumine - Loop.ogg"
+var song_intro: AudioStream
+var song_loop: AudioStream
+export var song_intro_alt : AudioStream
+export var song_loop_alt : AudioStream
 export var boss_bar : Texture
+
+func _ready():
+	._ready()
+	if Configurations.get("AltMusic"):
+		song_intro = song_intro_alt
+		song_loop = song_loop_alt
+	else:
+		song_intro = preload(song_intro_og)
+		song_loop = preload(song_loop_og)
 
 func connect_start_events() -> void:
 	call_deferred("prepare_for_intro")

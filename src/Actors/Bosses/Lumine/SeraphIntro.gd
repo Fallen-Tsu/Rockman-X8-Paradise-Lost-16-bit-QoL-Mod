@@ -1,7 +1,11 @@
 extends GenericIntro
 
-export var intro : AudioStream
-export var loop : AudioStream
+var intro : AudioStream
+var loop : AudioStream
+const intro_og = "res://src/Sounds/OST - SeraphLumine - Intro.ogg"
+const loop_og = "res://src/Sounds/OST - SeraphLumine - Loop.ogg"
+export var intro_alt : AudioStream
+export var loop_alt : AudioStream
 onready var sprite: AnimatedSprite = $"../animatedSprite"
 onready var tween := TweenController.new(self,false)
 onready var front_wings: AnimatedSprite = $"../frontWings"
@@ -15,7 +19,14 @@ onready var move_feathers: Particles2D = $"../animatedSprite/move_feathers"
 onready var space: Node = $"../Space"
 onready var flash_2: Sprite = $flash2
 
-
+func _ready():
+	._ready()
+	if Configurations.get("AltMusic"):
+		intro = intro_alt
+		loop = loop_alt
+	else:
+		intro = preload(intro_og)
+		loop = preload(loop_og)
 func connect_start_events() -> void:
 	call_deferred("prepare_for_intro")
 	call_deferred("set_visibility",false)
