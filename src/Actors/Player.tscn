@@ -280,16 +280,18 @@ position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 69
+frame = 40
 playing = true
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
+visible = false
 material = ExtResource( 23 )
 frames = ExtResource( 48 )
 animation = "idle"
 script = ExtResource( 54 )
 
 [node name="body_armor" type="AnimatedSprite" parent="animatedSprite"]
+visible = false
 material = ExtResource( 112 )
 frames = ExtResource( 49 )
 animation = "idle"
@@ -299,6 +301,7 @@ __meta__ = {
 }
 
 [node name="arms_armor" type="AnimatedSprite" parent="animatedSprite"]
+visible = false
 material = ExtResource( 113 )
 frames = ExtResource( 46 )
 animation = "idle"
@@ -312,6 +315,7 @@ animation = "shot"
 script = ExtResource( 54 )
 
 [node name="legs_armor" type="AnimatedSprite" parent="animatedSprite"]
+visible = false
 material = ExtResource( 111 )
 frames = ExtResource( 50 )
 animation = "idle"
