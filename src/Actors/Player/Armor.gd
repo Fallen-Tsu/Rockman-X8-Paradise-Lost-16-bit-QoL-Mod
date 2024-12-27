@@ -55,28 +55,27 @@ func collected(collectible : String):
 func display(full_part_name : String):
 	var part_location = full_part_name.replace("icarus_","").replace("hermes_","").replace("ultimate_","")
 	call("display_" + part_location)
-	
+	var armor_set = full_part_name.split("_")[0]
+	var colors
+	var method_to_color = "change_colors"
+	match (armor_set):
+		"icarus":
+			colors = IcarusColors
+		"hermes":
+			colors = HermesColors
+		"ultimate":
+			colors = UltimateColors
+			method_to_color = "change_ultimate_colors"
+		
 	for part in armor:
-		if part_location in part.name:
-			if "icarus" in full_part_name:
-				if is_using_full_set():
-					apply_family_color("icarus")
-					part.family = "icarus"
-				else:
-					change_colors(part,IcarusColors)
-					turn_yellow_over_time()
-					part.family = "icarus"
-			elif "hermes" in full_part_name:
-				if is_using_full_set():
-					apply_family_color("hermes")
-					part.family = "hermes"
-				else:
-					change_colors(part,HermesColors)
-					turn_yellow_over_time()
-					part.family = "hermes"
-			elif "ultimate" in full_part_name:
-				change_ultimate_colors(part,UltimateColors)
-				part.family = "ultimate"
+		if part_location in part.name or (part_location == "arms" and "cannon" in part.name):
+			part.family = armor_set
+			if is_using_full_set():
+				apply_family_color(armor_set)
+			else:
+				callv(method_to_color,[part,colors])
+				turn_yellow_over_time()
+			
 	if "ultimate" in full_part_name:
 		playerSprite.material.set_shader_param("R_MainColor4", UltimateInner1)
 		playerSprite.material.set_shader_param("R_MainColor5", UltimateInner2)
