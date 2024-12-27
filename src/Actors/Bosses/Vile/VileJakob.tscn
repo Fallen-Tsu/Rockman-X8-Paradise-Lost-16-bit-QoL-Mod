@@ -367,7 +367,8 @@ texture = ExtResource( 51 )
 script = ExtResource( 52 )
 initial_alpha = 1.0
 tween_scale_y = false
-final_color = Color( 1, 1, 1, 1 )
+initial_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+final_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 duration = 0.064
 
 [node name="VileAirCannon" type="Node2D" parent="."]

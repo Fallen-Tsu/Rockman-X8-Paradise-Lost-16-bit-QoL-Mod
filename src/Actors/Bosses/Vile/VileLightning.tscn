@@ -61,7 +61,7 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "default",
-"speed": 42.0
+"speed": 15.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -84,14 +84,13 @@ cast_to = Vector2( 0, 255 )
 [node name="line" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 0, 251 )
 width = 48.0
-default_color = Color( 1, 1, 1, 1 )
+default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 texture = ExtResource( 4 )
 texture_mode = 1
 
 [node name="finish" type="AnimatedSprite" parent="line"]
 position = Vector2( 0, 251 )
 frames = SubResource( 11 )
-frame = 4
 playing = true
 
 [node name="end" type="Node2D" parent="."]
