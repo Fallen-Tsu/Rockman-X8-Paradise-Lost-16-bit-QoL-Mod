@@ -45,7 +45,7 @@ func fire_charged(_charge_level) -> void:
 
 func _StartCondition() -> bool:
 	if current_weapon and character.has_control():
-		if current_weapon.name == "XDrive":
+		if current_weapon.name == "XDrive" or current_weapon.name == "GigaCrash":
 			return current_weapon.has_ammo()
 		if current_weapon_is_buster():
 			return current_weapon.has_ammo()
