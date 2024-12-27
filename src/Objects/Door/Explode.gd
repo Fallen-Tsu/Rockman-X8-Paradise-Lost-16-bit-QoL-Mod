@@ -26,7 +26,7 @@ func stop_visuals() -> void:
 	particles.emitting = false
 
 func _on_punch_detector_body_entered(body) -> void:
-	if body.name == "RideArmorPunch" or (body.name == "PlasmaShot" and should_explode_with_plasma):
+	if body.name == "RideArmorPunch":
 		_on_signal()
 	#elif body.name == "BlastLaunchCharged":
 	#	body.hit(self)
