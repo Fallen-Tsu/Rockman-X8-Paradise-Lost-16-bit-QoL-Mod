@@ -142,7 +142,7 @@ expression = "bool replace (vec3 color, vec3 main_color, vec3 replace_color, out
 {	vec3 diff3 = color - main_color;
 	float m = max(max(abs(diff3.r), abs(diff3.g)), abs(diff3.b));
 	
-	if ((step(m, tol) >= 0.0000000000001)){ 
+	if ((step(m, tol) >= 0.01)){ 
 		color = mix(color, replace_color, step(m, tol));
 		output = color;
 		return true;
@@ -274,7 +274,7 @@ uniform float Alpha;
 	{	vec3 diff3 = color - main_color;
 		float m = max(max(abs(diff3.r), abs(diff3.g)), abs(diff3.b));
 		
-		if ((step(m, tol) >= 0.0000000000001)){ 
+		if ((step(m, tol) >= 0.01)){ 
 			color = mix(color, replace_color, step(m, tol));
 			output = color;
 			return true;
@@ -635,7 +635,7 @@ void light() {
 
 }
 "
-graph_offset = Vector2( -826.087, 76.3446 )
+graph_offset = Vector2( -719.891, -128.505 )
 mode = 1
 flags/light_only = false
 nodes/vertex/2/node = SubResource( 20 )
@@ -749,7 +749,7 @@ nodes/fragment/71/expression = "bool replace (vec3 color, vec3 main_color, vec3 
 {	vec3 diff3 = color - main_color;
 	float m = max(max(abs(diff3.r), abs(diff3.g)), abs(diff3.b));
 	
-	if ((step(m, tol) >= 0.0000000000001)){ 
+	if ((step(m, tol) >= 0.01)){ 
 		color = mix(color, replace_color, step(m, tol));
 		output = color;
 		return true;
