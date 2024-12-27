@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Ys VIII Lacrimosa of DANA - A-to-Z .ogg-a05bf6d00efe
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
