@@ -1,8 +1,9 @@
-[gd_scene load_steps=150 format=2]
+[gd_scene load_steps=156 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/HUD/Hud.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Levels/Inferno/Music Player.gd" type="Script" id=3]
+[ext_resource path="res://src/Sounds/OST - Inferno - Intro.ogg" type="AudioStream" id=4]
 [ext_resource path="res://src/System/StateCamera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Alt Music/Ys IX Super Ultimate - Catch Me If You Can.ogg" type="AudioStream" id=6]
 [ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=7]
@@ -31,6 +32,10 @@
 [ext_resource path="res://Alt Music/Ys： The Oath in Felghana OST - A Searing Struggle.ogg" type="AudioStream" id=30]
 [ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=31]
 [ext_resource path="res://src/Objects/Door/NewBossDoor.tscn" type="PackedScene" id=32]
+[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=33]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=34]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=35]
+[ext_resource path="res://src/Sounds/OST - Inferno - Loop.ogg" type="AudioStream" id=36]
 [ext_resource path="res://src/Actors/Enemies/GroundPizza/SimplePizza.tscn" type="PackedScene" id=37]
 [ext_resource path="res://src/Actors/Enemies/Wheeler.tscn" type="PackedScene" id=38]
 [ext_resource path="res://src/Effects/enemy_shader.tres" type="Shader" id=39]
@@ -82,6 +87,7 @@
 [ext_resource path="res://src/Levels/Inferno/GravityPassage.tscn" type="PackedScene" id=85]
 [ext_resource path="res://src/Levels/Inferno/Blockade.gd" type="Script" id=86]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=87]
+[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=88]
 
 [sub_resource type="CanvasItemMaterial" id=92]
 blend_mode = 1
@@ -132,6 +138,8 @@ shader_param/Alert = 0.0
 shader_param/R_CrystalColor2 = Color( 0.941176, 0.25098, 0.0627451, 1 )
 shader_param/R_CrystalColor3 = Color( 0.447059, 0.133333, 0.215686, 1 )
 shader_param/tolerance = 0.01
+shader_param/MainColor7 = null
+shader_param/R_MainColor7 = null
 shader_param/Alpha = 1.0
 
 [sub_resource type="ShaderMaterial" id=47]
@@ -160,6 +168,8 @@ shader_param/Alert = 0.0
 shader_param/R_CrystalColor2 = Color( 0.941176, 0.25098, 0.0627451, 1 )
 shader_param/R_CrystalColor3 = Color( 0.447059, 0.133333, 0.215686, 1 )
 shader_param/tolerance = 0.01
+shader_param/MainColor7 = null
+shader_param/R_MainColor7 = null
 shader_param/Alpha = 1.0
 
 [sub_resource type="ShaderMaterial" id=48]
@@ -188,6 +198,8 @@ shader_param/Alert = 0.0
 shader_param/R_CrystalColor2 = Color( 0.941176, 0.25098, 0.0627451, 1 )
 shader_param/R_CrystalColor3 = Color( 0.447059, 0.133333, 0.215686, 1 )
 shader_param/tolerance = 0.01
+shader_param/MainColor7 = null
+shader_param/R_MainColor7 = null
 shader_param/Alpha = 1.0
 
 [sub_resource type="ShaderMaterial" id=49]
@@ -216,6 +228,8 @@ shader_param/Alert = 0.0
 shader_param/R_CrystalColor2 = Color( 0.941176, 0.25098, 0.0627451, 1 )
 shader_param/R_CrystalColor3 = Color( 0.447059, 0.133333, 0.215686, 1 )
 shader_param/tolerance = 0.01
+shader_param/MainColor7 = null
+shader_param/R_MainColor7 = null
 shader_param/Alpha = 1.0
 
 [sub_resource type="ShaderMaterial" id=50]
@@ -244,6 +258,8 @@ shader_param/Alert = 0.0
 shader_param/R_CrystalColor2 = Color( 0.941176, 0.25098, 0.0627451, 1 )
 shader_param/R_CrystalColor3 = Color( 0.447059, 0.133333, 0.215686, 1 )
 shader_param/tolerance = 0.01
+shader_param/MainColor7 = null
+shader_param/R_MainColor7 = null
 shader_param/Alpha = 1.0
 
 [sub_resource type="CanvasItemMaterial" id=51]
@@ -636,7 +652,7 @@ position = Vector2( 199, 258 )
 
 [node name="animatedSprite" parent="X" index="3"]
 material = SubResource( 46 )
-frame = 70
+frame = 34
 
 [node name="head_armor" parent="X/animatedSprite" index="0"]
 material = SubResource( 47 )
@@ -701,9 +717,15 @@ process_material = SubResource( 66 )
 pause_mode = 2
 bus = "Music"
 script = ExtResource( 3 )
+boss_intro_og = ExtResource( 33 )
+boss_song_og = ExtResource( 88 )
 boss_song_alt = ExtResource( 8 )
+angry_boss_intro_og = ExtResource( 35 )
+angry_boss_song_og = ExtResource( 34 )
 stage_clear_song_alt = ExtResource( 7 )
 capsule_song_alt = ExtResource( 31 )
+stage_intro_og = ExtResource( 4 )
+stage_song_og = ExtResource( 36 )
 stage_song_alt = ExtResource( 30 )
 lava_intro = ExtResource( 6 )
 lava_song = ExtResource( 6 )
@@ -1986,7 +2008,7 @@ armor_part = "hermes_legs"
 dialogue = ExtResource( 20 )
 
 [node name="animatedSprite" parent="Objects/Capsule" index="1"]
-frame = 4
+frame = 16
 
 [node name="area2D" parent="Objects/Capsule" index="6"]
 visible = true
