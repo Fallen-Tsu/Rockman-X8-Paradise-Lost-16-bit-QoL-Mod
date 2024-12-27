@@ -117,10 +117,11 @@ func _process(delta: float) -> void:
 						var parts=["legs","body","arms","head"]
 						for part in parts:
 							Event.emit_signal("collected","ultimate_"+part)
+							player.play_animation_once("armor_receive")
 					else : 
 						Event.emit_signal("collected", armor_part)
+						player.play_animation_once("armor_receive")
 					Savefile.save()
-					player.play_animation_once("armor_receive")
 					gave_armor = true
 					achievement_check()
 
