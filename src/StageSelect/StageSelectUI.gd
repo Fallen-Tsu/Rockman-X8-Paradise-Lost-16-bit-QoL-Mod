@@ -17,12 +17,35 @@ onready var gateway: TextureButton = $Menu/Gateway
 onready var sigma_palace: TextureButton = $Menu/SigmaPalace
 onready var last_stages := [jacob_elevator,gateway,sigma_palace]
 
-const music_0_intro:= preload("res://src/Sounds/OST - Stage Select 1 - Intro.ogg")
-const music_0_loop := preload("res://src/Sounds/OST - Stage Select 1 - Loop.ogg")
-const music_1_intro := preload("res://src/Sounds/OST - StageSelect3 - Intro.ogg")
-const music_1_loop := preload("res://src/Sounds/OST - StageSelect3 - Loop.ogg")
+var eight_bosses_alive_intro: AudioStream
+var eight_bosses_alive_loop: AudioStream
+export var eight_bosses_alive_intro_alt: AudioStream
+export var eight_bosses_alive_loop_alt: AudioStream
+var eight_bosses_dead_intro: AudioStream
+var eight_bosses_dead_loop: AudioStream
+export var eight_bosses_dead_intro_alt: AudioStream
+export var eight_bosses_dead_loop_alt: AudioStream
+var sigma_palace_theme_intro: AudioStream
+var sigma_palace_theme_loop: AudioStream
+export var sigma_palace_theme_intro_alt: AudioStream
+export var sigma_palace_theme_loop_alt: AudioStream
+
 
 func _ready() -> void:
+	if Configurations.get("AltMusic"):
+		eight_bosses_alive_intro = eight_bosses_alive_intro_alt
+		eight_bosses_alive_loop = eight_bosses_alive_loop_alt
+		eight_bosses_dead_intro = eight_bosses_dead_intro_alt
+		eight_bosses_dead_loop = eight_bosses_dead_loop_alt
+		sigma_palace_theme_intro = sigma_palace_theme_intro_alt
+		sigma_palace_theme_loop = sigma_palace_theme_loop_alt
+	else:
+		eight_bosses_alive_intro = preload("res://src/Sounds/OST - Stage Select 1 - Intro.ogg")
+		eight_bosses_alive_loop = preload("res://src/Sounds/OST - Stage Select 1 - Loop.ogg")
+		eight_bosses_dead_intro = preload("res://src/Sounds/OST - StageSelect2 - Intro.ogg")
+		eight_bosses_dead_loop = preload("res://src/Sounds/OST - StageSelect2 - Loop.ogg")
+		sigma_palace_theme_intro = preload("res://src/Sounds/OST - StageSelect3 - Intro.ogg")
+		sigma_palace_theme_loop = preload("res://src/Sounds/OST - StageSelect3 - Loop.ogg")
 	GameManager.force_unpause()
 	lock_buttons()
 	call_deferred("show_last_stages_and_play_music")
@@ -46,11 +69,11 @@ func show_last_stages_and_play_music() -> void:
 
 func play_stage_select_song(intensity := 0):
 	if intensity == 0:
-		music.play_with_intro(music_0_intro,music_0_loop)
+		music.play_with_intro(eight_bosses_alive_intro,eight_bosses_alive_loop)
 	elif intensity == 1 or intensity == 2:
-		music.play_with_intro()
+		music.play_with_intro(eight_bosses_dead_intro, eight_bosses_dead_loop)
 	elif intensity > 2:
-		music.play_with_intro(music_1_intro,music_1_loop)
+		music.play_with_intro(sigma_palace_theme_intro,sigma_palace_theme_loop)
 
 func play_choice_sound() -> void:
 	choice.play()

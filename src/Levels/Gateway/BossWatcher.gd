@@ -1,7 +1,11 @@
 extends Node2D
 
-export var final_section_intro : AudioStream
-export var final_section_loop : AudioStream
+var final_section_intro : AudioStream
+var final_section_loop : AudioStream
+export var final_section_intro_og : AudioStream
+export var final_section_loop_og : AudioStream
+export var final_section_intro_alt : AudioStream
+export var final_section_loop_alt : AudioStream
 
 var beaten_bosses : Array
 var crystals_ready : Array
@@ -12,6 +16,12 @@ signal prepare_for_sigma
 onready var ready_effect: Sprite = $"../charge_circle2"
 
 func _ready() -> void:
+	if Configurations.get("AltMusic"):
+		final_section_intro = final_section_intro_alt
+		final_section_loop = final_section_loop_alt
+	else:
+		final_section_intro = final_section_intro_og
+		final_section_loop = final_section_loop_og
 	Event.connect("gateway_crystal_get",self,"on_crystal_got")
 	Event.connect("gateway_boss_defeated",self,"on_boss_defeated")
 	Event.connect("gateway_final_section",self,"start_final_section")

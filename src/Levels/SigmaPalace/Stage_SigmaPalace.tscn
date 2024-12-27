@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=126 format=2]
 
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/BossSpawner.gd" type="Script" id=2]
@@ -50,6 +50,8 @@
 [ext_resource path="res://src/Levels/SigmaPalace/PlayerMover.gd" type="Script" id=48]
 [ext_resource path="res://src/Levels/SigmaPalace/MusicSilencer.gd" type="Script" id=49]
 [ext_resource path="res://src/Levels/SigmaPalace/MusicStarter.gd" type="Script" id=50]
+[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=51]
+[ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=52]
 [ext_resource path="res://src/Levels/SigmaPalace/seraph_bg.png" type="Texture" id=53]
 [ext_resource path="res://src/System/BossOrder.tscn" type="PackedScene" id=54]
 [ext_resource path="res://src/Levels/SigmaPalace/finalfightBG.gd" type="Script" id=55]
@@ -71,6 +73,10 @@
 [ext_resource path="res://src/Effects/Textures/elec_particles.png" type="Texture" id=71]
 [ext_resource path="res://src/Levels/SigmaPalace/RechargeHint.gd" type="Script" id=72]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=73]
+[ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=74]
+[ext_resource path="res://src/Sounds/OST - TrueSigma - Loop.ogg" type="AudioStream" id=75]
+[ext_resource path="res://src/Sounds/OST - SigmaPalace - Loop.ogg" type="AudioStream" id=76]
+[ext_resource path="res://src/Sounds/OST - SigmaPalace - Intro.ogg" type="AudioStream" id=77]
 
 [sub_resource type="ShaderMaterial" id=92]
 resource_local_to_scene = true
@@ -285,9 +291,15 @@ emit_capsule_signal = false
 
 [node name="Music Player" parent="." index="1"]
 debug_logs = true
+boss_song_og = ExtResource( 75 )
 boss_song_alt = ExtResource( 25 )
+stage_clear_song_og = ExtResource( 51 )
 stage_clear_song_alt = ExtResource( 4 )
+stage_intro_og = ExtResource( 77 )
+stage_song_og = ExtResource( 76 )
 stage_song_alt = ExtResource( 3 )
+miniboss_intro_og = ExtResource( 74 )
+miniboss_song_og = ExtResource( 52 )
 miniboss_song_alt = ExtResource( 26 )
 
 [node name="BossOrder" parent="StateCamera" index="14" instance=ExtResource( 54 )]
@@ -1906,13 +1918,12 @@ position = Vector2( -48, -109 )
 shape = SubResource( 93 )
 
 [node name="MusicStarter" type="Area2D" parent="Objects" index="37"]
-visible = false
 position = Vector2( 7524, -1028 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 50 )
-intro = ExtResource( 45 )
-loop = ExtResource( 45 )
+intro_alt = ExtResource( 45 )
+loop_alt = ExtResource( 45 )
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="Objects/MusicStarter" index="0"]
 position = Vector2( 88, -109 )

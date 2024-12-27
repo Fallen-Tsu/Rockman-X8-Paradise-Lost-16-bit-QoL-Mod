@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=144 format=2]
 
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/Test/test_tileset.tres" type="TileSet" id=2]
@@ -89,6 +89,14 @@
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=87]
 [ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=88]
 [ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=89]
+[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=90]
+[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=91]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=92]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=93]
+[ext_resource path="res://src/Sounds/OST - Dynasty - Intro.ogg" type="AudioStream" id=94]
+[ext_resource path="res://src/Sounds/OST - Dynasty - Loop.ogg" type="AudioStream" id=95]
+[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=96]
+[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=97]
 
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 41.5, 19 )
@@ -255,9 +263,17 @@ extents = Vector2( 199, 112 )
 [node name="Music Player" parent="." index="1"]
 debug_logs = null
 stop_song_on_dialogue = null
+boss_intro_og = ExtResource( 90 )
+boss_song_og = ExtResource( 91 )
 boss_song_alt = ExtResource( 46 )
+angry_boss_intro_og = ExtResource( 92 )
+angry_boss_song_og = ExtResource( 93 )
+stage_clear_song_og = ExtResource( 97 )
 stage_clear_song_alt = ExtResource( 88 )
+capsule_song_og = ExtResource( 96 )
 capsule_song_alt = ExtResource( 89 )
+stage_intro_og = ExtResource( 94 )
+stage_song_og = ExtResource( 95 )
 stage_song_alt = ExtResource( 3 )
 
 [node name="X" parent="." index="3"]
@@ -1174,7 +1190,7 @@ pause_mode = 2
 position = Vector2( 13666, -2158 )
 z_index = 2
 frames = SubResource( 187 )
-frame = 3
+frame = 4
 playing = true
 script = ExtResource( 82 )
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=132 format=2]
 
 [ext_resource path="res://src/Levels/CentralWhite/Music Player.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
@@ -9,9 +9,12 @@
 [ext_resource path="res://Alt Music/Ys Foliage Ocean in Celceta - In the Fires of Ignition (Ys IV).ogg" type="AudioStream" id=7]
 [ext_resource path="res://Alt Music/07. ICE RIDGE OF NOLTIA [ Ys I II Chronicles.ogg" type="AudioStream" id=8]
 [ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=10]
 [ext_resource path="res://src/Levels/Test/test_tileset.tres" type="TileSet" id=11]
 [ext_resource path="res://src/Actors/Spawners/BikeSpawner.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/Objects/LifeUp.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=14]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=15]
 [ext_resource path="res://src/Objects/Box/StaticBreakBox.tscn" type="PackedScene" id=16]
 [ext_resource path="res://src/Objects/Box/StaticDeflectBox.tscn" type="PackedScene" id=17]
 [ext_resource path="res://src/Levels/CentralWhite/new_parallax_1.png" type="Texture" id=18]
@@ -32,6 +35,8 @@
 [ext_resource path="res://src/Effects/Textures/blue_screen.png" type="Texture" id=33]
 [ext_resource path="res://src/Levels/CentralWhite/teleport_light.gd" type="Script" id=34]
 [ext_resource path="res://src/Levels/CentralWhite/SinkStarter.gd" type="Script" id=35]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=36]
+[ext_resource path="res://src/Sounds/OST - CentralWhite - Intro.ogg" type="AudioStream" id=37]
 [ext_resource path="res://src/Levels/CentralWhite/_cache_centralwhite.tscn" type="PackedScene" id=38]
 [ext_resource path="res://src/Effects/Materials/SonicWave.tres" type="Material" id=39]
 [ext_resource path="res://src/Effects/Textures/sonic_wave.png" type="Texture" id=40]
@@ -81,6 +86,11 @@
 [ext_resource path="res://src/Levels/Primrose/portal_deactivated.png" type="Texture" id=84]
 [ext_resource path="res://src/Levels/Gateway/Portal.tscn" type="PackedScene" id=85]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=86]
+[ext_resource path="res://src/Sounds/OST - CentralWhite - Loop.ogg" type="AudioStream" id=87]
+[ext_resource path="res://src/Sounds/OST - MiniBoss - Intro.ogg" type="AudioStream" id=88]
+[ext_resource path="res://src/Sounds/OST - MiniBoss - Loop.ogg" type="AudioStream" id=89]
+[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=90]
+[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=91]
 
 [sub_resource type="CanvasItemMaterial" id=94]
 particles_animation = true
@@ -316,10 +326,20 @@ __meta__ = {
 "_editor_description_": ""
 }
 debug_logs = true
+boss_intro_og = ExtResource( 10 )
+boss_song_og = ExtResource( 14 )
 boss_song_alt = ExtResource( 7 )
+angry_boss_intro_og = ExtResource( 36 )
+angry_boss_song_og = ExtResource( 15 )
+stage_clear_song_og = ExtResource( 90 )
 stage_clear_song_alt = ExtResource( 5 )
+capsule_song_og = ExtResource( 91 )
 capsule_song_alt = ExtResource( 9 )
+stage_intro_og = ExtResource( 37 )
+stage_song_og = ExtResource( 87 )
 stage_song_alt = ExtResource( 8 )
+miniboss_intro_og = ExtResource( 88 )
+miniboss_song_og = ExtResource( 89 )
 miniboss_song_alt = ExtResource( 6 )
 
 [node name="StateCamera" parent="." instance=ExtResource( 3 )]
@@ -783,7 +803,7 @@ pause_mode = 2
 position = Vector2( 4406, -1313 )
 z_index = 2
 frames = SubResource( 187 )
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 script = ExtResource( 82 )

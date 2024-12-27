@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=2]
+[gd_scene load_steps=158 format=2]
 
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/HUD/Hud.tscn" type="PackedScene" id=2]
@@ -88,6 +88,8 @@
 [ext_resource path="res://src/Levels/Inferno/Blockade.gd" type="Script" id=86]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=87]
 [ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=88]
+[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=91]
+[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=92]
 
 [sub_resource type="CanvasItemMaterial" id=92]
 blend_mode = 1
@@ -652,7 +654,7 @@ position = Vector2( 199, 258 )
 
 [node name="animatedSprite" parent="X" index="3"]
 material = SubResource( 46 )
-frame = 34
+frame = 58
 
 [node name="head_armor" parent="X/animatedSprite" index="0"]
 material = SubResource( 47 )
@@ -722,13 +724,15 @@ boss_song_og = ExtResource( 88 )
 boss_song_alt = ExtResource( 8 )
 angry_boss_intro_og = ExtResource( 35 )
 angry_boss_song_og = ExtResource( 34 )
+stage_clear_song_og = ExtResource( 92 )
 stage_clear_song_alt = ExtResource( 7 )
+capsule_song_og = ExtResource( 91 )
 capsule_song_alt = ExtResource( 31 )
 stage_intro_og = ExtResource( 4 )
 stage_song_og = ExtResource( 36 )
 stage_song_alt = ExtResource( 30 )
-lava_intro = ExtResource( 6 )
-lava_song = ExtResource( 6 )
+lava_intro_alt = ExtResource( 6 )
+lava_song_alt = ExtResource( 6 )
 
 [node name="Scenery" type="Node" parent="."]
 
@@ -2008,7 +2012,7 @@ armor_part = "hermes_legs"
 dialogue = ExtResource( 20 )
 
 [node name="animatedSprite" parent="Objects/Capsule" index="1"]
-frame = 16
+frame = 6
 
 [node name="area2D" parent="Objects/Capsule" index="6"]
 visible = true

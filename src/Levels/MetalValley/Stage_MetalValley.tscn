@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=2]
+[gd_scene load_steps=131 format=2]
 
 [ext_resource path="res://src/Actors/Enemies/BigMechaniloid/EnemyMechaniloid.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Pickups/SubTank.tscn" type="PackedScene" id=2]
@@ -71,7 +71,17 @@
 [ext_resource path="res://src/Levels/MetalValley/sandstorm.gd" type="Script" id=69]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=70]
 [ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=71]
+[ext_resource path="res://src/Sounds/OST - Metal Valley 2 - Intro.ogg" type="AudioStream" id=72]
+[ext_resource path="res://src/Sounds/OST - Metal Valley 2 - Loop.ogg" type="AudioStream" id=73]
 [ext_resource path="res://src/Actors/Enemies/Respawner.gd" type="Script" id=74]
+[ext_resource path="res://src/Sounds/OST - MiniBoss - Intro.ogg" type="AudioStream" id=75]
+[ext_resource path="res://src/Sounds/OST - MiniBoss - Loop.ogg" type="AudioStream" id=76]
+[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=77]
+[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=78]
+[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=79]
+[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=80]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=81]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=82]
 
 [sub_resource type="CanvasItemMaterial" id=109]
 particles_animation = true
@@ -290,10 +300,20 @@ __meta__ = {
 
 [node name="Music Player" parent="." index="1"]
 stream = null
+boss_intro_og = ExtResource( 80 )
+boss_song_og = ExtResource( 79 )
 boss_song_alt = ExtResource( 34 )
+angry_boss_intro_og = ExtResource( 82 )
+angry_boss_song_og = ExtResource( 81 )
+stage_clear_song_og = ExtResource( 77 )
 stage_clear_song_alt = ExtResource( 29 )
+capsule_song_og = ExtResource( 78 )
 capsule_song_alt = ExtResource( 71 )
+stage_intro_og = ExtResource( 72 )
+stage_song_og = ExtResource( 73 )
 stage_song_alt = ExtResource( 30 )
+miniboss_intro_og = ExtResource( 75 )
+miniboss_song_og = ExtResource( 76 )
 miniboss_song_alt = ExtResource( 33 )
 
 [node name="sandstorm" type="Particles2D" parent="StateCamera" index="14"]

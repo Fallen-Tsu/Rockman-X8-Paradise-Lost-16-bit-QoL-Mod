@@ -23,8 +23,13 @@ onready var player: KinematicBody2D = $"../../X"
 onready var visual: Label = $"../../X/combo_label"
 onready var visual_ranking: Node2D = $"../../StateCamera/VisualRanking"
 
-const intro = preload("res://Alt Music//Ys Seven OST - To Reveal the Way to Go.ogg")
-const loop = preload("res://Alt Music//Ys Seven OST - To Reveal the Way to Go.ogg")
+var intro: AudioStream
+var loop: AudioStream
+const intro_og = "res://src/Sounds/OST - TroiaBase 2 - Intro.ogg"
+const loop_og = "res://src/Sounds/OST - TroiaBase 2 - Loop.ogg"
+
+export var intro_alt: AudioStream 
+export var loop_alt: AudioStream 
 
 signal started
 signal combo_value_changed
@@ -38,6 +43,12 @@ var enemies_left_to_kill := 0
 
 func _ready() -> void:
 	set_physics_process(false)
+	if Configurations.get("AltMusic"):
+		intro = intro_alt
+		loop = loop_alt
+	else:
+		intro = preload(intro_og)
+		loop = preload(loop_og)
 	for enemy in get_children():
 		if enemy is Enemy:
 			enemy.listen("combo_hit",self,"damaged_enemy")

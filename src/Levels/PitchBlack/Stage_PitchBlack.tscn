@@ -1,11 +1,12 @@
-[gd_scene load_steps=123 format=2]
+[gd_scene load_steps=131 format=2]
 
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=1]
 [ext_resource path="res://src/Levels/Test/test_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://src/Levels/PitchBlack/Music Player.gd" type="Script" id=3]
 [ext_resource path="res://Alt Music/Ys VIII Lacrimosa of DANA - Night Survivor.ogg" type="AudioStream" id=4]
-[ext_resource path="res://Alt Music/Ys I&II Chronicles OST - Holders of Power.ogg" type="AudioStream" id=5]
+[ext_resource path="res://src/Sounds/OST - PitchBlack - Intro.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Alt Music/Ys III Wanderers from Ys (Mega Drive Genesis) - Treasure Box.ogg" type="AudioStream" id=6]
+[ext_resource path="res://src/Sounds/OST - PitchBlack - Loop.ogg" type="AudioStream" id=7]
 [ext_resource path="res://src/Actors/Bosses/DarkMantis/Mantis.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/Levels/PitchBlack/light.png" type="Texture" id=9]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=10]
@@ -20,9 +21,13 @@
 [ext_resource path="res://src/Objects/Spotlight/SearchLight.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Alt Music/Ys VI The Ark of Napishtim OST - Mighty Obstacle.ogg" type="AudioStream" id=20]
 [ext_resource path="res://src/Levels/PitchBlack/StageLights.gd" type="Script" id=21]
+[ext_resource path="res://Alt Music/Ys I&II Chronicles OST - Holders of Power.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Alt Music/Ys Origin OST - Feena (Harmonica).ogg" type="AudioStream" id=23]
+[ext_resource path="res://src/Sounds/OST - boss.ogg" type="AudioStream" id=24]
+[ext_resource path="res://src/Sounds/OST - boss - Intro.ogg" type="AudioStream" id=25]
 [ext_resource path="res://src/DialogSystem/Dialogs/Capsules/HermesBody.tres" type="Resource" id=26]
 [ext_resource path="res://src/Actors/Enemies/WallEnemy/WallEnemy.tscn" type="PackedScene" id=27]
+[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=28]
 [ext_resource path="res://src/Actors/Enemies/SwordReploid/SwordReploid.tscn" type="PackedScene" id=29]
 [ext_resource path="res://src/Actors/Enemies/ShieldReploid/ShieldReploid.tscn" type="PackedScene" id=30]
 [ext_resource path="res://src/Actors/Enemies/LaserLine/LaserLine.tscn" type="PackedScene" id=31]
@@ -82,6 +87,9 @@
 [ext_resource path="res://src/AchievementSystem/Achievements/MANTISUNDETECTED.tres" type="Resource" id=85]
 [ext_resource path="res://src/Levels/Inferno/DeathShock.tscn" type="PackedScene" id=86]
 [ext_resource path="res://src/Levels/PitchBlack/parent_mover.gd" type="Script" id=87]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Loop.ogg" type="AudioStream" id=88]
+[ext_resource path="res://src/Sounds/OST - AngryBoss - Intro.ogg" type="AudioStream" id=89]
+[ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=90]
 
 [sub_resource type="RectangleShape2D" id=52]
 extents = Vector2( 2303.5, 557 )
@@ -5836,11 +5844,19 @@ pause_mode = 2
 bus = "Music"
 script = ExtResource( 3 )
 debug_logs = true
+boss_intro_og = ExtResource( 25 )
+boss_song_og = ExtResource( 24 )
 boss_song_alt = ExtResource( 20 )
+angry_boss_intro_og = ExtResource( 89 )
+angry_boss_song_og = ExtResource( 88 )
+stage_clear_song_og = ExtResource( 28 )
 stage_clear_song_alt = ExtResource( 6 )
+capsule_song_og = ExtResource( 90 )
 capsule_song_alt = ExtResource( 23 )
+stage_intro_og = ExtResource( 5 )
+stage_song_og = ExtResource( 7 )
 stage_song_alt = ExtResource( 4 )
-alarm_song = ExtResource( 5 )
+alarm_song_alt = ExtResource( 22 )
 
 [node name="X" parent="." instance=ExtResource( 10 )]
 position = Vector2( -503, 81 )
@@ -6418,7 +6434,7 @@ armor_part = "hermes_body"
 dialogue = ExtResource( 26 )
 
 [node name="animatedSprite" parent="Objects/Capsule" index="1"]
-frame = 12
+frame = 10
 
 [node name="collisionShape2D" parent="Objects/Capsule/area2D" index="0"]
 shape = SubResource( 49 )

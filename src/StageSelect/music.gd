@@ -1,13 +1,12 @@
 extends AudioStreamPlayer
 
-export var intro : AudioStream
 var music : AudioStream
 var playing_intro := false
 
 func _ready() -> void:
 	music = stream
 
-func play_with_intro(intro_song := intro, loop := music) -> void:
+func play_with_intro(intro_song, loop := music) -> void:
 	playing_intro = true
 	music = loop
 	stream = intro_song
