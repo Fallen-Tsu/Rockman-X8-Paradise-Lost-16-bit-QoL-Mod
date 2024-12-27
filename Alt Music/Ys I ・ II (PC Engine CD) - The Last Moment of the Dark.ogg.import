@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys I ・ II (PC Engine CD) - The Last Moment of the Dark.ogg-f0f06e5451541bb96b42ea5e95b1a9d1.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys I ・ II (PC Engine CD) - The Last Moment of the Dark.ogg"
+dest_files=[ "res://.import/Ys I ・ II (PC Engine CD) - The Last Moment of the Dark.ogg-f0f06e5451541bb96b42ea5e95b1a9d1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
