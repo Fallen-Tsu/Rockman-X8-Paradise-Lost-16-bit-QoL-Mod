@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://src/Options/KeyConfig.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Options/Options.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://src/Sounds/FX - Menu Switch.ogg" type="AudioStream" id=11]
 [ext_resource path="res://src/Options/selectable_options.png" type="Texture" id=12]
 [ext_resource path="res://src/Options/selectable_keyconfig.png" type="Texture" id=13]
+[ext_resource path="res://Alt Music/Kuro no Kiseki II OST (Second Volume) - Dignity of Glowing Red.ogg" type="AudioStream" id=14]
 [ext_resource path="res://src/StageSelect/selectables/selectable_mantis.res" type="SpriteFrames" id=15]
 [ext_resource path="res://src/StageSelect/pointer.gd" type="Script" id=16]
 [ext_resource path="res://src/StageSelect/menu_3.png" type="Texture" id=17]
@@ -60,6 +61,7 @@
 [ext_resource path="res://src/Options/selectable_achiev.png" type="Texture" id=59]
 [ext_resource path="res://src/Levels/IGTimer.tscn" type="PackedScene" id=60]
 [ext_resource path="res://src/HUD/IGTDisplayScene.tscn" type="PackedScene" id=61]
+[ext_resource path="res://Alt Music/Endless History - The Last Moment of the Dark ~ Final Battle (Ys I).ogg" type="AudioStream" id=62]
 
 [sub_resource type="ShortCut" id=1]
 
@@ -287,10 +289,10 @@ script = ExtResource( 5 )
 initial_focus = NodePath("Menu/ArmorSetup")
 eight_bosses_alive_intro_alt = ExtResource( 8 )
 eight_bosses_alive_loop_alt = ExtResource( 8 )
-eight_bosses_dead_intro_alt = ExtResource( 8 )
-eight_bosses_dead_loop_alt = ExtResource( 8 )
-sigma_palace_theme_intro_alt = ExtResource( 8 )
-sigma_palace_theme_loop_alt = ExtResource( 8 )
+eight_bosses_dead_intro_alt = ExtResource( 14 )
+eight_bosses_dead_loop_alt = ExtResource( 14 )
+sigma_palace_theme_intro_alt = ExtResource( 62 )
+sigma_palace_theme_loop_alt = ExtResource( 62 )
 
 [node name="Menu" type="Control" parent="StageSelectUI"]
 anchor_right = 1.0
@@ -594,12 +596,13 @@ transform = Transform2D( 1, 0, 0, 1, 0, -206 )
 position = Vector2( 199, -139 )
 z_index = -50
 frames = SubResource( 38 )
+frame = 12
 playing = true
 
 [node name="pointer" type="AnimatedSprite" parent="map"]
 position = Vector2( 0, 322 )
 frames = SubResource( 16 )
-frame = 4
+frame = 6
 playing = true
 script = ExtResource( 16 )
 button_sprites = NodePath("../../button_sprites")
@@ -696,6 +699,7 @@ visible = false
 position = Vector2( 199, 186 )
 z_index = 11
 frames = SubResource( 7 )
+frame = 3
 playing = true
 script = ExtResource( 43 )
 
@@ -710,7 +714,7 @@ frame = 1
 
 [node name="cursor" parent="button_sprites/JacobElevator" index="0"]
 animation = "long"
-frame = 1
+frame = 4
 
 [node name="Gateway" parent="button_sprites" instance=ExtResource( 22 )]
 position = Vector2( 343, 112 )
@@ -719,7 +723,7 @@ frame = 1
 
 [node name="cursor" parent="button_sprites/Gateway" index="0"]
 animation = "long"
-frame = 1
+frame = 4
 
 [node name="on_stage_select" type="Node" parent="."]
 script = ExtResource( 51 )
