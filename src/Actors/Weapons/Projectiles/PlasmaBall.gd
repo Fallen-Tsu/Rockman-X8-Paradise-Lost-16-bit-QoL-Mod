@@ -9,11 +9,11 @@ var current_time_on_screen := 0.0
 onready var animation_player = $animationPlayer
 
 func _on_PlasmaBall_body_entered(body):
-	if body is Enemy:
+	if body is Enemy and not enemies_inside.has(body):
 		enemies_inside.append(body)
 
 func _on_PlasmaBall_body_exited(body):
-	if body is Enemy and enemies_inside.find(body) >= 0:
+	if body is Enemy and enemies_inside.has(body):
 		enemies_inside.erase(body)
 
 

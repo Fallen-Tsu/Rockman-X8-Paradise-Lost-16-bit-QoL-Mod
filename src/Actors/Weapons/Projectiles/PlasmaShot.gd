@@ -5,11 +5,13 @@ var current_balls := 0
 var enemies_hit : Array
 export var horizontal_velocity = 350
 export var vertical_position_range := 1
+signal projectile_started
+
 
 func projectile_setup(dir : int, position : Vector2, _launcher_velocity := 0.0):
 	position_setup(position, dir)
 	set_horizontal_speed(dir * horizontal_velocity)
-	
+	call_deferred("emit_signal","projectile_started")
 
 func create_ball(enemy):
 	if current_balls < 3 and enemies_hit.find(enemy) < 0:
