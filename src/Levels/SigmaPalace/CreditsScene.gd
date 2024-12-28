@@ -1,6 +1,8 @@
 extends Node2D
 
-export var song : AudioStream
+var song: AudioStream
+const song_og = "res://src/Sounds/OST - MainTheme E-Capcom Remix.ogg"
+export var song_alt : AudioStream
 onready var tween := TweenController.new(self,false)
 onready var visuals: Node2D = $Visuals
 onready var credits_bg: Sprite = $CreditsBG
@@ -12,6 +14,10 @@ onready var top_cover: Sprite = $top_cover
 onready var loop: AudioStreamPlayer2D = $Visuals/ElevatorPlatform/loop
 
 func _ready() -> void:
+	if Configurations.get("AltMusic"):
+		song = song_alt
+	else:
+		song = preload(song_og)
 	screencover.visible = true
 	Tools.timer(1,"fade_in",self)
 	Tools.timer(8,"start",self)

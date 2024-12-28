@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://src/Objects/Pickups/ExtraLife.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Objects/Heal.tscn" type="PackedScene" id=2]
@@ -30,8 +30,6 @@
 [ext_resource path="res://src/Actors/Bosses/Lumine/SeraphLumine.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/Levels/base_stage.tscn" type="PackedScene" id=29]
 [ext_resource path="res://Alt Music/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg" type="AudioStream" id=30]
-[ext_resource path="res://src/Sounds/OST - SigmaDemo.ogg" type="AudioStream" id=31]
-[ext_resource path="res://src/Sounds/OST - SigmaDemo - Loop.ogg" type="AudioStream" id=32]
 [ext_resource path="res://src/Levels/SigmaPalace/finalbg_palette.png" type="Texture" id=33]
 [ext_resource path="res://src/Levels/SigmaPalace/mid_clouds.png" type="Texture" id=34]
 [ext_resource path="res://src/Levels/SigmaPalace/near_clouds.png" type="Texture" id=35]
@@ -205,6 +203,7 @@ text = "Test text."
 emit_capsule_signal = false
 
 [node name="Music Player" parent="." index="1"]
+stream = null
 debug_logs = true
 boss_song_alt = ExtResource( 30 )
 
@@ -1733,8 +1732,6 @@ position = Vector2( 7524, -1028 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 8 )
-intro = ExtResource( 31 )
-loop = ExtResource( 32 )
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="Objects/MusicStarter" index="0"]
 position = Vector2( 88, -109 )

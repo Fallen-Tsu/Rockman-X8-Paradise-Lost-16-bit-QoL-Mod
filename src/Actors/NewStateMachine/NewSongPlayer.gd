@@ -1,5 +1,7 @@
 extends AudioStreamPlayer
 
+export var alt_song: AudioStream
+export var alt_loop: AudioStream
 onready var loop: AudioStreamPlayer = get_node_or_null("loop")
 onready var tween := TweenController.new(self,false)
 onready var base_volume := volume_db
@@ -8,6 +10,9 @@ var queued:= false
 var has_loop := false
 
 func _ready() -> void:
+	if Configurations.get("AltMusic"):
+		stream = alt_song
+		loop.stream = alt_loop
 	has_loop = loop != null
 	Event.connect("half_music_volume",self,"set_volume",[base_volume-10])
 	Event.connect("normal_music_volume",self,"set_volume",[base_volume])

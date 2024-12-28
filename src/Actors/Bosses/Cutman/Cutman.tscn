@@ -93,7 +93,6 @@ material = ExtResource( 39 )
 z_index = 1
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 1
 playing = true
 offset = Vector2( 0, 1 )
 flip_h = true
@@ -102,7 +101,6 @@ flip_h = true
 material = ExtResource( 39 )
 frames = ExtResource( 10 )
 animation = "idle"
-frame = 1
 playing = true
 offset = Vector2( 0, 1 )
 flip_h = true
@@ -138,6 +136,8 @@ stream = ExtResource( 8 )
 volume_db = -4.0
 bus = "Music"
 script = ExtResource( 12 )
+alt_song = ExtResource( 8 )
+alt_loop = ExtResource( 6 )
 
 [node name="loop" type="AudioStreamPlayer" parent="Intro/BattleSong"]
 pause_mode = 2

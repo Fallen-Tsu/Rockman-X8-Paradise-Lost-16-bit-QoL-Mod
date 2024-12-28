@@ -4,7 +4,7 @@ class_name BossDeath
 export var freeze_time := 1.0
 var freeze_moment := 0.0
 var freeze_over := false
-export var explosion_time := 3.0
+export var explosion_time := 10.0
 export var death_animation := "death"
 export var pause_animation := true
 export var force_reploid_death := false
@@ -60,9 +60,7 @@ func _Setup():
 			IGT.send_command("set_gametime_command")
 			IGT.send_command("split_command")
 		else:
-			var seconds := 15.0 if collectible == "finished_intro" else 17.0
-			Tools.timer_p(seconds,"send_command",IGT,"set_gametime_command")
-			Tools.timer_p(seconds,"send_command",IGT,"split_command")
+			IGT.can_split = true
 
 func animate_boss_or_reploid() -> void:
 	if death_animation != "":
@@ -180,8 +178,10 @@ func set_background_alpha(value : float):
 	var alpha = value
 	if alpha > 1:
 		alpha = 1
-	if alpha < 0:
+	elif alpha < 0:
 		alpha = 0
+		if $audioStreamPlayer2D.get_playback_position() < 10.62:
+			$audioStreamPlayer2D.seek(10.62)
 	background_alpha = alpha
 	background.material.set_shader_param("Alpha",background_alpha)
 
