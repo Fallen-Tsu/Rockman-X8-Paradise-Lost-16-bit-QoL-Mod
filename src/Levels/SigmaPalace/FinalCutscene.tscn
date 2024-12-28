@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://src/DialogSystem/Dialogs/Stages/Lumine_End_Dialogue.tres" type="Resource" id=1]
 [ext_resource path="res://src/DialogSystem/DialogBox.tscn" type="PackedScene" id=2]
@@ -40,7 +40,6 @@
 [ext_resource path="res://src/Effects/Textures/follow_shot.png" type="Texture" id=38]
 [ext_resource path="res://src/Levels/music_player.gd" type="Script" id=39]
 [ext_resource path="res://src/Effects/Textures/smoke.png" type="Texture" id=41]
-[ext_resource path="res://Alt Music/Ys X Nordics OST - Nordics Saga The Endless Bloody Sea.ogg" type="AudioStream" id=42]
 [ext_resource path="res://src/Effects/Materials/mecha_smokes.tres" type="Material" id=48]
 [ext_resource path="res://src/Effects/Materials/mat_smokeparticle.tres" type="Material" id=49]
 [ext_resource path="res://src/Effects/Textures/wallwave.png" type="Texture" id=50]
@@ -100,6 +99,8 @@ shader_param/Alert = 0.0
 shader_param/R_CrystalColor2 = Color( 0.941176, 0.25098, 0.0627451, 1 )
 shader_param/R_CrystalColor3 = Color( 0.447059, 0.133333, 0.215686, 1 )
 shader_param/tolerance = 0.01
+shader_param/MainColor7 = null
+shader_param/R_MainColor7 = null
 shader_param/Alpha = 1.0
 
 [sub_resource type="AtlasTexture" id=6]
@@ -14676,8 +14677,8 @@ animations = [ {
 script = ExtResource( 25 )
 charge_color1 = Color( 0, 0.25098, 0.941176, 1 )
 charge_color2 = Color( 0.282353, 0.533333, 0.698039, 1 )
-song_intro = ExtResource( 26 )
-song_loop = ExtResource( 26 )
+song_intro_alt = ExtResource( 26 )
+song_loop_alt = ExtResource( 26 )
 text_second_dialog = ExtResource( 11 )
 
 [node name="DialogBox" parent="." instance=ExtResource( 2 )]
@@ -14778,7 +14779,7 @@ position = Vector2( 163, 191 )
 z_index = 1
 frames = ExtResource( 27 )
 animation = "Tag"
-frame = 4
+frame = 7
 playing = true
 
 [node name="shot" type="AudioStreamPlayer2D" parent="ChargeShot"]
@@ -14823,7 +14824,7 @@ bus = "SFX"
 visible = false
 position = Vector2( 2, 2 )
 frames = SubResource( 38 )
-frame = 3
+frame = 9
 playing = true
 
 [node name="shot" type="AudioStreamPlayer2D" parent="X"]
@@ -15006,14 +15007,13 @@ bus = "Music"
 script = ExtResource( 39 )
 debug_logs = true
 stop_song_on_dialogue = false
-boss_song_alt = ExtResource( 42 )
 
 [node name="fire" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.4 )
 position = Vector2( 333, 146 )
 z_index = -2
 frames = SubResource( 49 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="fire2" type="AnimatedSprite" parent="."]
@@ -15021,6 +15021,7 @@ modulate = Color( 1, 1, 1, 0.619608 )
 position = Vector2( 365, 20 )
 z_index = -1
 frames = SubResource( 49 )
+frame = 1
 playing = true
 
 [node name="fire3" type="AnimatedSprite" parent="."]
@@ -15028,7 +15029,7 @@ modulate = Color( 1, 1, 1, 0.529412 )
 position = Vector2( 16, 189 )
 z_index = 4
 frames = SubResource( 49 )
-frame = 2
+frame = 3
 playing = true
 flip_h = true
 
@@ -15037,14 +15038,14 @@ modulate = Color( 1, 1, 1, 0.686275 )
 position = Vector2( 21, 144 )
 z_index = 2
 frames = SubResource( 58 )
-frame = 4
+frame = 5
 playing = true
 
 [node name="small_fire3" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0.423529 )
 position = Vector2( 49, 73 )
 frames = SubResource( 58 )
-frame = 4
+frame = 5
 playing = true
 flip_h = true
 
@@ -15053,7 +15054,6 @@ modulate = Color( 1, 1, 1, 0.529412 )
 position = Vector2( 362, 200 )
 z_index = 4
 frames = SubResource( 58 )
-frame = 7
 playing = true
 flip_h = true
 

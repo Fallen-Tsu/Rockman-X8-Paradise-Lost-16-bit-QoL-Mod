@@ -3,8 +3,12 @@ onready var firenoise: AudioStreamPlayer2D = $firenoise
 
 export var charge_color1 : Color
 export var charge_color2 : Color
-export var song_intro : AudioStream
-export var song_loop : AudioStream
+var song_intro: AudioStream
+var song_loop: AudioStream
+const song_intro_og = "res://src/Sounds/OST - Ending - Intro.ogg"
+const song_loop_og = "res://src/Sounds/OST - Ending - Loop.ogg"
+export var song_intro_alt : AudioStream
+export var song_loop_alt : AudioStream
 export var text_second_dialog : Resource
 onready var dialog_box: Label = $DialogBox
 onready var screencover: Sprite = $screencover
@@ -28,6 +32,12 @@ onready var shot2: AudioStreamPlayer2D = $X/shot
 onready var tween := TweenController.new(self,false)
 
 func _ready() -> void:
+	if Configurations.get("AltMusic"):
+		song_intro = song_intro_alt
+		song_loop = song_loop_alt
+	else:
+		song_intro = preload(song_intro_og)
+		song_loop = preload(song_loop_og)
 	screencover.visible = true
 	tween.attribute("volume_db",-35,2,firenoise)
 	Tools.timer(2,"fade_in",self)
