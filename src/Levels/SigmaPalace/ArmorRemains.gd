@@ -11,6 +11,8 @@ func check_for_armor():
 			return
 		elif "icarus" in item:
 			return
+		elif "ultimate" in item:
+			return
 	
 	push_warning("TODO: Remember to set current armor after Lumine 2")
 	queue_free()
