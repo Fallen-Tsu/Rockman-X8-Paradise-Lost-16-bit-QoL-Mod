@@ -342,7 +342,7 @@ shape = SubResource( 49 )
 [node name="backWings" type="AnimatedSprite" parent="."]
 frames = ExtResource( 7 )
 animation = "idle"
-frame = 8
+frame = 1
 playing = true
 flip_h = true
 script = ExtResource( 32 )
@@ -439,7 +439,7 @@ playing = true
 z_index = 2
 frames = ExtResource( 8 )
 animation = "idle"
-frame = 9
+frame = 2
 playing = true
 flip_h = true
 script = ExtResource( 32 )

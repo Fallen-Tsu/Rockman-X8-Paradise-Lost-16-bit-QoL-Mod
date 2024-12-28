@@ -20,7 +20,6 @@ onready var space: Node = $"../Space"
 onready var flash_2: Sprite = $flash2
 
 func _ready():
-	._ready()
 	if Configurations.get("AltMusic"):
 		intro = intro_alt
 		loop = loop_alt

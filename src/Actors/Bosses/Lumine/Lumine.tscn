@@ -1,4 +1,4 @@
-[gd_scene load_steps=144 format=2]
+[gd_scene load_steps=145 format=2]
 
 [ext_resource path="res://src/Actors/Bosses/Lumine/lumine.res" type="SpriteFrames" id=1]
 [ext_resource path="res://src/Actors/NewStateMachine/audioplayer.gd" type="Script" id=2]
@@ -93,6 +93,7 @@
 [ext_resource path="res://src/Sounds/Lumine - Transform.wav" type="AudioStream" id=91]
 [ext_resource path="res://src/DialogSystem/Dialogs/Stages/Lumine_Dialogue.tres" type="Resource" id=92]
 [ext_resource path="res://Alt Music/Ys VIII Lacrimosa of DANA - A-to-Z .ogg" type="AudioStream" id=93]
+[ext_resource path="res://src/Actors/Bosses/SatanSigma/flash.gd" type="Script" id=94]
 [ext_resource path="res://src/HUD/Lumine_bar.png" type="Texture" id=95]
 [ext_resource path="res://src/Actors/Bosses/Lumine/lumine_transform.res" type="SpriteFrames" id=96]
 [ext_resource path="res://src/Actors/Bosses/Lumine/DeathTransform.gd" type="Script" id=97]
@@ -479,7 +480,6 @@ scale = Vector2( 4.35, 4.25 )
 script = ExtResource( 39 )
 debug_logs = true
 dialogue = ExtResource( 92 )
-song_intro_alt = ExtResource( 93 )
 song_loop_alt = ExtResource( 93 )
 boss_bar = ExtResource( 95 )
 
@@ -739,6 +739,19 @@ volume_db = 2.0
 max_distance = 600.0
 bus = "SFX"
 script = ExtResource( 2 )
+
+[node name="flash" type="Sprite" parent="GigaStorm"]
+pause_mode = 2
+visible = false
+self_modulate = Color( 1, 1, 1, 0.478431 )
+scale = Vector2( 10, 5 )
+z_index = -35
+texture = ExtResource( 73 )
+script = ExtResource( 94 )
+initial_alpha = 1.0
+tween_scale_y = false
+final_color = Color( 1, 1, 1, 1 )
+duration = 0.064
 
 [node name="OpticCrush" type="Node2D" parent="."]
 script = ExtResource( 60 )

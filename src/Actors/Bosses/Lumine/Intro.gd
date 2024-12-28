@@ -13,7 +13,6 @@ export var song_loop_alt : AudioStream
 export var boss_bar : Texture
 
 func _ready():
-	._ready()
 	if Configurations.get("AltMusic"):
 		song_intro = song_intro_alt
 		song_loop = song_loop_alt
