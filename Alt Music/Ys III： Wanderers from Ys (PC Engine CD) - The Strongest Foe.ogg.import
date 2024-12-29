@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys III： Wanderers from Ys (PC Engine CD) - The Strongest Foe.ogg-3ed111dc4ce7750ccc542b2537ed4365.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys III： Wanderers from Ys (PC Engine CD) - The Strongest Foe.ogg"
+dest_files=[ "res://.import/Ys III： Wanderers from Ys (PC Engine CD) - The Strongest Foe.ogg-3ed111dc4ce7750ccc542b2537ed4365.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

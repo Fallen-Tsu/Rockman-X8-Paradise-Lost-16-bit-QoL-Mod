@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ys (Famicom) - Final Battle.ogg-284485e1e1e9064c80d875c8beaedf34.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Ys (Famicom) - Final Battle.ogg"
+dest_files=[ "res://.import/Ys (Famicom) - Final Battle.ogg-284485e1e1e9064c80d875c8beaedf34.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

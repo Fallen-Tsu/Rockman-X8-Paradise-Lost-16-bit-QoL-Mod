@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Baroque - True Final Battle (Ys I Famicom).ogg-d3af5da60fd5bd6ee608b20804d8b683.oggstr"
+
+[deps]
+
+source_file="res://Alt Music/Baroque - True Final Battle (Ys I Famicom).ogg"
+dest_files=[ "res://.import/Baroque - True Final Battle (Ys I Famicom).ogg-d3af5da60fd5bd6ee608b20804d8b683.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
