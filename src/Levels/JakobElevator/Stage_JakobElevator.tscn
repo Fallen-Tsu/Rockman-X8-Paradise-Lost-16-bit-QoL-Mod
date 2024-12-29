@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=2]
+[gd_scene load_steps=123 format=2]
 
 [ext_resource path="res://src/System/CameraLimits.gd" type="Script" id=1]
 [ext_resource path="res://src/Actors/Bosses/Vile/VileJakob.tscn" type="PackedScene" id=2]
@@ -80,6 +80,7 @@
 [ext_resource path="res://src/Sounds/OST - Vile - Loop.ogg" type="AudioStream" id=78]
 [ext_resource path="res://src/Sounds/OST - Capsule.ogg" type="AudioStream" id=79]
 [ext_resource path="res://src/Sounds/OST - Vile - Intro.ogg" type="AudioStream" id=80]
+[ext_resource path="res://src/Sounds/OST - Stage Clear.ogg" type="AudioStream" id=81]
 [ext_resource path="res://src/Sounds/OST - Jakob - Intro.ogg" type="AudioStream" id=82]
 [ext_resource path="res://src/Sounds/OST - Jakob - Loop.ogg" type="AudioStream" id=83]
 
@@ -218,6 +219,7 @@ debug_logs = true
 boss_intro_og = ExtResource( 80 )
 boss_song_og = ExtResource( 78 )
 boss_song_alt = ExtResource( 20 )
+stage_clear_song_og = ExtResource( 81 )
 stage_clear_song_alt = ExtResource( 10 )
 capsule_song_og = ExtResource( 79 )
 capsule_song_alt = ExtResource( 77 )
@@ -1065,7 +1067,7 @@ dialogue = ExtResource( 76 )
 ultimate_capsule = true
 
 [node name="animatedSprite" parent="Objects/Capsule" index="1"]
-frame = 13
+frame = 19
 
 [node name="Limits" parent="." index="8"]
 visible = false
