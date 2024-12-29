@@ -2,6 +2,7 @@ extends GenericIntro
 
 onready var overlay: AnimatedSprite = $"../overlay"
 onready var song: AudioStreamPlayer = $song
+export var intro_song_alt: AudioStream
 onready var tween := TweenController.new(self,false)
 onready var battle_song: AudioStreamPlayer = $BattleSong
 onready var effect: AudioStreamPlayer = $effect
@@ -9,6 +10,8 @@ onready var damage: Node2D = $"../Damage"
 export var bar : Texture
 
 func _ready() -> void:
+	if Configurations.get("AltMusic"):
+		song.stream = intro_song_alt
 	call_deferred("play_animation","intro")
 	make_invisible()
 	Event.listen("character_talking",self,"talk")
