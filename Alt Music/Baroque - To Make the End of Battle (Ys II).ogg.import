@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Baroque - To Make the End of Battle (Ys II).ogg-6ce5
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
