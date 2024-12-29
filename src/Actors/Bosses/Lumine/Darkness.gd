@@ -1,7 +1,9 @@
 extends AttackAbility
 
 export var death_walls : PackedScene
-export var music : AudioStream
+const music_og = "res://src/Sounds/OST - ParadiseLost.ogg"
+export var music_alt : AudioStream
+var music: AudioStream
 onready var space: Node = $"../Space"
 onready var tween := TweenController.new(self,false)
 var walls : Array
@@ -10,6 +12,12 @@ onready var feather_decay: Particles2D = $"../feather_decay"
 onready var damage: Node2D = $"../Damage"
 onready var dot: Node2D = $"../DamageOnTouch"
 onready var flap: AudioStreamPlayer2D = $flap
+
+func _ready():
+	if Configurations.get("AltMusic"):
+		music = music_alt
+	else:
+		music = preload(music_og)
 
 func _Setup():
 	go_to_center()

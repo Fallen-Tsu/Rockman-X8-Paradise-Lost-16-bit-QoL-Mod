@@ -318,7 +318,7 @@ extents = Vector2( 19, 25.6875 )
 
 [node name="SeraphLumine" type="KinematicBody2D" groups=["Bosses"]]
 z_index = 4
-collision_layer = 0
+collision_layer = 64
 script = ExtResource( 1 )
 max_health = 400.0
 
@@ -341,7 +341,7 @@ shape = SubResource( 49 )
 [node name="backWings" type="AnimatedSprite" parent="."]
 frames = ExtResource( 7 )
 animation = "idle"
-frame = 11
+frame = 3
 playing = true
 flip_h = true
 script = ExtResource( 32 )
@@ -438,7 +438,7 @@ playing = true
 z_index = 2
 frames = ExtResource( 8 )
 animation = "idle"
-frame = 12
+frame = 4
 playing = true
 flip_h = true
 script = ExtResource( 32 )
@@ -690,7 +690,7 @@ script = ExtResource( 15 )
 script = ExtResource( 23 )
 desperation_attack = true
 death_walls = ExtResource( 22 )
-music = ExtResource( 27 )
+music_alt = ExtResource( 27 )
 
 [node name="flap" type="AudioStreamPlayer2D" parent="ParadiseLost"]
 stream = ExtResource( 16 )
