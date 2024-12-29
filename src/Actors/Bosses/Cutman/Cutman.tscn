@@ -7,7 +7,7 @@
 [ext_resource path="res://src/Actors/Bosses/Cutman/Jump.gd" type="Script" id=5]
 [ext_resource path="res://src/Sounds/OST - Cutman - Loop.ogg" type="AudioStream" id=6]
 [ext_resource path="res://src/Actors/Bosses/Cutman/Throw.gd" type="Script" id=7]
-[ext_resource path="res://src/Sounds/OST - Cutman - Intro.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Alt Music/Ys III： Wanderers from Ys (PC Engine CD) - The Strongest Foe.mp3" type="AudioStream" id=8]
 [ext_resource path="res://src/Actors/Bosses/Cutman/Tesora.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/Actors/Bosses/Cutman/cutman_hat.res" type="SpriteFrames" id=10]
 [ext_resource path="res://src/Actors/Bosses/Cutman/cutma_hair.gd" type="Script" id=11]
@@ -132,12 +132,12 @@ script = ExtResource( 3 )
 
 [node name="BattleSong" type="AudioStreamPlayer" parent="Intro"]
 pause_mode = 2
-stream = ExtResource( 8 )
+stream = ExtResource( 6 )
 volume_db = -4.0
 bus = "Music"
 script = ExtResource( 12 )
 alt_song = ExtResource( 8 )
-alt_loop = ExtResource( 6 )
+alt_loop = ExtResource( 8 )
 
 [node name="loop" type="AudioStreamPlayer" parent="Intro/BattleSong"]
 pause_mode = 2
