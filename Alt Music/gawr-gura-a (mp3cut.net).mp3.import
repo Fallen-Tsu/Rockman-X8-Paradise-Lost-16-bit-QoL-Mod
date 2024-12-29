@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/gawr-gura-a (mp3cut.net).mp3-ff2126b99e41ae2326d5736895906345.mp3str"
+
+[deps]
+
+source_file="res://Alt Music/gawr-gura-a (mp3cut.net).mp3"
+dest_files=[ "res://.import/gawr-gura-a (mp3cut.net).mp3-ff2126b99e41ae2326d5736895906345.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
