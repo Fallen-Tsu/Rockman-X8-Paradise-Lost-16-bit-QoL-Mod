@@ -12,13 +12,12 @@ var current_armor : Array
 
 signal unlocked_hermes
 signal unlocked_icarus
+signal unlocked_ultimate
+signal ultimate_activated
 
 func _ready() -> void:
 	var _s = menu.connect("initialize",self,"initialize")
-	if !is_ultimate:
-		armor = $"../../../Armor"
-	else:
-		armor = $"../../../../textureRect/Armor"
+	armor = $"../../../Armor"
 
 func initialize() -> void:
 	emit_unlocked_set_signals()
@@ -49,12 +48,15 @@ func update_current_armor():
 func emit_unlocked_set_signals():
 	var hermes_pieces := 0
 	var icarus_pieces := 0
+	var ultimate_pieces := 0
 	for item in GameManager.collectibles:
 		if "hermes" in item: hermes_pieces += 1
 		elif "icarus" in item: icarus_pieces += 1
+		elif "ultimate" in item: ultimate_pieces += 1
 	
 	if hermes_pieces == 4: emit_signal("unlocked_hermes")
 	if icarus_pieces == 4: emit_signal("unlocked_icarus")
+	if ultimate_pieces == 4: emit_signal("unlocked_ultimate")
 	
 
 func emit_current_set_signals():
@@ -62,9 +64,11 @@ func emit_current_set_signals():
 	for piece in current_armor:
 		if "hermes" in piece: parts += 1
 		elif "icarus" in piece: parts -= 1
+		elif "ultimate" in piece: parts += 3
 	
 	if parts == 4: Event.emit_signal("full_hermes")
 	elif parts == -4: Event.emit_signal("full_icarus")
+	elif parts == 12: Event.emit_signal("full_ultimate")
 	else: Event.emit_signal("mixed_set")
 	
 
@@ -138,10 +142,12 @@ func flash(piece : TextureRect) -> void:
 func align(part_name := "none") -> void:
 	print("Aligning part: ")
 	print(part_name)
-	if "icarus" in part_name:
-		alignment = BoxContainer.ALIGN_END
-	elif "hermes" in part_name:
+	if "hermes" in part_name:
 		alignment = BoxContainer.ALIGN_BEGIN
+	elif "icarus" in part_name:
+		alignment = BoxContainer.ALIGN_END
+	elif "ultimate" in part_name:
+		alignment = BoxContainer.ALIGN_END
 	else:
 		alignment = BoxContainer.ALIGN_CENTER
 

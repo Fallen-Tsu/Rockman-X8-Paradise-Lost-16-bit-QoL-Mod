@@ -1,47 +1,43 @@
-extends X8TextureButton
+extends VBoxContainer
 
+var ultimate_on: bool = false
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal ultimate_activated(part_name)
+signal other_activated(part_name)
 
-var no_parts : Array
-var ultimate_parts: Array
-onready var icon = $"../icon"
-# Called when the node enters the scene tree for the first time.
+onready var menu = $"../../../.."
+
 func _ready():
+	margin_left = -47.5
+	margin_right = 47.5
+	var head_part_container = $HeadParts
+	yield(menu, "initialize")
+	if head_part_container.get_child(3).visible:
+		margin_left = -63
+		margin_right = 63
+	var all_armor_pieces = head_part_container.get_collected_armor_pieces()
+	var current_armor = head_part_container.filter_parts(all_armor_pieces)
+	for part in current_armor:
+		if "ultimate" in part:
+			ultimate_on = true
+			break
+		
 	
-	no_parts = [
-		$"../../textureRect/Options Group/ArmorParts/HeadParts/head",
-		$"../../textureRect/Options Group/ArmorParts/BodyParts/body",
-		$"../../textureRect/Options Group/ArmorParts/ArmsParts/arms",
-		$"../../textureRect/Options Group/ArmorParts/LegsParts/legs",
-	]
-	ultimate_parts = [
-		$ArmorParts/HeadParts/ultimate_head,
-		$ArmorParts/BodyParts/ultimate_body,
-		$ArmorParts/ArmsParts/ultimate_arms,
-		$ArmorParts/LegsParts/ultimate_legs,
-	]
-	icon.visible = get_parent().visible
 
+func on_ultimate_activated(part_name):
+	if !ultimate_on:
+		ultimate_on = true
+		var part_containers = get_children()
+		for part_container in part_containers:
+			if not part_name.get_slice("_",1) in part_container.name.to_lower():
+				part_container.get_child(3).on_press()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_entered():
-	play_sound()
-	flash()
-
-
-func _on_ultimateButton_toggled(button_pressed):
-	if !button_pressed:
-		for part in no_parts:
-			part.on_press()
-		Event.emit_signal("mixed_set")
-	else:
-		for part in ultimate_parts:
-			part.on_press()
-		Event.emit_signal("full_ultimate")
+func on_other_activated(part_name):
+	if ultimate_on:
+		ultimate_on = false
+		var part_containers = get_children()
+		for part_container in part_containers:
+			var this_part = part_name.find("_")
+			this_part = part_name if this_part == -1 else part_name.get_slice("_",1)
+			if not this_part in part_container.name.to_lower():
+				part_container.get_child(1).on_press()

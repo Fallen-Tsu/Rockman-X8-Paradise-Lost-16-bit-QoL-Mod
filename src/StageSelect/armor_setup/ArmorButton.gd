@@ -8,15 +8,15 @@ var disc_display: Label
 onready var equip: AudioStreamPlayer = $"../../../../../../equip"
 export var is_ultimate = false
 
+
 func _ready():
-	if !is_ultimate:
-		name_display = $"../../../../Description/name"
-		disc_display = $"../../../../Description/disc"
+	name_display = $"../../../../Description/name"
+	disc_display = $"../../../../Description/disc"
+	
 
 func _on_focus_entered() -> void:
 	play_sound()
-	if !is_ultimate:
-		display_info()
+	display_info()
 	flash()
 
 func _on_focus_exited() -> void:
@@ -30,12 +30,16 @@ func _on_focus_exited() -> void:
 func on_press() -> void:
 	if not is_viable_armor(name):
 		GameManager.add_equip_exception(name)
-	else:
+	else:	
 		GameManager.remove_equip_exception(get_body_part_name(name))
 		GameManager.reposition_collectible_in_savedata(name)
 	strong_flash()
 	Tools.timer(0.075,"play",equip)
 	parent.equip(self)
+	if is_ultimate:
+		parent.get_parent().emit_signal("ultimate_activated",name)
+	else:
+		parent.get_parent().emit_signal("other_activated",name)
 
 func is_viable_armor(armor_name : String) -> bool:
 	return "icarus" in armor_name or "hermes" in armor_name or "ultimate" in armor_name
