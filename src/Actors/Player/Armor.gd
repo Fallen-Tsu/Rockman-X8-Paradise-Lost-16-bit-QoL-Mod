@@ -23,6 +23,8 @@ export var UltimateInner1 : Color = Color("#687ccc")
 export var UltimateInner2 : Color = Color("#2c3956")
 export var BodyColor1 : Color
 export var BodyColor2 : Color
+var InnerColor1: Color = Color("#78d8f0")
+var InnerColor2: Color = Color("#50a0f0")
 onready var NeutralColors = [NeutralColor1,NeutralColor2,NeutralColor3]
 onready var HermesColors = [HermesColor1,HermesColor2,HermesColor3]
 onready var IcarusColors = [IcarusColor1,IcarusColor2,IcarusColor3]
@@ -75,11 +77,15 @@ func display(full_part_name : String):
 			else:
 				callv(method_to_color,[part,colors])
 				turn_yellow_over_time()
-			
+	
+	var inner1 = InnerColor1
+	var inner2 = InnerColor2
 	if "ultimate" in full_part_name:
-		playerSprite.material.set_shader_param("R_MainColor4", UltimateInner1)
-		playerSprite.material.set_shader_param("R_MainColor5", UltimateInner2)
-
+		inner1 = UltimateInner1
+		inner2 = UltimateInner2
+	playerSprite.material.set_shader_param("R_MainColor4", inner1)
+	playerSprite.material.set_shader_param("R_MainColor5", inner2)
+	
 func flash_family_colors():
 	if not is_using_full_set():
 		for part in armor:
@@ -104,6 +110,8 @@ func apply_family_color(family_name : String) -> void:
 
 func change_colors(part, new_colors):
 	part.material.set_shader_param("R_MainColor1", Color("#808080"))
+	part.material.set_shader_param("R_MainColor2", Color("#865875"))
+	part.material.set_shader_param("R_MainColor3", Color("#59364c"))
 	part.material.set_shader_param("R_MainColor4", new_colors[0])
 	part.material.set_shader_param("R_MainColor5", new_colors[1])
 	part.material.set_shader_param("R_MainColor6", new_colors[2])
