@@ -166,6 +166,9 @@ func achievement_check():
 	if "hermes" in armor_part:
 		if has_fullset("hermes"):
 			Achievements.unlock("COLLECTFULLHERMES")
+	elif "ultimate" in armor_part:
+		if has_fullset("ultimate"):
+			Achievements.unlock("COLLECTFULLULTIMATE")
 	else:
 		if has_fullset("icarus"):
 			Achievements.unlock("COLLECTFULLICARUS")

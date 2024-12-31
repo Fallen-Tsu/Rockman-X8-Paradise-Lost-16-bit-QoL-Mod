@@ -148,6 +148,9 @@ HERMESARMS_DISC,Weapon shots consume no ammo.,Tiros de Arma não gastam muniçã
 HERMESLEGS_NAME,Foot Parts H,Foot Parts H,Parte de Botas H,Saltos H
 HERMESLEGS_DISC,Ground dash is immune to damage,Dash no chão é imune a dano.,Dash por el suelo es inmune al daño.,Dash no chão é imune a dano.
 ,,,,
+ULTIMATEARMOR_NAME,Ultimate Armor,Ultimate Armor,Ultimate Armor,Ultimate Armor
+ULTIMATEARMOR_DISC,Plasma Shot I and H enhancements.,Plasma Shot melhorias I e H.,Plasma Shot mejoras I y H.,Plasma Shot melhorias I e H.
+,,,,
 DEFAULTHEAD_NAME,Default Head,Capacete Padrão,Casco Estandar,Chifres Padrão
 DEFAULTHEAD_DISC,Default part.,Parte padrão.,Parte Estandar,Parte padrão.
 DEFAULTBODY_NAME,Defaul Body,Peitoral Padrão,Peto Estandar,Petcholas Padrão
@@ -483,6 +486,8 @@ COLLECTFULLHERMES_TITLE,Soul Eraser,,,
 COLLECTFULLHERMES_DISC,Collected All Hermes Parts.,Coletou todas as partes da Hermes,Recolectaste todas las partes de la Armadura Hermes.,Coletou todas as partes da Hermes
 COLLECTFULLICARUS_TITLE,Command Mission,,,
 COLLECTFULLICARUS_DISC,Collected All Icarus Parts.,Coletou todas as partes da Icarus.,Recolectaste todas las partes de la Armadura Icarus.,Coletou todas as partes da Icarus.
+COLLECTFULLULTIMATE_TITLE,Ultimate Power,,,
+COLLECTFULLULTIMATE_DISC,Collected the Ultimate Armor.,Coletou a Ultimate Armor.,Recolectaste la Ultimate Armor.,Coletou a Ultimate Armor.
 COPYBUSTERONLY_TITLE,Your World Has Decayed,,,
 COPYBUSTERONLY_DISC,Defeated the Impostor without using special weapons.,Derrotou o Impostor sem usar armas especiais.,Derrotaste al Impostor sin utilizar armas especiales.,Derrotou o Impostor sem usar armas especiais.
 COPYDEFEATED_TITLE,Time for our Final Showdown,,,
