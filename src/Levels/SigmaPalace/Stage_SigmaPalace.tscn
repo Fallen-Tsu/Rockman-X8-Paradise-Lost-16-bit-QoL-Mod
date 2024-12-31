@@ -1922,7 +1922,6 @@ position = Vector2( 7524, -1028 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 50 )
-intro_alt = ExtResource( 45 )
 loop_alt = ExtResource( 45 )
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="Objects/MusicStarter" index="0"]
