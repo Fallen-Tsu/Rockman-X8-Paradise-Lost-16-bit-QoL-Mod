@@ -64,11 +64,11 @@ func emit_current_set_signals():
 	for piece in current_armor:
 		if "hermes" in piece: parts += 1
 		elif "icarus" in piece: parts -= 1
-		elif "ultimate" in piece: parts += 3
+		elif "ultimate" in piece: parts += 9
 	
 	if parts == 4: Event.emit_signal("full_hermes")
 	elif parts == -4: Event.emit_signal("full_icarus")
-	elif parts == 12: Event.emit_signal("full_ultimate")
+	elif parts == 36: Event.emit_signal("full_ultimate")
 	else: Event.emit_signal("mixed_set")
 	
 
