@@ -81,7 +81,7 @@ position = Vector2( 26, -30 )
 z_index = 1
 frames = ExtResource( 9 )
 animation = "idle"
-frame = 27
+frame = 25
 playing = true
 flip_h = true
 
@@ -143,8 +143,10 @@ custom_fonts/normal_font = ExtResource( 25 )
 bbcode_enabled = true
 bbcode_text = "[center]
 [color=#47a1fc]Rockman X8[/color]
-[color=#FF00FF]Paradise Lost[/color]
+[color=#21FFDE]Awakening[/color]
 16-bit
+
+A [color=#2142FF]Fallen_Tsu[/color] Mod
 
 [color=#FF00FF]Secret Code[/color]
 [color=#47a1fc](use on Title Screen)[/color]
@@ -153,11 +155,11 @@ Right, Right Right,
 Left, Left, Left, Left,
 Right, Right, Right, Right.
 
-[color=#FF00FF]Fallen_Tsu[/color]'s QoL Mod
 
-[color=#FF00FF]Alternate Music from[/color]
+[color=#21FF6F]Alternate Music 
+from[/color]
 [color=#ff0000]Ys Series (Nihon Falcom)[/color]
-[color=#47a1fc]Trails Series (Nihon Falcom)[/color]
+[color=#21B1FF]Trails Series (Nihon Falcom)[/color]
 
 [color=#FF00FF]Beta Testers[/color]
 5d100
@@ -260,8 +262,10 @@ By CAPCOM
 [/center]"
 text = "
 Rockman X8
-Paradise Lost
+Awakening
 16-bit
+
+A Fallen_Tsu Mod
 
 Secret Code
 (use on Title Screen)
@@ -270,9 +274,9 @@ Right, Right Right,
 Left, Left, Left, Left,
 Right, Right, Right, Right.
 
-Fallen_Tsu's QoL Mod
 
-Alternate Music from
+Alternate Music 
+from
 Ys Series (Nihon Falcom)
 Trails Series (Nihon Falcom)
 
