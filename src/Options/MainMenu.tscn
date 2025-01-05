@@ -16,7 +16,7 @@
 [ext_resource path="res://src/Fonts/x8_bitmapfont.tres" type="BitmapFont" id=14]
 [ext_resource path="res://src/Actors/Player/x_sprites/x.res" type="SpriteFrames" id=15]
 [ext_resource path="res://src/Options/LilMegamanOnScreen.gd" type="Script" id=16]
-[ext_resource path="res://src/Actors/Weapons/Projectiles/medium_shot.res" type="SpriteFrames" id=17]
+[ext_resource path="res://src/Actors/Weapons/Projectiles/heavy_shot.res" type="SpriteFrames" id=17]
 [ext_resource path="res://src/Actors/Player/x_sprites/x_crystal_pallette.png" type="Texture" id=18]
 [ext_resource path="res://addons/PaletteSwap/PaletteSwap.gdshader" type="Shader" id=19]
 [ext_resource path="res://Alt Music/y7se_000.wav" type="AudioStream" id=20]
@@ -49,20 +49,20 @@ margin_right = 398.0
 margin_bottom = 226.0
 texture = ExtResource( 13 )
 
-[node name="MegaMan" type="TextureRect" parent="Menu"]
-margin_left = 43.0
-margin_top = 24.0
-margin_right = 314.0
-margin_bottom = 107.0
-texture = ExtResource( 12 )
-expand = true
-
 [node name="X8" type="TextureRect" parent="Menu"]
 margin_left = 177.0
 margin_top = -29.0
 margin_right = 427.0
 margin_bottom = 151.0
 texture = ExtResource( 6 )
+
+[node name="MegaMan" type="TextureRect" parent="Menu"]
+margin_left = 30.0
+margin_top = 23.0
+margin_right = 315.0
+margin_bottom = 110.0
+texture = ExtResource( 12 )
+expand = true
 
 [node name="Title" type="Control" parent="Menu"]
 visible = false
@@ -241,7 +241,7 @@ margin_bottom = 149.0
 custom_colors/font_color = Color( 0.639216, 0.713726, 0.898039, 1 )
 custom_colors/font_color_shadow = Color( 0.270588, 0.270588, 0.270588, 1 )
 custom_fonts/font = ExtResource( 14 )
-text = "Paradise Lost
+text = "Awakening
 16-bit
 "
 align = 1
@@ -258,8 +258,8 @@ visible = false
 position = Vector2( 13, 2 )
 z_index = -1
 frames = ExtResource( 17 )
-animation = "loop"
-frame = 6
+animation = "Tag"
+frame = 2
 playing = true
 
 [node name="choice" type="AudioStreamPlayer" parent="."]
