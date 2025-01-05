@@ -16,7 +16,7 @@
 [ext_resource path="res://src/Effects/Textures/simple_gradient2.png" type="Texture" id=14]
 [ext_resource path="res://src/Levels/music_player.gd" type="Script" id=15]
 [ext_resource path="res://images/f3e61d9d6ec11558d2bcd47ebbf8af08.png" type="Texture" id=16]
-[ext_resource path="res://Alt Music/Ys X −Nordics− OST - And the Adventure Begins (Second Part).ogg" type="AudioStream" id=17]
+[ext_resource path="res://Alt Music/Kuro no Kiseki Super Ultimate - Namonaki Akumu No Hate.ogg" type="AudioStream" id=17]
 [ext_resource path="res://src/Levels/PitchBlack/light.png" type="Texture" id=23]
 [ext_resource path="res://src/Sounds/Bike - RunLoop.wav" type="AudioStream" id=24]
 [ext_resource path="res://src/Fonts/X8bitmapfont.fnt" type="BitmapFont" id=25]
@@ -81,7 +81,7 @@ position = Vector2( 26, -30 )
 z_index = 1
 frames = ExtResource( 9 )
 animation = "idle"
-frame = 25
+frame = 29
 playing = true
 flip_h = true
 
