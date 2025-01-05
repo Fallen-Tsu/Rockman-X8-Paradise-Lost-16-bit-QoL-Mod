@@ -1016,7 +1016,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Rockman X8 Paradise Lost Mod 16-Bit - (Tsu) Alpha"
+config/name="Rockman X8 Awakening 16-Bit - A Mod by Fallen_Tsu"
 config/description="A mod on a mod, Modified version of Tchy's Speedrun mod by Fallen_Tsu
 Original fangame by AlyssonDaPaz"
 run/main_scene="res://src/Title/DisclaimerScreen.tscn"
