@@ -1,7 +1,7 @@
 extends Node
 
 const codename := "X8FC"
-const version := "2.0.0 - Fallen_Tsu's Mod 'Beta'"
+const version := "2.0.1 - Fallen_Tsu's Mod 'Beta'"
 const current_demo := "Tchy's Speedrun Mod v7.-"
 
 var player : Character
