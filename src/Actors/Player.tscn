@@ -280,7 +280,7 @@ position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 33
+frame = 85
 playing = true
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
@@ -986,6 +986,7 @@ conflicting_moves = [ "DashJump", "WallSlide", "AirDash", "WallJump", "DashWallJ
 actions = [ "jump" ]
 animation = "jump"
 sound = ExtResource( 3 )
+jump_velocity = 380.0
 shot_pos_adjust = Vector2( 4, 0 )
 
 [node name="audioStreamPlayer" type="AudioStreamPlayer" parent="Jump"]
