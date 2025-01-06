@@ -280,7 +280,7 @@ position = Vector2( 0, -4 )
 z_index = 5
 frames = ExtResource( 1 )
 animation = "idle"
-frame = 40
+frame = 33
 playing = true
 
 [node name="head_armor" type="AnimatedSprite" parent="animatedSprite"]
@@ -876,6 +876,7 @@ animation = "walljump"
 sound = ExtResource( 3 )
 shot_pos_adjust = Vector2( 4, 0 )
 leeway_time = 0.0
+fullspeed_proportion = 0.29
 minimum_upwards_time = 0.235
 start_delay = 0.116
 move_away_duration = 0.15
@@ -1033,7 +1034,7 @@ conflicting_moves = [ "Jump", "DashJump", "WallJump", "WallSlide", "AirDash" ]
 actions = [ "dash" ]
 animation = "dash"
 sound = ExtResource( 6 )
-horizontal_velocity = 210.0
+horizontal_velocity = 260.0
 jump_velocity = 420.0
 dash_duration = 0.75
 
